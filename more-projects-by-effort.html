@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>More Projects (by effort) — Joshua Rivera Camacho</title>
+  <meta name="description" content="Smaller projects by Joshua Rivera Camacho.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="more-effort" data-root="">
+  <div class="page">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main>
+      <header class="masthead">
+        <h1>An assortment of my other work -- including smaller projects that perhaps demanded lower time/effort/technical skill but were a ton of fun and formative nonetheless</h1>
+        <nav class="toggle" aria-label="Sort projects">
+          <a href="more-projects-by-date.html">By Date</a>
+          <a href="more-projects-by-effort.html" class="is-current" aria-current="page">By Effort</a>
+        </nav>
+      </header>
+      <!-- Cards are generated from MORE_PROJECTS in assets/js/projects.js -->
+      <div class="more-grid" id="more-grid" data-sort="effort"></div>
+    </main>
+  </div>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
