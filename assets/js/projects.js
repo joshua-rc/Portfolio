@@ -12,7 +12,7 @@
 window.SELECTED_WORK = [
   { slug: "synthia", title: "Synthia",
     blurb: "visual synthesizer that combines ambient audio with live video to create concert-level visuals in your own home",
-    meta: "", image: "" },
+    meta: "2025", image: "" },
   { slug: "cantilevered-deltaxy", title: "Cantilevered DeltaXY Research", blurb: "", meta: "", image: "" },
   { slug: "twofold",              title: "TwoFold",                       blurb: "", meta: "", image: "" },
   { slug: "layer-by-layer",       title: "Layer By Layer",                blurb: "", meta: "", image: "" },
