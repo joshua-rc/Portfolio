@@ -7,9 +7,6 @@
   const C = window.CONTACT || {};
 
   const ICONS = {
-    // Stand-in icons — replace with the exported Figma icons if you like
-    linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-1.85 3.76-1.85 4.02 0 4.88 2.4 4.88 5.94v5.41h-4v-4.8c0-1.15-.02-2.62-1.6-2.62-1.6 0-1.85 1.25-1.85 2.54v4.88h-4.05v-11Z"/></svg>',
-    mail: '<svg viewBox="0 0 34 22" aria-hidden="true"><rect x="1" y="1" width="32" height="20" rx="2" fill="currentColor"/><path d="M2 2.5 17 13 32 2.5" fill="none" stroke="#fff" stroke-width="2"/></svg>',
     up: '<svg viewBox="0 0 37 63" aria-hidden="true"><path d="M18.5 61V3M2 19 18.5 3 35 19" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   };
 
@@ -22,8 +19,8 @@
   if (aside) {
     const name = `<a class="name" href="${url("index.html")}">Joshua<br>Rivera<br>Camacho</a>`;
     const socials = `<div class="socials">
-        <a href="${esc(C.linkedin)}" target="_blank" rel="noopener" aria-label="LinkedIn">${ICONS.linkedin}</a>
-        <a href="mailto:${esc(C.email)}" aria-label="Email">${ICONS.mail}</a>
+        <a href="${esc(C.linkedin)}" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="${url("assets/img/icons/linkedin.png")}" alt=""></a>
+        <a href="mailto:${esc(C.email)}" aria-label="Email"><img src="${url("assets/img/icons/mail.png")}" alt=""></a>
       </div>`;
 
     if (page === "project") {
@@ -70,9 +67,9 @@
   const aboutLinks = document.getElementById("about-links");
   if (aboutLinks) {
     aboutLinks.innerHTML = `
-      <a href="${esc(C.linkedin)}" target="_blank" rel="noopener" aria-label="LinkedIn">${ICONS.linkedin}</a>
+      <a href="${esc(C.linkedin)}" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="${url("assets/img/icons/linkedin.png")}" alt=""></a>
       <a href="${url(C.resume)}" target="_blank" rel="noopener">Resume</a>
-      <a href="mailto:${esc(C.email)}" aria-label="Email">${ICONS.mail}</a>`;
+      <a href="mailto:${esc(C.email)}" aria-label="Email"><img class="icon--mail" src="${url("assets/img/icons/mail.png")}" alt=""></a>`;
   }
 
   /* ---------- Back to top ---------- */
