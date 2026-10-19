@@ -49,7 +49,7 @@
       sections.forEach((s) => io.observe(s));
     } else {
       const list = (window.SELECTED_WORK || [])
-        .map((p) => `<li><a href="${url("projects/" + p.slug + ".html")}"${p.slug === slug ? ' class="is-current"' : ""}>${esc(p.title)}</a></li>`)
+        .map((p) => `<li><a href="${url("projects/" + p.slug + ".html")}"${p.slug === slug ? ' class="is-current"' : ""}>${esc(p.navTitle || p.title).replace(/\n/g, "<br>")}</a></li>`)
         .join("");
       const onMore = page === "more-date" || page === "more-effort";
       aside.innerHTML = `${name}
@@ -115,7 +115,7 @@
 
     more.innerHTML = items
       .map((p) => {
-        const meta = more.dataset.sort === "effort" ? "" : fmtDate(p.date);
+        const meta = more.dataset.sort === "effort" ? "" : (p.dateLabel || fmtDate(p.date));
         const box = `<div class="media">${cardInner({ ...p, meta: p.meta ?? meta })}</div>`;
         const tag = p.link ? "a" : "div";
         const href = p.link ? ` href="${esc(url(p.link))}"` : "";

@@ -4,115 +4,84 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Synthia — Joshua Rivera Camacho</title>
-  <meta name="description" content="Synthia: a visual synthesizer that combines ambient audio with live video.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
+  <meta name="description" content="A visual synthesizer that turns ambient audio and live video into audio-reactive, concert-level visuals in your home.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<!-- data-slug must match this project's slug in assets/js/projects.js -->
+<!-- Generated from the content spreadsheet by tools/build_from_sheet.py.
+     Re-running the script overwrites this file. -->
 <body data-page="project" data-root="../" data-slug="synthia">
   <div class="page page--project">
-    <!-- Sidebar (name, section index, "Return to...") is generated automatically
-         from the <section id="..."> blocks below. -->
     <aside class="sidebar" id="sidebar"></aside>
 
     <main class="project">
       <h1 class="project__title">Synthia</h1>
 
-      <!-- ===== Hero image + info panel ===== -->
       <div class="project__hero">
-        <!-- Hero image: swap the src to use a different photo -->
         <figure class="media"><img src="../assets/img/covers/synthia.jpg" alt="Synthia"></figure>
         <div class="project__info">
-          <p>HCI Design</p>
-          <p>Wizard of Oz Prototyping</p>
-          <p>4.031: Objects and Interaction</p>
-          <p>SOLIDWORKS<br>Arduino IDE<br>Electronics/Circuitry<br>Laser Cutting<br>Metal Forming</p>
-          <p>6 weeks, Winter 2025</p>
-          <p>Built with<br>Joanne Hong &amp; Pria Sawhney</p>
+          <p><span class="info__label info__label--head">Design methodology</span><br>HCI/interaction design<br>Wizard-of-Oz prototyping</p>
+          <p><span class="info__label">Course</span>4.031: Design Studio: Objects and Interaction (Prof. Marcelo Coelho)<br><span class="info__label">Timeline</span>6 weeks, Winter 2025 (second half of the Fall 2025 semester)<br><span class="info__label">Team</span>Joanne Hong (MIT '27), Pria Sawhney (MIT '27)</p>
+          <p><span class="info__label info__label--head">Tools</span><br>SOLIDWORKS<br>Arduino IDE<br>TouchDesigner<br>Electronics/circuitry<br>Laser cutting<br>FDM 3D printing<br>Sheet metal forming</p>
         </div>
       </div>
 
-      <!-- ===== Overview ===== -->
       <section id="overview" data-nav="Project Overview">
-        <p class="project__summary">Synthia combines live video and ambient audio to transform the former into concert-level, audio-reactive visuals that can then be projected back into the room. With the three-state switch, the user is able to select from three graphic modes: dots (particle simulation), lines (edge detection), and solids (pixelation). All visual modes can be further modified using the knobs -- which control audio sensitivity, video threshold/contrast, and color -- to bring another level of customization. To ensure usability in either user- or audience-facing directions, the graphics can be flipped upside down using the x-axis mirror button.</p>
+        <div class="project__summary">
+          <p class="summary-text">Synthia combines live video and ambient audio to generate audio-reactive visuals that can be projected back into the room. Synthia's camera module can be rotated to point towards the user or an audience, with an x-axis mirror button available to flip graphics upside down, ensuring usability in either direction. A three-state switch picks between three graphic modes — dots (a particle simulation), lines (edge detection), and solids (pixelation) — while knobs tune audio sensitivity, video threshold and contrast, and color. I built Synthia with Joanne Hong and Pria Sawhney; though work wa heavily collaborative, the focus of my contribution was the mechanical design, fabrication, and electronics.</p>
+        </div>
       </section>
-
-      <!-- ===== Context ===== -->
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
-        <p>prompted to design an interactive digital camera using wizard of oz prototyping reimagine what it means for something to be a 'digital camera' and challenge the interaction with it</p>
+          <p class="body-text">For the second half of the class 4.031 with Marcelo Coelho, our project brief was to design an interactive digital camera using Wizard-of-Oz prototyping — and to reimagine what it means for something to be a "digital camera" and to challenge how people interact with one.</p>
       </section>
-
-      <!-- ===== Problem framing ===== -->
       <section id="problem" data-nav="Problem Framing">
         <h2>Problem Framing</h2>
-        <p>music tech inspiration -- audio reactive visuals</p>
+          <p class="body-text">My team drew inspiration from music technology, especially the audio-reactive visuals of live concerts which seemed to flood the floors with life and excitement -- an atmosphere which we felt could be harder to achieve in other less-equiped, environments. Additionally, we were drawn to the ability of a "transforming" form factor to incite curiousity and excitment in the user. These two requirements shaped everything after that. At a minimum, the camera needed a pitch degree of freedom so it could be aimed. And because the visuals had so many parameters, the controls had to be as intuitive as possible — and fun to play with — using components we could acquire within the limited timeframe.</p>
       </section>
-
-      <!-- ===== Process: design decisions alternate image left / image right ===== -->
       <section id="process" data-nav="Process">
         <h2>Process</h2>
 
-        <h3>Design Decision I</h3>
+        <h3>Form factor</h3>
         <div class="decision">
           <figure class="media"></figure>
-          <p class="body-text">Describe the first design decision here.</p>
-        </div>
-
-        <h3>Design Decision II</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the second design decision here.</p>
-        </div>
-
-        <h3>Design Decision III</h3>
-        <div class="decision">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the third design decision here.</p>
-        </div>
-
-        <h3>Design Decision IV</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the fourth design decision here.</p>
-        </div>
-
-        <h3>Design Decision V</h3>
-        <div class="decision">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the fifth design decision here.</p>
-        </div>
-
-        <h3>Design Decision VI</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the sixth design decision here.</p>
-        </div>
-      </section>
-
-      <!-- ===== Outcome: gallery rows of 3 / 2 / 4 (use gallery__row--2, --3 or --4) ===== -->
-      <section id="outcome" data-nav="Outcome">
-        <h2>Outcome</h2>
-        <p>Describe the final outcome here.</p>
-        <div class="gallery">
-          <div class="gallery__row gallery__row--3">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
+          <div class="decision__text">
+          <p class="body-text">We explored transforming forms through sketches, a cardboard prototype, and a first 3D-printed prototype, then settling on two asymmetrical halves. One half is curved, inviting the user to rotate the camera; the other is a near-rectangular module that holds the control panel, with the slant providing critical directionality for the user to situate themselves. The volume of the electronics we planned to use influenced much of the final size, though we aimed to keep it concise and compact.</p>
           </div>
-          <div class="gallery__row gallery__row--2">
-            <figure class="media"></figure><figure class="media"></figure>
+        </div>
+
+        <h3>Sheet metal forming</h3>
+        <div class="decision decision--flip">
+          <figure class="media"></figure>
+          <div class="decision__text">
+          <p class="body-text">Our team desired a high-quality finish that we felt wasn't attainable through a FDM printed alpha prototype. We dreamt of a seamless aluminum facade, but the challenge of matching the continuous curves on our form factor nearly ruled it out. To avoid abandoning the the target form factor and/or material, I designed custom 3D-printed stamping jigs that worked with the clamps we already had in-house, using the sheet metal springback equation* to drive the jig geometry so the aluminum would follow exactly along the intended curve.</p>
+          <p class="equation">R_i / R_f = 4(R_i/t × Y/E)³ − 3(R_i/t × Y/E) + 1</p>
+          <p class="footnote">*springback equation used</p>
           </div>
-          <div class="gallery__row gallery__row--4">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
+        </div>
+
+        <h3>Electronics and controls</h3>
+        <div class="decision">
+          <figure class="media"></figure>
+          <div class="decision__text">
+          <p class="body-text">Because the class heavily encouraged Wizard-of-Oz prototyping to focus on physical object design, we used a laptop running TouchDesigner to generate the visuals, and I built the hardware that fed it: an Arduino Micro streaming serial data into TouchDesigner, with a protoboard connecting the encoders, buttons, switches, microphone, and camera. The hardest constraints were housing volume, which shaped the device's overall form, and building an intuitive, fun interaction from available components — which led us to design custom button, knob, and switch caps, using Synthia's signature pop of orange where appropriate.</p>
+          </div>
+        </div>
+
+        <h3>Pitch magnet-bearing assembly</h3>
+        <div class="decision decision--flip">
+          <figure class="media"></figure>
+          <div class="decision__text">
+          <p class="body-text">We wanted the camera to turn smoothly, but time was short, so I leaned into the constraint and used a simple bearing assembly. I 3D-printed the tube shaft in its most favorable print orientation for strength, while keeping it hollow so wiring could pass through and avoid interfering with the shaft in rotation. We found that the rotation of the camera half was smooth, but keeping it at the desire angle was difficult -- likely due to weight imbalance from the irregular geometry and excaberated by the tension from the cables running inside. To resolve this, I imbedded magnets within the immediately adjacent walls of the camera- and control-halves. This resolved the issue, providing the user with 8 distinct angles to use, as well as providing tactile feedback into the rotation of the camera.</p>
           </div>
         </div>
       </section>
-
-      <!-- ===== Reflection ===== -->
+      <section id="improvement" data-nav="Room for Improvement">
+        <h2>Room for Improvement</h2>
+          <p class="body-text">Synthia was a huge hit at the final class exhibition, creating stunning visuals and providing tons of fun and wonder to all who used. However -- given more time -- there were a few design choices that I could have made to make the design more rigorously engineered. Though I chose to print the tube-shaft since there wasn't time or budget to procure a metal rod, I would opt against doing so in most other situations. I was incredibly proud of thinking of and designing the sheet metal stamps, but thinking about a more gradual release mechanism would definitely improve user experience. Electrnoics housing could have been more concise to improve assembly, although I will concede it was my first experience designing electronics housing.</p>
+      </section>
       <section id="reflection" data-nav="Reflection">
         <h2>Reflection</h2>
-        <p>Write your reflection here.</p>
+          <p class="body-text">Creating Synthia was an invaluable experience that introduced me to many valuable skills, such as hardware integration and sheet metal forming. However, it was most valuable as my first time working on a truly multi-disciplinary team. If I had to sum up what I took from it: being a good teammate on an interdisciplinary project means being reliable enough that people can build on what you own, and being humble enough to actually rely on their expertise where yours runs out.</p>
       </section>
     </main>
   </div>

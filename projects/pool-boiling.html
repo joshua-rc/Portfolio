@@ -4,97 +4,75 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Small-scale Pool Boiling Facility — Joshua Rivera Camacho</title>
-  <meta name="description" content="Small-scale Pool Boiling Facility by Joshua Rivera Camacho.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
+  <meta name="description" content="An experiment vessel that mimics boiling with gas bubbles and a perforated heater to study how bubble agitation drives heat transfer.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<!-- data-slug must match this project's slug in assets/js/projects.js -->
+<!-- Generated from the content spreadsheet by tools/build_from_sheet.py.
+     Re-running the script overwrites this file. -->
 <body data-page="project" data-root="../" data-slug="pool-boiling">
   <div class="page page--project">
-    <!-- Sidebar (name, section index, "Return to...") is generated automatically
-         from the <section id="..."> blocks below. -->
     <aside class="sidebar" id="sidebar"></aside>
 
     <main class="project">
       <h1 class="project__title">Small-scale Pool Boiling Facility</h1>
 
-      <!-- ===== Hero image + info panel ===== -->
       <div class="project__hero">
-        <!-- Hero image: swap the src to use a different photo -->
         <figure class="media"><img src="../assets/img/covers/pool-boiling.jpg" alt="Small-scale Pool Boiling Facility"></figure>
         <div class="project__info">
-          <p>Discipline<br>Method</p>
-          <p>Course number: Course name</p>
-          <p>Tool<br>Tool<br>Tool</p>
-          <p>Duration, Term Year</p>
-          <p>Built with<br>Collaborators</p>
+          <p><span class="info__label info__label--head">Design methodology</span><br>Experiment Design<br>Technical communication</p>
+          <p><span class="info__label">Lab</span>The Red Lab, MIT<br><span class="info__label">Program</span>MIT Energy Initiative (MITEI) Summer Cohort 2024<br><span class="info__label">Timeline</span>Summer 2024</p>
+          <p><span class="info__label info__label--head">Tools</span><br>SOLIDWORKS<br>MATLAB<br>SLA 3D printing</p>
         </div>
       </div>
 
-      <!-- ===== Overview ===== -->
       <section id="overview" data-nav="Project Overview">
-        <p class="project__summary">One-paragraph overview of the project: what it is, what it does, and what makes it interesting.</p>
+        <div class="project__summary">
+          <p class="summary-text">I designed and fabricated an experiment vessel to investigate how bubble agitation affects the heat transfer coefficient of water. Boiling is mimicked with a perforated heater and gas input, and the vessel is built to be filmed by infrared and high-speed cameras at the same time. The project was selected for the MIT Energy Initiative's 2024 Summer Cohort, and I presented my summer progress at the MITEI Annual Research Conference.</p>
+        </div>
       </section>
-
-      <!-- ===== Context ===== -->
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
-        <p>What prompted this project?</p>
+          <p class="body-text">During the summer after my freshman year, I worked as an undergraduate researcher in MIT's Red Lab. I was tasked with designing and fabricating a pool boiling facility that could mimic the bubbling seen in boiling, so the lab could isolate how bubble agitation affects the heat transfer coefficient of water.</p>
       </section>
-
-      <!-- ===== Problem framing ===== -->
       <section id="problem" data-nav="Problem Framing">
         <h2>Problem Framing</h2>
-        <p>How did you frame the problem?</p>
+          <p class="body-text">The facility had to be accessible to infrared and high-speed cameras simultaneously for data collection, while keeping water and gas from leaking into each other. I split the assembly into two main sections: a pool facility on top, with windows on each side so recording could happen from whichever angle was most convenient, and a gas compartment below.</p>
       </section>
-
-      <!-- ===== Process: design decisions alternate image left / image right ===== -->
       <section id="process" data-nav="Process">
         <h2>Process</h2>
 
-        <h3>Design Decision I</h3>
+        <h3>Adapting the previous facility</h3>
         <div class="decision">
           <figure class="media"></figure>
-          <p class="body-text">Describe the first design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">The lab's previous pool boiling facility could already record with ultra-high-speed and infrared cameras, but it couldn't generate bubbles. The challenge was adding bubble generation without giving up either recording capability.</p>
+          </div>
         </div>
 
-        <h3>Design Decision II</h3>
+        <h3>Sizing the bubble generation</h3>
         <div class="decision decision--flip">
           <figure class="media"></figure>
-          <p class="body-text">Describe the second design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">I wrote two MATLAB scripts to size the system. The first found the critical gas flow rate — the flow needed for bubbles to nucleate in a way that mimics boiling. The second modeled how needle radius affects bubble radius; because the relationship was fairly linear, I let manufacturing feasibility set the needle radius.</p>
+          </div>
         </div>
 
-        <h3>Design Decision III</h3>
+        <h3>Gas compartment and heater</h3>
         <div class="decision">
           <figure class="media"></figure>
-          <p class="body-text">Describe the third design decision here.</p>
-        </div>
-
-        <h3>Design Decision IV</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the fourth design decision here.</p>
-        </div>
-
-        <h3>Design Decision V</h3>
-        <div class="decision">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the fifth design decision here.</p>
-        </div>
-
-        <h3>Design Decision VI</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the sixth design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">Gas enters the compartment through an NPT-threaded nozzle, whose tapered thread seals with minimal leakage. A sapphire bottom plate closes the compartment, and the heater is perforated sapphire, so gas can pass through it while infrared cameras still see through. O-rings and gasket sealant keep water and gas separated throughout the assembly.</p>
+          </div>
         </div>
       </section>
-
-      <!-- ===== Outcome: gallery rows of 3 / 2 / 4 (use gallery__row--2, --3 or --4) ===== -->
+      <section id="improvement" data-nav="Room for Improvement">
+        <h2>Room for Improvement</h2>
+          <p class="body-text"><span class="todo">[NEEDS INPUT: leaks, fabrication issues, anything you'd redesign.]</span></p>
+      </section>
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
-        <p>Describe the final outcome here.</p>
+        <ul class="outcome-list"><li>Selected for the MITEI Summer Cohort 2024</li><li>Flash talk and poster at the MITEI Annual Research Conference</li><li>Captured high-speed footage of bubble formation</li><li><span class="todo">[NEEDS INPUT: any quantitative results, or what the lab used the facility for after you.]</span></li></ul>
+        <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
           <div class="gallery__row gallery__row--3">
             <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
@@ -107,11 +85,9 @@
           </div>
         </div>
       </section>
-
-      <!-- ===== Reflection ===== -->
       <section id="reflection" data-nav="Reflection">
         <h2>Reflection</h2>
-        <p>Write your reflection here.</p>
+          <p class="body-text"><span class="todo">[NEEDS INPUT — the MITEI workshops on communicating research could be a good thread here.]</span></p>
       </section>
     </main>
   </div>

@@ -3,98 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Unit Cell Tesselation — Joshua Rivera Camacho</title>
-  <meta name="description" content="Unit Cell Tesselation by Joshua Rivera Camacho.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
+  <title>Unit Cell Tessellation — Joshua Rivera Camacho</title>
+  <meta name="description" content="A stiffness-optimized metamaterial, printed at the micron scale with two-photon lithography and crushed inside an electron microscope.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<!-- data-slug must match this project's slug in assets/js/projects.js -->
+<!-- Generated from the content spreadsheet by tools/build_from_sheet.py.
+     Re-running the script overwrites this file. -->
 <body data-page="project" data-root="../" data-slug="unit-cell-tessellation">
   <div class="page page--project">
-    <!-- Sidebar (name, section index, "Return to...") is generated automatically
-         from the <section id="..."> blocks below. -->
     <aside class="sidebar" id="sidebar"></aside>
 
     <main class="project">
-      <h1 class="project__title">Unit Cell Tesselation</h1>
+      <h1 class="project__title">Unit Cell Tessellation</h1>
 
-      <!-- ===== Hero image + info panel ===== -->
       <div class="project__hero">
-        <!-- Hero image: swap the src to use a different photo -->
-        <figure class="media"><img src="../assets/img/covers/unit-cell-tessellation.jpg" alt="Unit Cell Tesselation"></figure>
+        <figure class="media"><img src="../assets/img/covers/unit-cell-tessellation.jpg" alt="Unit Cell Tessellation"></figure>
         <div class="project__info">
-          <p>Discipline<br>Method</p>
-          <p>Course number: Course name</p>
-          <p>Tool<br>Tool<br>Tool</p>
-          <p>Duration, Term Year</p>
-          <p>Built with<br>Collaborators</p>
+          <p><span class="info__label info__label--head">Design methodology</span><br>Architected material design<br>Finite element analysis<br>Nanomechanical testing</p>
+          <p><span class="info__label">Course</span>2.002: Mechanics &amp; Materials II<br><span class="info__label">Timeline</span>Spring 2026<br><span class="info__label">Team</span>Christian Tavera (MIT '27), Edison Peguero Rosario (MIT '27), Stasya Selizhuk (MIT '28)</p>
+          <p><span class="info__label info__label--head">Tools</span><br>SOLIDWORKS (CAD and FEA)<br>Two-photon lithography (MIT.nano)<br>Scanning electron microscope (SEM)<br>In-situ nanoindenter</p>
+          <p>Won class competition for highest stiffness design</p>
         </div>
       </div>
 
-      <!-- ===== Overview ===== -->
       <section id="overview" data-nav="Project Overview">
-        <p class="project__summary">One-paragraph overview of the project: what it is, what it does, and what makes it interesting.</p>
+        <div class="project__summary">
+          <p class="summary-text">For 2.002: Mechanics &amp; Materials II, my lab group and I designed a polymer mechanical metamaterial unit cell to maximize stiffness, then fabricated a 2×2×2 tessellation via two-photon lithography at MIT.nano. We compressed the ~150 μm sample with a nanoindenter inside an SEM, recording load-displacement data while watching it deform in real time. The design reached about 3.6× the normalized stiffness of a reference architecture, and our FEA predicted its stiffness within 2.2%.</p>
+        </div>
       </section>
-
-      <!-- ===== Context ===== -->
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
-        <p>What prompted this project?</p>
+          <p class="body-text">This project was the architected-materials lab in 2.002: Mechanics &amp; Materials II. The goal was to understand how unit-cell geometry affects a material's effective stiffness, strength, and toughness — relative to both the base resin and a reference architecture, the tetrakaidecahedron.</p>
       </section>
-
-      <!-- ===== Problem framing ===== -->
       <section id="problem" data-nav="Problem Framing">
         <h2>Problem Framing</h2>
-        <p>How did you frame the problem?</p>
+          <p class="body-text">We designed our unit cell to maximize stiffness. Working at this scale meant designing for two-photon lithography, with a sample about 146 μm tall on a 168 μm square footprint, printed from a photosensitive resin (Eₛ = 1,713 MPa, σᵧₛ = 22.1 MPa). Our benchmark was the tetrakaidecahedron, a common reference architecture.</p>
       </section>
-
-      <!-- ===== Process: design decisions alternate image left / image right ===== -->
       <section id="process" data-nav="Process">
         <h2>Process</h2>
 
-        <h3>Design Decision I</h3>
+        <h3>Designing for stiffness</h3>
         <div class="decision">
           <figure class="media"></figure>
-          <p class="body-text">Describe the first design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">We aimed the geometry at stiffness in two ways: a higher fill fraction, and struts arranged to place more material along the primary load-bearing direction. Both showed up in the results — the design's normalized stiffness was about 3.6× the reference's.</p>
+          </div>
         </div>
 
-        <h3>Design Decision II</h3>
+        <h3>Validating with FEA</h3>
         <div class="decision decision--flip">
           <figure class="media"></figure>
-          <p class="body-text">Describe the second design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">We modeled the full 2×2×2 tessellation in SOLIDWORKS, which predicted an effective modulus of 370.5 MPa. Experiment measured 362.5 MPa — a 2.2% discrepancy, giving us confidence that the model captured the geometry's behavior.</p>
+          </div>
         </div>
 
-        <h3>Design Decision III</h3>
+        <h3>Testing in situ</h3>
         <div class="decision">
           <figure class="media"></figure>
-          <p class="body-text">Describe the third design decision here.</p>
-        </div>
-
-        <h3>Design Decision IV</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the fourth design decision here.</p>
-        </div>
-
-        <h3>Design Decision V</h3>
-        <div class="decision">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the fifth design decision here.</p>
-        </div>
-
-        <h3>Design Decision VI</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the sixth design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">We first characterized the printed sample's dimensions by SEM, then compressed it with a nanoindenter mounted inside the SEM, so we could record load-displacement data and watch the deformation at the same time. We converted the raw data to engineering stress and strain to extract stiffness, yield strength, and toughness.</p>
+          </div>
         </div>
       </section>
-
-      <!-- ===== Outcome: gallery rows of 3 / 2 / 4 (use gallery__row--2, --3 or --4) ===== -->
+      <section id="improvement" data-nav="Room for Improvement">
+        <h2>Room for Improvement</h2>
+          <p class="body-text">Under compression, the metamaterial collapsed suddenly and catastrophically — consistent with stress concentrations at the beam junctions driving failure, followed by strain softening once its strain-hardening capacity was exhausted. In a next iteration, we would increase the fillet radii at the nodes to reduce those concentrations and delay the onset of failure.</p>
+      </section>
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
-        <p>Describe the final outcome here.</p>
+        <ul class="outcome-list"><li>Effective modulus E* = 362.5 MPa; FEA predicted 370.5 MPa (2.2% discrepancy)</li><li>Normalized stiffness 0.212 vs. 0.059 for the reference tetrakaidecahedron (~3.6×)</li><li>Normalized strength 0.629 vs. 0.115 (~5.5×)</li><li>Toughness 6.47 MJ/m³ vs. 0.332 MJ/m³ (~20×), owing to an extended post-yield plateau</li></ul>
+        <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
           <div class="gallery__row gallery__row--3">
             <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
@@ -107,11 +86,9 @@
           </div>
         </div>
       </section>
-
-      <!-- ===== Reflection ===== -->
       <section id="reflection" data-nav="Reflection">
         <h2>Reflection</h2>
-        <p>Write your reflection here.</p>
+          <p class="body-text"><span class="todo">[NEEDS INPUT]</span></p>
       </section>
     </main>
   </div>

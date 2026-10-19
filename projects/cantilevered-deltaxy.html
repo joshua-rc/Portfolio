@@ -3,98 +3,86 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cantilevered DeltaXY Research — Joshua Rivera Camacho</title>
-  <meta name="description" content="Cantilevered DeltaXY Research by Joshua Rivera Camacho.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
+  <title>Cantilevered DeltaXY — Joshua Rivera Camacho</title>
+  <meta name="description" content="Undergraduate research on a novel 3D printer movement system that fits a 120 mm build area into 127 mm of shelf width — part of co-authored research awarded Best Paper at ACM CHI 2026.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<!-- data-slug must match this project's slug in assets/js/projects.js -->
+<!-- Generated from the content spreadsheet by tools/build_from_sheet.py.
+     Re-running the script overwrites this file. -->
 <body data-page="project" data-root="../" data-slug="cantilevered-deltaxy">
   <div class="page page--project">
-    <!-- Sidebar (name, section index, "Return to...") is generated automatically
-         from the <section id="..."> blocks below. -->
     <aside class="sidebar" id="sidebar"></aside>
 
     <main class="project">
-      <h1 class="project__title">Cantilevered DeltaXY Research</h1>
+      <h1 class="project__title">Cantilevered DeltaXY</h1>
 
-      <!-- ===== Hero image + info panel ===== -->
       <div class="project__hero">
-        <!-- Hero image: swap the src to use a different photo -->
-        <figure class="media"><img src="../assets/img/covers/cantilevered-deltaxy.jpg" alt="Cantilevered DeltaXY Research"></figure>
+        <figure class="media"><img src="../assets/img/covers/cantilevered-deltaxy.jpg" alt="Cantilevered DeltaXY"></figure>
         <div class="project__info">
-          <p>Discipline<br>Method</p>
-          <p>Course number: Course name</p>
-          <p>Tool<br>Tool<br>Tool</p>
-          <p>Duration, Term Year</p>
-          <p>Built with<br>Collaborators</p>
+          <p><span class="info__label info__label--head">Design methodology</span><br>Machine design<br>Kinematic modeling/movement system parameterization</p>
+          <p><span class="info__label">Lab</span>Ideation Lab, MIT Department of Mechanical Engineering<br><span class="info__label">Role</span>Undergraduate researcher (UROP)<br><span class="info__label">Collaborators</span>Ilan Moyer (MIT Ideation Lab), Quentin Bolsee (MIT Center for Bits and Atoms)<br><span class="info__label">Timeline</span>Summer – Winter 2025</p>
+          <p><span class="info__label info__label--head">Tools</span><br>SOLIDWORKS<br>Python (incl. JAX)<br>G-code<br>Google Sheets<br>FDM 3D printing<br>Laser cutting</p>
+          <p><span class="info__label">Recognition</span>ACM CHI 2026 Best Paper Award (co-author)</p>
         </div>
       </div>
 
-      <!-- ===== Overview ===== -->
       <section id="overview" data-nav="Project Overview">
-        <p class="project__summary">One-paragraph overview of the project: what it is, what it does, and what makes it interesting.</p>
+        <div class="project__summary">
+          <p class="summary-text">The Cantilevered DeltaXY is a movement system with exceptionally high lateral space efficiency: it lets FabUnit, a bookshelf 3D printer, fit a ~120 × 120 mm build area into 127 mm of shelf width. As an undergraduate researcher in MIT's Ideation Lab, I worked under its creator, Ilan Moyer, on the kinematic model used to calibrate the printer's accuracy, then on a low-cost, easily prototyped version of the architecture. This work contributed to a paper at ACM CHI 2026, which received a Best Paper Award.</p>
+        </div>
       </section>
-
-      <!-- ===== Context ===== -->
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
-        <p>What prompted this project?</p>
+          <p class="body-text">Over my sophomore summer, I joined the Ideation Lab in MIT's Department of Mechanical Engineering as an undergraduate researcher. My research centered on the Cantilevered DeltaXY, a movement system Ilan Moyer designed for FabUnit — an ultra-thin 3D printer that sits on a bookshelf like a thick book. The architecture gives FabUnit a lateral space efficiency of 94%: its build area is nearly as wide as the machine itself.</p>
       </section>
-
-      <!-- ===== Problem framing ===== -->
       <section id="problem" data-nav="Problem Framing">
         <h2>Problem Framing</h2>
-        <p>How did you frame the problem?</p>
+          <p class="body-text">My work came in two phases. First, FabUnit's prints came out slightly distorted, usually skewed in one direction. The main source of error turned out to be an offset of the toolhead relative to its joint — a slight non-perpendicularity, amplified over the length of the printhead — so the machine's kinematics had to account for it. Second, I shifted to building the architecture into a cheaper form that was easier to prototype, to allow the exploration of new uses for its reach, such as multiple machines working together.</p>
       </section>
-
-      <!-- ===== Process: design decisions alternate image left / image right ===== -->
       <section id="process" data-nav="Process">
         <h2>Process</h2>
 
-        <h3>Design Decision I</h3>
+        <h3>Modeling the toolhead offset</h3>
         <div class="decision">
           <figure class="media"></figure>
-          <p class="body-text">Describe the first design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">I derived the forward kinematics (toolhead position from motor positions) and reverse kinematics (motor positions from toolhead coordinates) for an offset, non-concentric toolhead. I verified them with Python scripts built on JAX to ease integration with computer vision, and wrote a G-code grid test print that Quentin Bolsee analyzed with computer vision against the predicted coordinates. The offset model became part of the printer's calibration.</p>
+          </div>
         </div>
 
-        <h3>Design Decision II</h3>
+        <h3>Z-axis linkage stiffness</h3>
         <div class="decision decision--flip">
           <figure class="media"></figure>
-          <p class="body-text">Describe the second design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">For a high-fidelity prototype, we kept the narrow width and a level work platform, moving the toolhead in z instead. The z-height had to be easy to track to avoid adding kinematic complexity, so I used paired Sarrus linkages — which keep the top and bottom planes parallel — driven by a non-captive lead screw. I calculated the compliance of several linkage-bearing layouts; the equally spaced design I chose is nearly 3× stiffer than the original.</p>
+          <p class="body-text"><span class="todo">[Prototype was only designed]</span></p>
+          </div>
         </div>
 
-        <h3>Design Decision III</h3>
+        <h3>Living hinges and simplified linkages</h3>
         <div class="decision">
           <figure class="media"></figure>
-          <p class="body-text">Describe the third design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">To explore a cheaper, faster path, I designed a low-fidelity prototype that replaces the bearing assemblies with living hinges. Simplifying the linkages this way cut part count and cost, so the architecture can be iterated on without relying on the original machined assembly.</p>
+          </div>
         </div>
 
-        <h3>Design Decision IV</h3>
+        <h3>Building around aluminum extrusion</h3>
         <div class="decision decision--flip">
           <figure class="media"></figure>
-          <p class="body-text">Describe the fourth design decision here.</p>
-        </div>
-
-        <h3>Design Decision V</h3>
-        <div class="decision">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the fifth design decision here.</p>
-        </div>
-
-        <h3>Design Decision VI</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the sixth design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">In the same prototype, a sample of aluminum extrusion stands in for linear rails, and I restructured the frame to fit it. I designed and fabricated the low-fidelity prototype in about five days.</p>
+          </div>
         </div>
       </section>
-
-      <!-- ===== Outcome: gallery rows of 3 / 2 / 4 (use gallery__row--2, --3 or --4) ===== -->
+      <section id="improvement" data-nav="Room for Improvement">
+        <h2>Room for Improvement</h2>
+          <p class="body-text"><span class="todo">[NEEDS INPUT: e.g., anything about the low-fi prototype that underperformed, or what you'd do with more time.]</span></p>
+      </section>
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
-        <p>Describe the final outcome here.</p>
+        <ul class="outcome-list"><li>ACM CHI 2026 Best Paper Award (co-author)</li><li>FabUnit: ~120 × 120 mm build area in 127 mm of shelf width — 94% lateral space efficiency</li><li>Toolhead-offset kinematic model integrated into the printer's calibration</li><li>Selected linkage-bearing layout: ~3× stiffer than the original</li><li>Low-fidelity prototype designed and fabricated in ~5 days</li></ul>
+        <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
           <div class="gallery__row gallery__row--3">
             <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
@@ -107,11 +95,9 @@
           </div>
         </div>
       </section>
-
-      <!-- ===== Reflection ===== -->
       <section id="reflection" data-nav="Reflection">
         <h2>Reflection</h2>
-        <p>Write your reflection here.</p>
+          <p class="body-text">Working on this research -- and specifically under Ilan -- taught me the value of applying core engineering principles to both improve the performance of machines and drive their designs.</p>
       </section>
     </main>
   </div>

@@ -4,97 +4,87 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TwoFold — Joshua Rivera Camacho</title>
-  <meta name="description" content="TwoFold by Joshua Rivera Camacho.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
+  <meta name="description" content="An entirely analog camera using cyanotyping techniques that opens to make photograms and closes to take photographs.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<!-- data-slug must match this project's slug in assets/js/projects.js -->
+<!-- Generated from the content spreadsheet by tools/build_from_sheet.py.
+     Re-running the script overwrites this file. -->
 <body data-page="project" data-root="../" data-slug="twofold">
   <div class="page page--project">
-    <!-- Sidebar (name, section index, "Return to...") is generated automatically
-         from the <section id="..."> blocks below. -->
     <aside class="sidebar" id="sidebar"></aside>
 
     <main class="project">
       <h1 class="project__title">TwoFold</h1>
 
-      <!-- ===== Hero image + info panel ===== -->
       <div class="project__hero">
-        <!-- Hero image: swap the src to use a different photo -->
         <figure class="media"><img src="../assets/img/covers/twofold.jpg" alt="TwoFold"></figure>
         <div class="project__info">
-          <p>Discipline<br>Method</p>
-          <p>Course number: Course name</p>
-          <p>Tool<br>Tool<br>Tool</p>
-          <p>Duration, Term Year</p>
-          <p>Built with<br>Collaborators</p>
+          <p><span class="info__label info__label--head">Design methodology</span><br>User-centered/interaction design</p>
+          <p><span class="info__label">Course</span>4.031: Design Studio: Objects and Interaction (Prof. Marcelo Coelho)<br><span class="info__label">Timeline</span>6 weeks, Fall 2025<br><span class="info__label">Team</span>Sophia Letch (Wellesley '27)</p>
+          <p><span class="info__label info__label--head">Tools</span><br>Woodworking<br>CNC routing<br>SOLIDWORKS<br>FDM 3D printing<br>Cyanotype imaging</p>
         </div>
       </div>
 
-      <!-- ===== Overview ===== -->
       <section id="overview" data-nav="Project Overview">
-        <p class="project__summary">One-paragraph overview of the project: what it is, what it does, and what makes it interesting.</p>
+        <div class="project__summary">
+          <p class="summary-text">TwoFold is a cyanotype camera with two modes: opened, it makes photograms; closed, it takes photographs — doubling the exposure opportunities of a single device. It relies only on traditional cyanotype chemistry and mechanical movement, as a homage to historical photographic and development methods. I co-developed TwoFold with Sophia Letch and was responsible for its mechanical design, user interaction, CAD, and fabrication.</p>
+        </div>
       </section>
-
-      <!-- ===== Context ===== -->
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
-        <p>What prompted this project?</p>
+          <p class="body-text">In the first half of 4.031, our brief was to explore interaction design by building a camera with no electronics — using cyanotype printing in place of a sensor — with a strong push toward woodworking.</p>
       </section>
-
-      <!-- ===== Problem framing ===== -->
       <section id="problem" data-nav="Problem Framing">
         <h2>Problem Framing</h2>
-        <p>How did you frame the problem?</p>
+          <p class="body-text">Cyanotyping has two common methods: long-exposure photography through a lens, and short-exposure photograms, made by laying objects directly on the paper. We wanted a single device that could do both, with an interaction that felt ritualistic, so that switching between modes is a deliberate, physical act.</p>
+          <p class="body-text"><span class="todo">[CONFIRM: is "deliberate, physical act" what you meant by ritualistic? Any other constraints — size, exposure times, paper size?]</span></p>
       </section>
-
-      <!-- ===== Process: design decisions alternate image left / image right ===== -->
       <section id="process" data-nav="Process">
         <h2>Process</h2>
 
-        <h3>Design Decision I</h3>
+        <h3>Angling method</h3>
         <div class="decision">
           <figure class="media"></figure>
-          <p class="body-text">Describe the first design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">To aim the camera, the user loosens a knob on the side, slides the camera to the desired angle, and tightens it again.</p>
+          <p class="body-text"><span class="todo">[NEEDS INPUT: what alternatives did you consider, and why a knob-and-slide?]</span></p>
+          </div>
         </div>
 
-        <h3>Design Decision II</h3>
+        <h3>Focusing method</h3>
         <div class="decision decision--flip">
           <figure class="media"></figure>
-          <p class="body-text">Describe the second design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">A telescoping lens allows fine focus adjustments.</p>
+          <p class="body-text"><span class="todo">[NEEDS INPUT: how is the lens made, and how did you work out the focal range for cyanotype exposures?]</span></p>
+          </div>
         </div>
 
-        <h3>Design Decision III</h3>
+        <h3>Photogramming platform</h3>
         <div class="decision">
           <figure class="media"></figure>
-          <p class="body-text">Describe the third design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text">To switch to photogram mode, the user unlatches the clasps and raises the photogramming base with an outside slider. Cyanotype paper is held in place with magnets, and a collapsing sleeve at the back stores finished prints.</p>
+          <p class="body-text"><span class="todo">[NEEDS INPUT: the key design problem here — e.g., keeping the base flat, light-sealing in camera mode.]</span></p>
+          </div>
         </div>
 
-        <h3>Design Decision IV</h3>
+        <h3>Hinges</h3>
         <div class="decision decision--flip">
           <figure class="media"></figure>
-          <p class="body-text">Describe the fourth design decision here.</p>
-        </div>
-
-        <h3>Design Decision V</h3>
-        <div class="decision">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the fifth design decision here.</p>
-        </div>
-
-        <h3>Design Decision VI</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <p class="body-text">Describe the sixth design decision here.</p>
+          <div class="decision__text">
+          <p class="body-text"><span class="todo">[NEEDS INPUT: what hinge type, and what made it hard (wood movement, alignment, light leaks)?]</span></p>
+          </div>
         </div>
       </section>
-
-      <!-- ===== Outcome: gallery rows of 3 / 2 / 4 (use gallery__row--2, --3 or --4) ===== -->
+      <section id="improvement" data-nav="Room for Improvement">
+        <h2>Room for Improvement</h2>
+          <p class="body-text"><span class="todo">[NEEDS INPUT]</span></p>
+      </section>
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
-        <p>Describe the final outcome here.</p>
+        <ul class="outcome-list"><li><span class="todo">[NEEDS INPUT: e.g., exposure times achieved, number of prints made, sample images.]</span></li></ul>
+        <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
           <div class="gallery__row gallery__row--3">
             <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
@@ -107,11 +97,9 @@
           </div>
         </div>
       </section>
-
-      <!-- ===== Reflection ===== -->
       <section id="reflection" data-nav="Reflection">
         <h2>Reflection</h2>
-        <p>Write your reflection here.</p>
+          <p class="body-text"><span class="todo">[NEEDS INPUT]</span></p>
       </section>
     </main>
   </div>
