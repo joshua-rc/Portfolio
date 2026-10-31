@@ -43,7 +43,7 @@
 
         <h3>Form factor</h3>
         <div class="decision">
-          <figure class="media"></figure>
+          <figure class="media media--cover" style="aspect-ratio:1.333"><img src="../assets/img/projects/synthia/d1.jpg" alt="" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">We explored transforming forms through sketches, a cardboard prototype, and a first 3D-printed prototype before settling on two asymmetrical halves. One half is curved, inviting the user to rotate the camera; the other is a near-rectangular module holding the control panel, whose slant gives the user a clear sense of where to stand. The volume of the electronics drove much of the final size, though we worked to keep it compact.</p>
           </div>
@@ -51,7 +51,7 @@
 
         <h3>Sheet metal forming</h3>
         <div class="decision decision--flip">
-          <figure class="media"></figure>
+          <figure class="media media--cover" style="aspect-ratio:1.600"><video src="../assets/img/projects/synthia/d2.mp4" autoplay muted loop playsinline preload="metadata" poster="../assets/img/projects/synthia/d2-poster.jpg"></video></figure>
           <div class="decision__text">
           <p class="body-text">We wanted a finish we didn't think an FDM-printed prototype could deliver: a seamless aluminum facade. Matching the continuous curves of our form nearly ruled it out. Rather than give up the form or the material, I designed custom 3D-printed stamping jigs that worked with clamps we already had in-house, using the sheet metal springback equation to set the jig geometry so the aluminum would settle exactly onto the intended curve.</p>
           <figure class="eq"><figcaption class="eq__label">Springback</figcaption><div class="eq__math">R<sub>i</sub>/R<sub>f</sub> = 4(R<sub>i</sub>Y/Et)³ − 3(R<sub>i</sub>Y/Et) + 1</div><dl class="eq__vars"><dt><var>R<sub>i</sub></var>, <var>R<sub>f</sub></var></dt><dd>the bend radii before and after release</dd><dt><var>Y</var></dt><dd>yield strength</dd><dt><var>E</var></dt><dd>elastic modulus</dd><dt><var>t</var></dt><dd>sheet thickness</dd></dl></figure>
@@ -60,7 +60,7 @@
 
         <h3>Electronics and controls</h3>
         <div class="decision">
-          <figure class="media"></figure>
+          <figure class="media media--cover" style="aspect-ratio:1.500"><img src="../assets/img/projects/synthia/d3.jpg" alt="" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">Because the class encouraged Wizard-of-Oz prototyping to keep the focus on physical object design, a laptop running TouchDesigner generated the visuals, and I built the hardware that fed it: an Arduino Micro streaming serial data into TouchDesigner, with a protoboard connecting the encoders, buttons, switches, microphone, and camera. The hardest constraints were housing volume, which shaped the device's overall form, and building an intuitive, fun interaction from available components — which led us to design custom button, knob, and switch caps, with Synthia's signature pop of orange where it counted.</p>
           </div>
@@ -68,7 +68,7 @@
 
         <h3>Pitch magnet–bearing assembly</h3>
         <div class="decision decision--flip">
-          <figure class="media"></figure>
+          <figure class="media media--cover" style="aspect-ratio:1.600"><video src="../assets/img/projects/synthia/d4.mp4" autoplay muted loop playsinline preload="metadata" poster="../assets/img/projects/synthia/d4-poster.jpg"></video></figure>
           <div class="decision__text">
           <p class="body-text">We wanted the camera to turn smoothly, but time was short, so I leaned into the constraint with a simple bearing assembly. I 3D-printed the tube shaft in its strongest print orientation and kept it hollow, so wiring could pass through without interfering with rotation. The camera half turned smoothly but wouldn't hold its angle — likely from the weight imbalance of its irregular geometry, worsened by tension from the cables inside. To fix this, I embedded magnets in the adjacent walls of the camera and control halves, giving the user eight distinct angles and tactile feedback as the camera rotates.</p>
           </div>
@@ -81,17 +81,11 @@
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
         
-        <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
-          <div class="gallery__row gallery__row--3">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--2">
-            <figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--4">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
+          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/synthia/g1.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.780 1 0;aspect-ratio:1.780"><video src="../assets/img/projects/synthia/g2.mp4" autoplay muted loop playsinline preload="metadata" poster="../assets/img/projects/synthia/g2-poster.jpg"></video></figure><figure class="media gallery__item media--cover" style="flex:1.778 1 0;aspect-ratio:1.778"><video src="../assets/img/projects/synthia/g3.mp4" autoplay muted loop playsinline preload="metadata" poster="../assets/img/projects/synthia/g3-poster.jpg"></video></figure></div>
+          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.777 1 0;aspect-ratio:1.777"><video src="../assets/img/projects/synthia/g4.mp4" autoplay muted loop playsinline preload="metadata" poster="../assets/img/projects/synthia/g4-poster.jpg"></video></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/synthia/g5.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/synthia/g6.jpg" alt="" loading="lazy"></figure></div>
+          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/synthia/g7.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/synthia/g8.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.777 1 0;aspect-ratio:1.777"><img src="../assets/img/projects/synthia/g9.jpg" alt="" loading="lazy"></figure></div>
+          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--contain" style="flex:2.052 1 0;aspect-ratio:2.052"><img src="../assets/img/projects/synthia/g10.png" alt="" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:2.586 1 0;aspect-ratio:2.586"><img src="../assets/img/projects/synthia/g11.png" alt="" loading="lazy"></figure></div>
         </div>
       </section>
       <section id="reflection" data-nav="Reflection">

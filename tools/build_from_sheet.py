@@ -82,6 +82,12 @@ EXTRA_EQUATIONS = {
         "Wide-flange beam (parallel axis theorem): I_WF = Σ (I_i + A_i·d_i^2), where I_i is the moment of inertia of each flange and the web about its own centroid, A_i is its area, and d_i is the distance from its centroid to the beam's centroid.",
         "Matching the two, solved for web width: b_w = [I_rect − Σ_flanges (I_i + A_i·d_i^2)] / (t_w^3/12 + t_w·d_w^2) ≈ 2.55 mm, where t_w = 9 mm is the web height, and d_w is the distance from the web's centroid to the beam's centroid.",
     ],
+    ("yubbayubba", "Interference fit analysis and validation"): [
+        "Impact speed from the drop test: v_impact = √(2·g·h_drop) ≈ 16.05 ft/s, where g = 32.2 ft/s² is gravitational acceleration, and h_drop = 4 ft is the drop height.",
+        "Force the joint must survive: F_escape = m·v_impact / t_stop ≈ 26.96 lb, where m = 0.00336 slug is the mass of the yo-yo assembly, and t_stop = 0.002 s is the stopping time on impact.",
+        "Contact pressure from the interference fit: P = (E / r_i)·δ·[(r_o^2 − r_i^2)(r_i^2 − r_e^2)] / [2r_i^2(r_o^2 − r_e^2)] ≈ 139.6 psi nominal / 46.5 psi minimum, where E = 217,557 psi is the elastic modulus, δ = 0.0075 in nominal / 0.0025 in minimum is the interference, r_o = 1.18 in is the outer radius, r_i = 1.08 in is the interface radius, and r_e = 0.98 in is the inner radius.",
+        "Holding force: F_hold = μ·P·2π·r_i·L ≈ 37.9 lb nominal (SF ≈ 1.41) / 12.6 lb minimum (SF ≈ 0.47), where μ = 0.2 is the friction coefficient, and L = 0.200 in is the length of engagement.",
+    ],
     ("layer-by-layer", "Automating the analysis"): [
         "Flexural modulus (three-point bending): E = L^3·m / 48I, where L = 120 mm is the support span, m is the slope of the linear regime of the load–displacement curve, and I is the beam's measured moment of inertia.",
     ],
@@ -103,7 +109,7 @@ def math_html(expr):
 
 def split_where(where):
     """'Rᵢ and R_f are the radii, Y is yield strength, and t is thickness' -> [(vars, meaning)]"""
-    items = re.split(r",\s*(?:and\s+)?", where.strip().rstrip("."))
+    items = re.split(r",\s+(?:and\s+)?", where.strip().rstrip("."))  # "217,557" stays whole
     out, i = [], 0
     while i < len(items):
         it = items[i]
@@ -209,6 +215,75 @@ def render_outcome(text):
     return '<ul class="outcome-list">' + "".join(f"<li>{inline(x)}</li>" for x in items) + "</ul>"
 
 
+# ---------- Images (tools/images.json) ----------
+IMAGES = {}
+
+
+def load_images():
+    f = ROOT / "tools" / "images.json"
+    if f.exists():
+        IMAGES.update({k: v for k, v in json.loads(f.read_text()).items() if not k.startswith("_")})
+
+
+def media_el(item, cls="media", style=""):
+    """<figure> for one image or video from images.json."""
+    src = "../" + item["src"]
+    fit = item.get("fit", "cover")
+    alt = html.escape(item.get("alt") or "")
+    if src.lower().endswith((".mp4", ".webm", ".mov")):
+        inner = (f'<video src="{src}" autoplay muted loop playsinline preload="metadata"'
+                 + (f' poster="../{item["poster"]}"' if item.get("poster") else "") + "></video>")
+    else:
+        inner = f'<img src="{src}" alt="{alt}" loading="lazy">'
+    return f'<figure class="{cls} media--{fit}"{style}>{inner}</figure>'
+
+
+def decision_media(slug, n):
+    item = (IMAGES.get(slug, {}).get("decisions", {}) or {}).get(str(n))
+    if item:
+        ar = max(0.75, min(float(item.get("ar", 1)), 1.6)) if item.get("fit", "cover") == "cover" \
+            else max(0.6, min(float(item.get("ar", 1)), 2.4))
+        return media_el(item, style=f' style="aspect-ratio:{ar:.3f}"')
+    if slug in IMAGES:          # this page has images, just not for this decision -> text only
+        return ""
+    return '<figure class="media"></figure>'   # no images yet -> gray placeholder
+
+
+def gallery_html(slug):
+    items = IMAGES.get(slug, {}).get("gallery")
+    if not items:
+        return """<div class="gallery">
+          <div class="gallery__row gallery__row--3">
+            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
+          </div>
+          <div class="gallery__row gallery__row--2">
+            <figure class="media"></figure><figure class="media"></figure>
+          </div>
+          <div class="gallery__row gallery__row--4">
+            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
+          </div>
+        </div>"""
+    # Fill each row until its images' combined width/height ratio reaches ~3.4, so every
+    # row is about the same height; images in a row share one height and keep their shape.
+    TARGET = 3.4
+    rows, row, total = [], [], 0.0
+    for it in items:
+        row.append(it); total += float(it.get("ar", 1))
+        if total >= TARGET:
+            rows.append(row); row, total = [], 0.0
+    if row:
+        rows.append(row)
+    out = []
+    for row in rows:
+        figs = "".join(media_el(it, "media gallery__item",
+                                f' style="flex:{float(it.get("ar", 1)):.3f} 1 0;aspect-ratio:{float(it.get("ar", 1)):.3f}"')
+                       for it in row)
+        ar_sum = sum(float(it.get("ar", 1)) for it in row)
+        cap = "" if ar_sum >= TARGET else f' style="max-width:calc(100% * {ar_sum / TARGET:.3f})"'  # short last row keeps row height
+        out.append(f'<div class="gallery__row gallery__row--flex"{cap}>{figs}</div>')
+    return '<div class="gallery">\n          ' + "\n          ".join(out) + "\n        </div>"
+
+
 def page(slug, d):
     title = d["title"]
     sections = []
@@ -234,14 +309,17 @@ def page(slug, d):
         blocks = []
         for n, dec in enumerate(d["decisions"]):
             first, _, rest = dec.strip().partition("\n")
+            fig = decision_media(slug, n + 1)
             flip = " decision--flip" if n % 2 else ""
+            if not fig:
+                flip = " decision--textonly"
             body, code_html = render_body(rest.strip(), split_code=True)
             extras = [render_equation(x) for x in EXTRA_EQUATIONS.get((slug, first.strip()), [])]
             if extras:
                 body += "\n          " + "\n          ".join(e for e in extras if e)
             blocks.append(f'''        <h3>{inline(first.strip())}</h3>
         <div class="decision{flip}">
-          <figure class="media"></figure>
+          {fig}
           <div class="decision__text">
           {body}
           </div>
@@ -261,18 +339,7 @@ def page(slug, d):
         sections.append(f'''      <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
         {outcome_list}
-        <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
-        <div class="gallery">
-          <div class="gallery__row gallery__row--3">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--2">
-            <figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--4">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
-        </div>
+        {gallery_html(slug)}
       </section>''')
 
     if d.get("reflection"):
@@ -301,7 +368,7 @@ def page(slug, d):
       <h1 class="project__title">{esc(title)}</h1>
 
       <div class="project__hero">
-        <figure class="media"><img src="../assets/img/covers/{slug}.jpg" alt="{html.escape(title)}"></figure>
+        <figure class="media"><img src="../{IMAGES.get(slug, {}).get("hero", f"assets/img/covers/{slug}.jpg")}" alt="{html.escape(title)}"></figure>
         <div class="project__info">
           {render_glance(d.get("glance") or "")}
         </div>
@@ -431,6 +498,7 @@ def update_projects_js(main, mini):
 def main():
     xlsx = sys.argv[1]
     wb = openpyxl.load_workbook(xlsx, data_only=True)
+    load_images()
     projects = read_main(wb["Main Projects"])
     for slug, d in projects.items():
         has_content = any(d[k] for k in ("overview", "glance", "context", "framing", "decisions"))

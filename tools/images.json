@@ -1,0 +1,515 @@
+{
+  "_help": "Images for each project page. Paths are from the site root. 'fit': 'cover' fills the box (photos), 'contain' shows the whole image on white (diagrams, charts). 'ar' is width/height. Decisions are numbered in sheet order; a decision with no image shows its text full width. Videos (.mp4) autoplay muted and loop.",
+  "layer-by-layer": {
+    "decisions": {
+      "1": {
+        "src": "assets/img/projects/layer-by-layer/d1-beams.png",
+        "fit": "contain",
+        "ar": 3.87,
+        "alt": "Wide-flange and rectangular beam geometries"
+      },
+      "2": {
+        "src": "assets/img/projects/layer-by-layer/d2-orientation.png",
+        "fit": "contain",
+        "ar": 2.2,
+        "alt": "Vertical and horizontal print orientations"
+      },
+      "3": {
+        "src": "assets/img/projects/layer-by-layer/d3-flexural-trial.png",
+        "fit": "contain",
+        "ar": 1.0,
+        "alt": "Force-displacement curve from a flexural trial, with the fitted slope"
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/projects/layer-by-layer/g1-poster.jpg",
+        "fit": "contain",
+        "ar": 1.166,
+        "alt": "Research poster: Layer by Layer"
+      },
+      {
+        "src": "assets/img/projects/layer-by-layer/g2-bar-chart.png",
+        "fit": "contain",
+        "ar": 2.0,
+        "alt": "Mean flexural modulus and max force by condition"
+      },
+      {
+        "src": "assets/img/projects/layer-by-layer/g3-modulus-scatter.png",
+        "fit": "contain",
+        "ar": 1.0,
+        "alt": "Flexural modulus vs layer height"
+      },
+      {
+        "src": "assets/img/projects/layer-by-layer/g4-maxforce-scatter.png",
+        "fit": "contain",
+        "ar": 1.0,
+        "alt": "Max force vs layer height"
+      },
+      {
+        "src": "assets/img/projects/layer-by-layer/g5-failure-trial.png",
+        "fit": "contain",
+        "ar": 1.0,
+        "alt": "Force-displacement curve from a failure trial"
+      }
+    ]
+  },
+  "pearcat": {
+    "decisions": {
+      "1": {
+        "src": "assets/img/projects/pearcat/d1.mp4",
+        "fit": "cover",
+        "ar": 1.0,
+        "alt": "",
+        "poster": "assets/img/projects/pearcat/d1-poster.jpg"
+      },
+      "2": {
+        "src": "assets/img/projects/pearcat/d2.png",
+        "fit": "contain",
+        "ar": 1.313,
+        "alt": ""
+      },
+      "3": {
+        "src": "assets/img/projects/pearcat/d3.png",
+        "fit": "contain",
+        "ar": 1.804,
+        "alt": ""
+      },
+      "4": {
+        "src": "assets/img/projects/pearcat/d4.jpg",
+        "fit": "cover",
+        "ar": 0.762,
+        "alt": ""
+      },
+      "5": {
+        "src": "assets/img/projects/pearcat/d5.png",
+        "fit": "contain",
+        "ar": 1.644,
+        "alt": ""
+      },
+      "6": {
+        "src": "assets/img/projects/pearcat/d6.jpg",
+        "fit": "cover",
+        "ar": 1.304,
+        "alt": ""
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/projects/pearcat/g1.jpg",
+        "fit": "cover",
+        "ar": 1.006,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g2.jpg",
+        "fit": "cover",
+        "ar": 0.75,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g3.jpg",
+        "fit": "cover",
+        "ar": 0.75,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g4.jpg",
+        "fit": "contain",
+        "ar": 1.357,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g5.jpg",
+        "fit": "contain",
+        "ar": 1.779,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g6.jpg",
+        "fit": "contain",
+        "ar": 1.758,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g7.jpg",
+        "fit": "cover",
+        "ar": 0.75,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g8.jpg",
+        "fit": "cover",
+        "ar": 0.75,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g9.jpg",
+        "fit": "cover",
+        "ar": 2.161,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g10.jpg",
+        "fit": "contain",
+        "ar": 1.186,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/pearcat/g11.jpg",
+        "fit": "cover",
+        "ar": 0.75,
+        "alt": ""
+      }
+    ]
+  },
+  "synthia": {
+    "decisions": {
+      "1": {
+        "src": "assets/img/projects/synthia/d1.jpg",
+        "fit": "cover",
+        "ar": 1.333,
+        "alt": ""
+      },
+      "2": {
+        "src": "assets/img/projects/synthia/d2.mp4",
+        "fit": "cover",
+        "ar": 1.783,
+        "alt": "",
+        "poster": "assets/img/projects/synthia/d2-poster.jpg"
+      },
+      "3": {
+        "src": "assets/img/projects/synthia/d3.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      "4": {
+        "src": "assets/img/projects/synthia/d4.mp4",
+        "fit": "cover",
+        "ar": 1.782,
+        "alt": "",
+        "poster": "assets/img/projects/synthia/d4-poster.jpg"
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/projects/synthia/g1.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/synthia/g2.mp4",
+        "fit": "cover",
+        "ar": 1.78,
+        "alt": "",
+        "poster": "assets/img/projects/synthia/g2-poster.jpg"
+      },
+      {
+        "src": "assets/img/projects/synthia/g3.mp4",
+        "fit": "cover",
+        "ar": 1.778,
+        "alt": "",
+        "poster": "assets/img/projects/synthia/g3-poster.jpg"
+      },
+      {
+        "src": "assets/img/projects/synthia/g4.mp4",
+        "fit": "cover",
+        "ar": 1.777,
+        "alt": "",
+        "poster": "assets/img/projects/synthia/g4-poster.jpg"
+      },
+      {
+        "src": "assets/img/projects/synthia/g5.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/synthia/g6.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/synthia/g7.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/synthia/g8.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/synthia/g9.jpg",
+        "fit": "cover",
+        "ar": 1.777,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/synthia/g10.png",
+        "fit": "contain",
+        "ar": 2.052,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/synthia/g11.png",
+        "fit": "contain",
+        "ar": 2.586,
+        "alt": ""
+      }
+    ]
+  },
+  "mochimash": {
+    "decisions": {
+      "1": {
+        "src": "assets/img/projects/mochimash/d1.jpg",
+        "fit": "contain",
+        "ar": 1.221,
+        "alt": ""
+      },
+      "2": {
+        "src": "assets/img/projects/mochimash/d2.jpg",
+        "fit": "cover",
+        "ar": 1.777,
+        "alt": ""
+      },
+      "3": {
+        "src": "assets/img/projects/mochimash/d3.png",
+        "fit": "contain",
+        "ar": 1.257,
+        "alt": ""
+      },
+      "4": {
+        "src": "assets/img/projects/mochimash/d4.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/projects/mochimash/g1.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g2.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g3.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g4.jpg",
+        "fit": "cover",
+        "ar": 0.667,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g5.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g6.jpg",
+        "fit": "cover",
+        "ar": 1.283,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g7.jpg",
+        "fit": "cover",
+        "ar": 1.777,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g8.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g9.jpg",
+        "fit": "cover",
+        "ar": 1.777,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g10.jpg",
+        "fit": "cover",
+        "ar": 1.777,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/mochimash/g11.png",
+        "fit": "contain",
+        "ar": 1.931,
+        "alt": ""
+      }
+    ]
+  },
+  "en-clair": {
+    "decisions": {
+      "1": {
+        "src": "assets/img/projects/en-clair/d1.png",
+        "fit": "contain",
+        "ar": 0.989,
+        "alt": ""
+      },
+      "2": {
+        "src": "assets/img/projects/en-clair/d2.png",
+        "fit": "contain",
+        "ar": 1.819,
+        "alt": ""
+      },
+      "3": {
+        "src": "assets/img/projects/en-clair/d3.jpg",
+        "fit": "cover",
+        "ar": 1.718,
+        "alt": ""
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/projects/en-clair/g1.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/en-clair/g2.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/en-clair/g3.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/en-clair/g4.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/en-clair/g5.jpg",
+        "fit": "cover",
+        "ar": 1.5,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/en-clair/g6.png",
+        "fit": "contain",
+        "ar": 1.556,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/en-clair/g7.jpg",
+        "fit": "cover",
+        "ar": 3.624,
+        "alt": ""
+      }
+    ]
+  },
+  "yubbayubba": {
+    "decisions": {
+      "1": {
+        "src": "assets/img/projects/yubbayubba/d1.png",
+        "fit": "contain",
+        "ar": 1.752,
+        "alt": ""
+      },
+      "2": {
+        "src": "assets/img/projects/yubbayubba/d2.png",
+        "fit": "contain",
+        "ar": 1.0,
+        "alt": ""
+      },
+      "3": {
+        "src": "assets/img/projects/yubbayubba/d3.mp4",
+        "fit": "contain",
+        "ar": 1.052,
+        "alt": "",
+        "poster": "assets/img/projects/yubbayubba/d3-poster.jpg"
+      },
+      "4": {
+        "src": "assets/img/projects/yubbayubba/d4.png",
+        "fit": "contain",
+        "ar": 1.153,
+        "alt": ""
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/projects/yubbayubba/g1.jpg",
+        "fit": "cover",
+        "ar": 1.777,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/yubbayubba/g2.jpg",
+        "fit": "cover",
+        "ar": 1.777,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/yubbayubba/g3.jpg",
+        "fit": "contain",
+        "ar": 1.241,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/yubbayubba/g4.png",
+        "fit": "contain",
+        "ar": 1.95,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/yubbayubba/g5.mp4",
+        "fit": "contain",
+        "ar": 1.716,
+        "alt": "",
+        "poster": "assets/img/projects/yubbayubba/g5-poster.jpg"
+      },
+      {
+        "src": "assets/img/projects/yubbayubba/g6.jpg",
+        "fit": "cover",
+        "ar": 0.75,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/yubbayubba/g7.jpg",
+        "fit": "cover",
+        "ar": 1.005,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/yubbayubba/g8.jpg",
+        "fit": "contain",
+        "ar": 1.006,
+        "alt": ""
+      },
+      {
+        "src": "assets/img/projects/yubbayubba/g9.jpg",
+        "fit": "cover",
+        "ar": 1.777,
+        "alt": ""
+      }
+    ]
+  }
+}

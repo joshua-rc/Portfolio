@@ -126,6 +126,22 @@
     if (img && !img.complete) img.addEventListener("load", fit);
   }
 
+  /* ---------- Lightbox for project images ---------- */
+  document.addEventListener("click", (e) => {
+    const m = e.target.closest(".project .media img, .project .media video");
+    if (!m || m.closest(".lightbox")) return;
+    const box = document.createElement("div");
+    box.className = "lightbox";
+    const big = m.cloneNode();
+    if (big.tagName === "VIDEO") { big.controls = true; big.muted = true; big.play && big.play(); }
+    box.appendChild(big);
+    const close = () => { box.remove(); document.removeEventListener("keydown", onKey); };
+    const onKey = (ev) => { if (ev.key === "Escape") close(); };
+    box.addEventListener("click", (ev) => { if (ev.target === box || ev.target.tagName === "IMG") close(); });
+    document.addEventListener("keydown", onKey);
+    document.body.appendChild(box);
+  });
+
   /* ---------- Back to top ---------- */
   const btn = document.createElement("button");
   btn.className = "to-top";

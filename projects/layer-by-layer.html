@@ -43,7 +43,7 @@
 
         <h3>Standardizing test samples</h3>
         <div class="decision">
-          <figure class="media"></figure>
+          <figure class="media media--contain" style="aspect-ratio:2.400"><img src="../assets/img/projects/layer-by-layer/d1-beams.png" alt="Wide-flange and rectangular beam geometries" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">To compare geometries fairly, I used a 19 × 14 mm rectangular beam based on ASTM D638 and designed a wide-flange beam with the same bending moment of inertia (≈4,345 mm⁴), so any difference in response would come from the shape rather than its stiffness on paper. Fixing the flanges at 19 × 3 mm and the web height at 9 mm, I wrote a MATLAB script to solve for the web width that matched the two: 2.55 mm.</p>
           <figure class="eq"><figcaption class="eq__label">Rectangular beam</figcaption><div class="eq__math">I<sub>rect</sub> = b·h<sup>3</sup> / 12 ≈ 4,345 mm⁴</div><dl class="eq__vars"><dt><var>b</var></dt><dd>the beam width <span class="eq__val">(19 mm)</span></dd><dt><var>h</var></dt><dd>the beam height <span class="eq__val">(14 mm)</span></dd></dl></figure>
@@ -54,7 +54,7 @@
 
         <h3>Determining variables</h3>
         <div class="decision decision--flip">
-          <figure class="media"></figure>
+          <figure class="media media--contain" style="aspect-ratio:2.200"><img src="../assets/img/projects/layer-by-layer/d2-orientation.png" alt="Vertical and horizontal print orientations" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">To stay within the class's scope, I crossed the two geometries with the two most common print orientations (horizontal and vertical) and three common layer heights: 0.15 mm ("fine"), 0.20 mm (standard), and 0.25 mm ("rough," usually reserved for quick prints). That made 12 conditions with five specimens each — 60 beams in total, each tested in three-point bending for flexural modulus and maximum load before failure.</p>
           </div>
@@ -62,7 +62,7 @@
 
         <h3>Automating the analysis</h3>
         <div class="decision">
-          <figure class="media"></figure>
+          <figure class="media media--contain" style="aspect-ratio:1.000"><img src="../assets/img/projects/layer-by-layer/d3-flexural-trial.png" alt="Force-displacement curve from a flexural trial, with the fitted slope" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">I wrote MATLAB scripts to process every test the same way. Each script parsed the file name for geometry, layer height, and print orientation; fit the linear regime of the load–displacement curve; matched the beam's measured moment of inertia; and computed flexural modulus from the three-point bending relation E = L³m / 48I over a 120 mm span. A second script found peak load the same way, and both grouped results by condition with means and standard deviations.</p>
           <figure class="eq"><figcaption class="eq__label">Flexural modulus (three-point bending)</figcaption><div class="eq__math">E = L<sup>3</sup>·m / 48I</div><dl class="eq__vars"><dt><var>L</var></dt><dd>the support span <span class="eq__val">(120 mm)</span></dd><dt><var>m</var></dt><dd>the slope of the linear regime of the load–displacement curve</dd><dt><var>I</var></dt><dd>the beam's measured moment of inertia</dd></dl></figure>
@@ -70,8 +70,8 @@
         </div>
 
         <h3>Rescuing corrupted data files</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
+        <div class="decision decision--textonly">
+          
           <div class="decision__text">
           <p class="body-text">Transferring 200+ raw Instron data files to Excel was already a Sisyphean task — and then, for reasons I never pinned down, the formatting on nearly every file came out corrupted. Instead of fixing them by hand, I wrote a MATLAB script to clean them in bulk.</p>
           </div>
@@ -84,17 +84,9 @@
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
         <ul class="outcome-list"><li>Wide-flange beams: up to 24% higher flexural modulus and 32% higher load capacity than rectangular beams</li><li>Horizontally printed beams sustained 16–66% higher loads than vertical ones</li><li>Orientation affected stiffness in opposite ways: wide-flange beams were up to 12% stiffer printed horizontally; rectangular beams were 12% stiffer printed vertically, up to 0.25 mm layer height</li><li>Thicker layers consistently helped horizontal beams; vertical beams performed best at moderate layer heights</li></ul>
-        <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
-          <div class="gallery__row gallery__row--3">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--2">
-            <figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--4">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
+          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--contain" style="flex:1.166 1 0;aspect-ratio:1.166"><img src="../assets/img/projects/layer-by-layer/g1-poster.jpg" alt="Research poster: Layer by Layer" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:2.000 1 0;aspect-ratio:2.000"><img src="../assets/img/projects/layer-by-layer/g2-bar-chart.png" alt="Mean flexural modulus and max force by condition" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.000 1 0;aspect-ratio:1.000"><img src="../assets/img/projects/layer-by-layer/g3-modulus-scatter.png" alt="Flexural modulus vs layer height" loading="lazy"></figure></div>
+          <div class="gallery__row gallery__row--flex" style="max-width:calc(100% * 0.588)"><figure class="media gallery__item media--contain" style="flex:1.000 1 0;aspect-ratio:1.000"><img src="../assets/img/projects/layer-by-layer/g4-maxforce-scatter.png" alt="Max force vs layer height" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.000 1 0;aspect-ratio:1.000"><img src="../assets/img/projects/layer-by-layer/g5-failure-trial.png" alt="Force-displacement curve from a failure trial" loading="lazy"></figure></div>
         </div>
       </section>
       <section id="reflection" data-nav="Reflection">

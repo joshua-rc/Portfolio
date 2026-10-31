@@ -43,7 +43,7 @@
 
         <h3>Form factor</h3>
         <div class="decision">
-          <figure class="media"></figure>
+          <figure class="media media--contain" style="aspect-ratio:0.989"><img src="../assets/img/projects/en-clair/d1.png" alt="" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">en clair can be handheld or worn at the waist, drawing directly on the Sony Walkman's reframing of listening as personal and portable. A modified scissor linkage lets it stay hip-mounted while rotating the e-ink display up to face the user whenever the device is opened. Since on-screen prompts are only needed while choosing a filter, the display is most accessible exactly then.</p>
           </div>
@@ -51,7 +51,7 @@
 
         <h3>Cartridges and electronics</h3>
         <div class="decision decision--flip">
-          <figure class="media"></figure>
+          <figure class="media media--contain" style="aspect-ratio:1.819"><img src="../assets/img/projects/en-clair/d2.png" alt="" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">Each cartridge carries an NFC tag, read by a PN532 module — giving every cartridge a unique, swappable identity without complex electrical signatures. The device runs on an ESP32-S3 with an INMP441 I2S microphone and a 2.13 in e-ink display, chosen over a high-resolution or touch screen for its low power draw, legibility in any lighting, and visually quiet aesthetic. Everything mounts to a custom double-sided PCB milled in-house.</p>
           </div>
@@ -59,7 +59,7 @@
 
         <h3>Software and prompt design</h3>
         <div class="decision">
-          <figure class="media"></figure>
+          <figure class="media media--cover" style="aspect-ratio:1.600"><img src="../assets/img/projects/en-clair/d3.jpg" alt="" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">A laptop server transcribes speech with Whisper, filters it through Claude, and speaks the result back with ElevenLabs. New cartridges trigger a two-stage call: the user's spoken description is turned into a filter system prompt, which then drives all filtering on that cartridge — more reliable than asking users to write prompts themselves. To stop "POV drift" into narration as conversations grew, every turn is wrapped with an anchor that restates the listener's perspective.</p>
           </div>
@@ -72,17 +72,10 @@
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
         
-        <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
-          <div class="gallery__row gallery__row--3">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--2">
-            <figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--4">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
+          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g1.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g2.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g3.jpg" alt="" loading="lazy"></figure></div>
+          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g4.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g5.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.556 1 0;aspect-ratio:1.556"><img src="../assets/img/projects/en-clair/g6.png" alt="" loading="lazy"></figure></div>
+          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:3.624 1 0;aspect-ratio:3.624"><img src="../assets/img/projects/en-clair/g7.jpg" alt="" loading="lazy"></figure></div>
         </div>
       </section>
       <section id="reflection" data-nav="Reflection">
