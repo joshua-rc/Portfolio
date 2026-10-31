@@ -358,9 +358,11 @@ img { display: block; max-width: 100%; }
   text-align: right;
   color: var(--accent);
   font-size: calc(var(--s) * 30);
-  line-height: calc(var(--s) * 50);
+  line-height: 1.6;            /* em-based so the panel scales as one when text is resized to fit */
+  overflow: hidden;
 }
-.project__info p + p { margin-top: calc(var(--s) * 50); }
+.project__hero { align-items: start; }
+.project__info p + p { margin-top: 1.4em; }
 
 .project__summary {
   margin: calc(var(--s) * 50) 0 calc(var(--s) * 60);
@@ -483,6 +485,45 @@ details.code pre {
   .page--project .sidebar { --s: max(0.35px, min(clamp(0.5px, calc(100vw / 2560), 0.75px), calc(100dvh / 1400))); }
 }
 
+
+/* ---------- Equation callouts ---------- */
+.eq {
+  margin: calc(var(--s) * 30) 0 0;
+  background: var(--panel);
+  border-left: calc(var(--s) * 6) solid var(--accent);
+  border-radius: calc(var(--radius) / 2);
+  padding: calc(var(--s) * 24) calc(var(--s) * 30);
+  color: var(--accent);
+}
+.eq__label { font-size: calc(var(--s) * 22); line-height: 1.4; opacity: .75; }
+.eq__math {
+  font-size: calc(var(--s) * 34);
+  line-height: 1.5;
+  color: var(--ink);
+  margin: calc(var(--s) * 8) 0 calc(var(--s) * 14);
+  overflow-x: auto;
+}
+.eq__math sub, .eq__math sup, .eq__vars sub, .eq__vars sup { font-size: .68em; }
+.eq__vars {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: calc(var(--s) * 24);
+  row-gap: calc(var(--s) * 6);
+  margin: 0;
+  font-size: calc(var(--s) * 24);
+  line-height: 1.45;
+}
+.eq__vars dt { margin: 0; color: var(--ink); }
+.eq__vars dd { margin: 0; }
+.eq__vars var {
+  font-style: italic;
+  background: #fff;
+  border-radius: 4px;
+  padding: 0 .3em;
+}
+.eq__val { opacity: .75; white-space: nowrap; }
+.eq + .eq { margin-top: calc(var(--s) * 18); }
+
 /* =========================================================
    Phone / small tablet: sidebar becomes a top header
    ========================================================= */
@@ -549,6 +590,10 @@ details.code pre {
   .project h3 { font-size: 20px; line-height: 28px; margin-top: 24px; }
   .body-text, .project section > p, .summary-text, .body-list, .outcome-list { font-size: 15px; line-height: 24px; }
   .equation { font-size: 13px; line-height: 22px; }
+  .eq { padding: 12px 14px; border-left-width: 3px; }
+  .eq__label { font-size: 11px; }
+  .eq__math { font-size: 16px; }
+  .eq__vars { font-size: 12px; column-gap: 10px; }
   details.code summary { font-size: 13px; }
   details.code pre { font-size: 11px; }
   .decision, .decision--flip { grid-template-columns: 1fr; gap: 10px; }

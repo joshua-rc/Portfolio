@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PearCat — Joshua Rivera Camacho</title>
-  <meta name="description" content="A competition robot that had to be redesigned mid-build — and still won the class prize for most complex mechanisms.">
+  <meta name="description" content="A competition robot that spins, lifts, tows, and starts itself with a flash of light. Won the class prize for most complex mechanisms.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <!-- Generated from the content spreadsheet by tools/build_from_sheet.py.
@@ -19,81 +19,81 @@
       <div class="project__hero">
         <figure class="media"><img src="../assets/img/covers/pearcat.jpg" alt="PearCat"></figure>
         <div class="project__info">
-          <p><span class="info__label info__label--head">Design methodology</span><br>Mechanism/machine design<br>Electromechanical design/robotics</p>
-          <p><span class="info__label">Course</span>2.007: Design and Manufacturing I<br><span class="info__label">Timeline</span>12 weeks, Spring 2025</p>
-          <p><span class="info__label info__label--head">Tools</span><br>SOLIDWORKS<br>Arduino IDE<br>Manual Machining<br>Waterjet cutting<br>FDM 3D printing</p>
-          <p><span class="info__label">Award</span>Animatronic Oz Prize — "most complex/most intricate mechanisms or robots"</p>
+          <p>Mechanism/machine design<br>Electromechanical design/robotics</p>
+          <p>2.007: Design and Manufacturing I<br>12 weeks, Spring 2025</p>
+          <p>SOLIDWORKS<br>Arduino IDE<br>Manual Machining<br>Waterjet cutting<br>FDM 3D printing</p>
+          <p>Animatronic Oz Prize — "most complex/most intricate mechanisms or robots"</p>
         </div>
       </div>
 
       <section id="overview" data-nav="Project Overview">
         <div class="project__summary">
-          <p class="summary-text">PearCat is a competition robot I designed and built for MIT's 2.007: Design and Manufacturing I annual class competition. It scores by spinning gear-driven platforms at two different heights and by hooking and pulling a swiveling point multiplier, using four main mechanisms: a belt-driven lift, a two-motor gear spinner, an all-wheel drivetrain, and an actuated tow hook. PearCat won the class's Animatronic Oz Prize for the most complex and intricate mechanisms.</p>
+          <p class="summary-text">PearCat is a competition robot I designed and built for the annual competition in MIT's 2.007: Design and Manufacturing I. It scores by spinning gear-driven platforms at two different heights and by hooking and pulling a swiveling point multiplier, using four main mechanisms: a belt-driven lift, a two-motor gear spinner, an all-wheel drivetrain, and an actuated tow hook. PearCat won the class's Animatronic Oz Prize for the most complex and intricate mechanisms.</p>
         </div>
       </section>
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
-          <p class="body-text">2.007 is built around an annual competition. Each year, the course staff design a themed gameboard full of objectives and obstacles, and every student designs and fabricates a robot to score as many points as possible within a two-minute round and a strict set of build constraints. My year's gameboard was themed after the recently-released movie Wicked.</p>
+          <p class="body-text">2.007 is built around an annual competition. Each year, the course staff design a themed gameboard full of objectives and obstacles, and every student designs and fabricates a robot to score as many points as possible within a two-minute round and a strict set of build constraints. My year's gameboard was themed after the recently released movie Wicked.</p>
       </section>
       <section id="problem" data-nav="Problem Framing">
         <h2>Problem Framing</h2>
-          <p class="body-text">Obviously I wanted to score plenty of points, but I also wanted to have lots of fun building my robot. That led me to the gear-driven train platform and the hot air balloon — a chance to explore gears and transmissions — and a strategy analysis added the Oz Head point multiplier. The balloon and train gears sat at different heights and spun in opposite directions, so the spinner needed vertical travel and torque in both directions. Completing Train to Oz during the 30-second autonomous period would double its points, which demanded speed and a hands-free start. On the balloon, I targeted 5.1 lb, the lightest weight in its 1.3× tier, since anything heavier would add torque without adding points.</p>
+          <p class="body-text">Of course I wanted to score plenty of points, but I also wanted to have fun building my robot. That led me to the gear-driven train platform and the hot air balloon — a chance to explore gears and transmissions — and a strategy analysis added the Oz Head point multiplier. The balloon and train gears sat at different heights and spun in opposite directions, so the spinner needed vertical travel and torque in both directions. Completing Train to Oz during the 30-second autonomous period would double its points, which demanded speed and a hands-free start. On the balloon, I targeted 5.1 lb, the lightest weight in its 1.3× tier, since anything heavier would add torque without adding points.</p>
       </section>
       <section id="process" data-nav="Process">
         <h2>Process</h2>
 
-        <h3>Autonomous start</h3>
+        <h3>Establishing the most critical module</h3>
         <div class="decision">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">Per the rules, each round began with a 30s autonomous period, which was roughly defined as a start and run with hands off the RC manual controls. To trigger the autonomous period, I build a simple photoresistor circuit feeding into one the Arduino's analog pins and coded the appropriate routine to complete the train obstacle and reach Oz. When I flashed the light at the robot, the Arduino detected the spike in light intensity and started the autonmous routine. In competition, the autonomous period ran flawlessly.</p>
-          </div>
-        </div>
-
-        <h3>Establishing the most critical module</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <div class="decision__text">
-          <p class="body-text">I identified the height-varying gear spinner as my most critical module (MCM). To raise it, I chose a timing-belt lift over lead screws (available ones seemed too slow), scissor lifts (high torque at the start of travel), and four-bar linkages (overkill for travel distance). I first planned slots and pins to constrain the carriage, but worried they wouldn't be stiff enough against pitch reaction forces. After speaking with a lab instructor, I pursued making dovetail rails (thanks Kait!); I milled these from Delrin since its low friction coefficient would reduce friction in sliding, with guidance from shop staff (thanks Scott!). I sized the first gearbox — a 2:1 ratio driven by a Bilda torque servo — from force-meter measurements and motor curves.</p>
+          <p class="body-text">I identified the height-varying gear spinner as my most critical module (MCM). To raise it, I chose a timing-belt lift over lead screws (the ones available seemed too slow), scissor lifts (high torque at the start of travel), and four-bar linkages (overkill for the travel distance). I first planned slots and pins to constrain the carriage, but worried they wouldn't be stiff enough against pitch reaction forces. At a lab instructor's suggestion (thanks Kait!), I made dovetail rails instead, milling them from Delrin for its low friction with guidance from shop staff (thanks Scott!). I sized the first gearbox — a 2:1 ratio driven by a Bilda torque servo — from force-meter measurements and motor curves.</p>
           </div>
         </div>
 
         <h3>Chassis redesign</h3>
-        <div class="decision">
+        <div class="decision decision--flip">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">I attached my MCM to a simple box chassis for my MVP. However -- once assembled -- the MCM was unstable in motion, and the chassis underutilzed the volume within the bounding box which was bad news for the modules I still had to add (also it could stand to look a bit cooler...). I redesigned the chassis with three goals: reduce compliance at the MCM, remove redundant aluminum, and allow for future modules to integrate more cleanly while I was still unsure of their final form. I had the new parts waterjet-cut to minimize misalignment for further stability (thanks Bill!).</p>
+          <p class="body-text">My MVP mounted the MCM on a simple box chassis. Once assembled, though, the MCM was unstable in motion, and the chassis underused the volume within the bounding box — bad news for the modules I still had to add (and it could stand to look a bit cooler). I redesigned it with three goals: reduce compliance at the MCM, remove redundant aluminum, and leave room for future modules to integrate cleanly while their final forms were still uncertain. I had the new parts waterjet-cut to minimize misalignment and add stability (thanks Bill!).</p>
           </div>
         </div>
 
         <h3>Diagnosing the gearbox shortfall</h3>
-        <div class="decision decision--flip">
+        <div class="decision">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">My first full Train to Oz trial failed: the single-motor 2:1 gearbox stalled at the easiest train gear. A quickly mocked-up 3:1 version worked, but took 50–60 s at the lowest torque train gear — far too slow for the autonomous period, and enough to eat the time I needed for other objectives. I dediced to trace it all the way back, finding three oversights in my original sizing:</p>
-          <ul class="body-list"><li>I measured force required on the Train to Oz with no load, though the bot itself would be a non-negligible load;</li><li>I assumed a higher voltage than the stock batteries provided -- a lower voltage mean a lower torque-speed curve and therefore underfitting the gear ratio;</li><li>and I automatically assumed the motors would spin fast enough, never verifying the speed needed to finish the obstacle in under 30 seconds.</li></ul>
+          <p class="body-text">My first full Train to Oz trial failed: the single-motor 2:1 gearbox stalled at the easiest train gear. A quickly mocked-up 3:1 version worked, but took 50–60 s at the lowest-torque train gear — far too slow for the autonomous period, and enough to eat into the time I needed for other objectives. I traced the failure back to three oversights in my original sizing:</p>
+          <ul class="body-list"><li>I measured the force Train to Oz required with no load, though the robot itself would be a non-negligible load.</li><li>I assumed a higher voltage than the stock batteries provided; a lower voltage meant a lower torque-speed curve, so my gear ratio was undersized.</li><li>I assumed the motors would spin fast enough, never checking the speed needed to finish the obstacle in under 30 s.</li></ul>
           </div>
         </div>
 
         <h3>Speed-running the drivetrain and tow hook</h3>
-        <div class="decision">
+        <div class="decision decision--flip">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">With about three weeks before impound and several modules unbuilt, I chose to finish the robot first and kept these modules simple and fast to fabricate in order to ensure time to iterate on my gearbox. 3D-printed wheel caps doubled as spacers and fasteners. Manually adjustable A-shaped aluminum slides tensioned the drive belts, avoiding cutting and rejoining belts, more complex spring tensioners, or re-cutting the chassis. The tow hook, driven by a 217:1 LDO motor (the highest-torque option) to pull a measured 15 N on the Oz Head, stows to fit the starting box and hooks upward, loading the back wheels to improve traction -- mimicking the pushback tractor principle.</p>
+          <p class="body-text">With about three weeks before impound and several modules unbuilt, I kept these modules simple and fast to fabricate, saving time to iterate on the gearbox. 3D-printed wheel caps doubled as spacers and fasteners. Manually adjustable A-shaped aluminum slides tensioned the drive belts, avoiding cutting and rejoining belts, more complex spring tensioners, or re-cutting the chassis. The tow hook, driven by a 217:1 LDO motor (the highest-torque option) to pull a measured 15 N on the Oz Head, stows to fit the starting box and hooks upward — loading the back wheels for traction, following the pushback tractor principle.</p>
           </div>
         </div>
 
         <h3>Dual-motor gearbox</h3>
+        <div class="decision">
+          <figure class="media"></figure>
+          <div class="decision__text">
+          <p class="body-text">To fix the spinner, I increased power in two ways. First, I fed the gearbox directly from the LiPo battery, raising its torque-speed curve. Then I moved to two Bilda Speed motors driving a 3:1 gearbox — about 3.18 N·m and 25 RPM at peak power. Space was the main constraint, since the bounding box had been sized for one motor: I shifted the timing-belt clamps inward and extended their shafts to double as spacers, and while the belts ran slightly crooked, the spacers kept them from slipping. When torque at the claw later made set screws slip, I filed the output axle into a D-shaft and made a custom claw adaptor, finalizing the gearbox.</p>
+          </div>
+        </div>
+
+        <h3>Autonomous start</h3>
         <div class="decision decision--flip">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">To fix the spinner, I increased power in two ways. First, I was able to directly feed power from a 7V LiPo battery to my gearbox, increasing the torque-speed curve. To improve performance even further, I moved to two Bilda Speed motors driving a 3:1 gearbox — about 3.18 N·m and 25 RPM at peak power. Space was the main constraint, since the bounding box had been sized for one motor. I shifted the timing-belt clamps inward and extended their shafts to double as spacers; the belts ran slightly crooked, but the spacers kept them from slipping. When torque at the claw later caused set screws to slip, I filed the output axle into a D-shaft and made a custom adaptor for the claw, finalizing the iterated gearbox design.</p>
+          <p class="body-text">Each round opened with a 30-second autonomous period, in which the robot had to start and run with hands off the manual controls. To trigger it, I built a simple photoresistor circuit feeding one of the Arduino's analog pins, and coded a routine to complete the train obstacle and reach Oz. When I flashed a light at the robot, the Arduino detected the spike in light intensity and launched the routine. In competition, the autonomous period ran flawlessly.</p>
           </div>
         </div>
       </section>
       <section id="improvement" data-nav="Room for Improvement">
         <h2>Room for Improvement</h2>
-          <p class="body-text">In competition, PearCat ran its autonomous period flawlessly — then couldn't move its belt drive or tow hook. Different parts of the robot ran on separate batteries, a 4.8 V four-pack and a LiPo, and I -- under nerves -- had only switched on the LiPo. Because of this, PearCat scored decently but didn't advance. The build had an issue with a similar root cause earlier on: under pressure to move quickly, I sized the first gearbox from incomplete assumptions and redesigned the chassis before testing it, spending time on a module that wasn't my riskiest.</p>
+          <p class="body-text">In competition, PearCat ran its autonomous period flawlessly — then couldn't move its belt drive or tow hook. Different parts of the robot ran on separate batteries, a 4.8 V four-pack and a LiPo, and I, nervous on competition day, had only switched on the LiPo. PearCat scored decently but didn't advance. An earlier problem in the build had a similar root cause: under pressure to move quickly, I sized the first gearbox from incomplete assumptions and redesigned the chassis before testing it, spending time on a module that wasn't my riskiest.</p>
       </section>
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cantilevered DeltaXY — Joshua Rivera Camacho</title>
-  <meta name="description" content="Undergraduate research on a novel 3D printer movement system that fits a 120 mm build area into 127 mm of shelf width — part of co-authored research awarded Best Paper at ACM CHI 2026.">
+  <meta name="description" content="Undergraduate research on a 3D printer movement system that fits a 120 mm build area into 127 mm of shelf width — co-authored work awarded Best Paper at ACM CHI 2026.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <!-- Generated from the content spreadsheet by tools/build_from_sheet.py.
@@ -19,10 +19,10 @@
       <div class="project__hero">
         <figure class="media"><img src="../assets/img/covers/cantilevered-deltaxy.jpg" alt="Cantilevered DeltaXY"></figure>
         <div class="project__info">
-          <p><span class="info__label info__label--head">Design methodology</span><br>Machine design<br>Kinematic modeling/movement system parameterization</p>
-          <p><span class="info__label">Lab</span>Ideation Lab, MIT Department of Mechanical Engineering<br><span class="info__label">Role</span>Undergraduate researcher (UROP)<br><span class="info__label">Collaborators</span>Ilan Moyer (MIT Ideation Lab), Quentin Bolsee (MIT Center for Bits and Atoms)<br><span class="info__label">Timeline</span>Summer – Winter 2025</p>
-          <p><span class="info__label info__label--head">Tools</span><br>SOLIDWORKS<br>Python (incl. JAX)<br>G-code<br>Google Sheets<br>FDM 3D printing<br>Laser cutting</p>
-          <p><span class="info__label">Recognition</span>ACM CHI 2026 Best Paper Award (co-author)</p>
+          <p>Machine design<br>Kinematic modeling/movement system parameterization</p>
+          <p>Ideation Lab, MIT Department of Mechanical Engineering<br>Undergraduate researcher (UROP)<br>Ilan Moyer (MIT Ideation Lab), Quentin Bolsee (MIT Center for Bits and Atoms)<br>Summer – Winter 2025</p>
+          <p>SOLIDWORKS<br>Python (incl. JAX)<br>G-code<br>Google Sheets<br>FDM 3D printing<br>Laser cutting</p>
+          <p>ACM CHI 2026 Best Paper Award (co-author)</p>
         </div>
       </div>
 
@@ -54,8 +54,7 @@
         <div class="decision decision--flip">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">For a high-fidelity prototype, we kept the narrow width and a level work platform, moving the toolhead in z instead. The z-height had to be easy to track to avoid adding kinematic complexity, so I used paired Sarrus linkages — which keep the top and bottom planes parallel — driven by a non-captive lead screw. I calculated the compliance of several linkage-bearing layouts; the equally spaced design I chose is nearly 3× stiffer than the original.</p>
-          <p class="body-text"><span class="todo">[Prototype was only designed]</span></p>
+          <p class="body-text">For a high-fidelity version, I designed a z-axis that keeps the narrow width and a level work platform, moving the toolhead in z instead. The z-height had to be easy to track to avoid adding kinematic complexity, so I used paired Sarrus linkages — which keep the top and bottom planes parallel — driven by a non-captive lead screw. I calculated the compliance of several linkage-bearing layouts; the equally spaced design I chose is nearly 3× stiffer than the original.</p>
           </div>
         </div>
 
@@ -77,11 +76,11 @@
       </section>
       <section id="improvement" data-nav="Room for Improvement">
         <h2>Room for Improvement</h2>
-          <p class="body-text"><span class="todo">[NEEDS INPUT: e.g., anything about the low-fi prototype that underperformed, or what you'd do with more time.]</span></p>
+          <p class="body-text">The time available for the low-fidelity prototype allowed iteration on individual components, but not on the prototype as a whole. With more time, I would have characterized its stiffness and accuracy against the original FabUnit to quantify whether it's a viable stand-in.</p>
       </section>
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
-        <ul class="outcome-list"><li>ACM CHI 2026 Best Paper Award (co-author)</li><li>FabUnit: ~120 × 120 mm build area in 127 mm of shelf width — 94% lateral space efficiency</li><li>Toolhead-offset kinematic model integrated into the printer's calibration</li><li>Selected linkage-bearing layout: ~3× stiffer than the original</li><li>Low-fidelity prototype designed and fabricated in ~5 days</li></ul>
+        <ul class="outcome-list"><li>ACM CHI 2026 Best Paper Award (co-author)</li><li>Toolhead-offset kinematic model integrated into the printer's calibration</li><li>High-fidelity z-axis design: ~3× stiffer than the original linkage-bearing layout</li><li>Low-fidelity prototype designed and fabricated in ~5 days</li></ul>
         <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
           <div class="gallery__row gallery__row--3">
@@ -97,7 +96,7 @@
       </section>
       <section id="reflection" data-nav="Reflection">
         <h2>Reflection</h2>
-          <p class="body-text">Working on this research -- and specifically under Ilan -- taught me the value of applying core engineering principles to both improve the performance of machines and drive their designs.</p>
+          <p class="body-text">Working on this research — and specifically under Ilan — taught me the value of applying core engineering principles both to improve the performance of machines and to drive their design.</p>
       </section>
     </main>
   </div>

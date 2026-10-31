@@ -68,6 +68,75 @@ def is_equation(line):
     return ("=" in line or "³" in line) and len(line.split()) < 14 and not line.rstrip().endswith(".")
 
 
+# ---------- Equation callouts ----------
+# In the sheet, put an equation on its own line in this form and it becomes a box:
+#   Label: equation, where X is ..., Y is ..., and Z is ...
+# Variables: write subscripts as X_y (or Unicode like Rᵢ); ^ for powers (L^3) or Unicode (L³).
+EQ_LINE_RE = re.compile(r"^(?P<label>[A-Z][^:=]{0,60}):\s*(?P<eq>(?:[^,]|,(?=\d{3}))*=(?:[^,]|,(?=\d{3}))*?)(?:,\s*where\s+(?P<where>.+?))?\.?$")
+
+# Extra equations shown under a decision, for math that lives in your scripts rather than the
+# sheet text. Keyed by (page slug, decision title). Same line format as above.
+EXTRA_EQUATIONS = {
+    ("layer-by-layer", "Standardizing test samples"): [
+        "Rectangular beam: I_rect = b·h^3 / 12 ≈ 4,345 mm⁴, where b = 19 mm is the beam width, and h = 14 mm is the beam height.",
+        "Wide-flange beam (parallel axis theorem): I_WF = Σ (I_i + A_i·d_i^2), where I_i is the moment of inertia of each flange and the web about its own centroid, A_i is its area, and d_i is the distance from its centroid to the beam's centroid.",
+        "Matching the two, solved for web width: b_w = [I_rect − Σ_flanges (I_i + A_i·d_i^2)] / (t_w^3/12 + t_w·d_w^2) ≈ 2.55 mm, where t_w = 9 mm is the web height, and d_w is the distance from the web's centroid to the beam's centroid.",
+    ],
+    ("layer-by-layer", "Automating the analysis"): [
+        "Flexural modulus (three-point bending): E = L^3·m / 48I, where L = 120 mm is the support span, m is the slope of the linear regime of the load–displacement curve, and I is the beam's measured moment of inertia.",
+    ],
+}
+
+
+def math_html(expr):
+    """Escape and typeset simple math: X_y -> subscript, ^n -> superscript."""
+    t = esc(expr.strip())
+    # Unicode subscripts (Rᵢ, Eₛ, σᵧₛ) -> real subscripts so they match X_y ones
+    sub = {"ᵢ": "i", "ₛ": "s", "ᵧ": "y", "ₓ": "x", "ₙ": "n", "ₘ": "m", "ₜ": "t", "ₐ": "a", "ₑ": "e", "ₒ": "o",
+           "₀": "0", "₁": "1", "₂": "2", "₃": "3", "₄": "4"}
+    t = re.sub("[" + "".join(sub) + "]+", lambda m: "<sub>" + "".join(sub[c] for c in m.group(0)) + "</sub>", t)
+    t = re.sub(r"\^\(([^)]+)\)", r"<sup>\1</sup>", t)
+    t = re.sub(r"\^([0-9A-Za-z]+)", r"<sup>\1</sup>", t)
+    t = re.sub(r"(?<=[A-Za-zΣ])_([A-Za-z0-9]+)", r"<sub>\1</sub>", t)
+    return t
+
+
+def split_where(where):
+    """'Rᵢ and R_f are the radii, Y is yield strength, and t is thickness' -> [(vars, meaning)]"""
+    items = re.split(r",\s*(?:and\s+)?", where.strip().rstrip("."))
+    out, i = [], 0
+    while i < len(items):
+        it = items[i]
+        m = re.match(r"^(?P<v>.+?)\s+(?:is|are)\s+(?P<m>.+)$", it)
+        if m:
+            out.append((m.group("v"), m.group("m")))
+        elif out:  # continuation of the previous meaning (a comma inside it)
+            out[-1] = (out[-1][0], out[-1][1] + ", " + it)
+        i += 1
+    return out
+
+
+def render_equation(line):
+    m = EQ_LINE_RE.match(line.strip())
+    if not m:
+        return None
+    rows = ""
+    if m.group("where"):
+        # "b = 19 mm is the width" -> variable "b", meaning "the width (19 mm)"
+        defs = []
+        for v, meaning in split_where(m.group("where")):
+            val = ""
+            vm = re.match(r"^(.+?)\s*=\s*(.+)$", v)
+            if vm:
+                v, val = vm.group(1), vm.group(2)
+            vars_html = ", ".join(f'<var>{math_html(x)}</var>' for x in re.split(r"\s+and\s+|,\s*", v) if x.strip())
+            extra = f' <span class="eq__val">({esc(val)})</span>' if val else ""
+            defs.append(f"<dt>{vars_html}</dt><dd>{esc(meaning)}{extra}</dd>")
+        rows = f'<dl class="eq__vars">{"".join(defs)}</dl>'
+    return (f'<figure class="eq"><figcaption class="eq__label">{esc(m.group("label"))}</figcaption>'
+            f'<div class="eq__math">{math_html(m.group("eq"))}</div>{rows}</figure>')
+
+
 def render_body(text, para_class="body-text", split_code=False):
     """Turn a cell into HTML paragraphs / lists / code blocks."""
     if not text:
@@ -92,9 +161,14 @@ def render_body(text, para_class="body-text", split_code=False):
             items = []
             i += 1
             while i < len(lines) and lines[i].strip():
-                items.append(f"<li>{inline(lines[i].strip())}</li>")
+                items.append(f"<li>{inline(re.sub(r'^[-•*]\s+', '', lines[i].strip()))}</li>")
                 i += 1
             parts.append(f'<ul class="body-list">{"".join(items)}</ul>')
+            continue
+        eq = render_equation(ln)
+        if eq:
+            parts.append(eq)
+            i += 1
             continue
         foot = re.match(r"^(.*=.*?)\s+(\*\S.*)$", ln)
         if foot:  # "formula *footnote"
@@ -122,18 +196,16 @@ def render_glance(text):
             if not ln:
                 continue
             if ln.endswith(":"):
-                rows.append(f'<span class="info__label info__label--head">{inline(ln[:-1])}</span>')
-            elif ":" in ln and not ln.startswith("[") and ln.index(":") < 24:
-                k, v = ln.split(":", 1)
-                rows.append(f'<span class="info__label">{inline(k)}</span>{inline(v.strip())}')
-            else:
-                rows.append(inline(ln))
+                continue  # header line ("Tools:", "Design methodology:") — labels hidden for now
+            if ":" in ln and not ln.startswith("[") and ln.index(":") < 24:
+                ln = ln.split(":", 1)[1].strip()  # "Course: 2.007 ..." -> "2.007 ..."
+            rows.append(inline(ln))
         out.append("<p>" + "<br>".join(rows) + "</p>")
     return "\n          ".join(out)
 
 
 def render_outcome(text):
-    items = [ln.strip() for ln in text.split("\n") if ln.strip()]
+    items = [re.sub(r"^[-•]\s+", "", ln.strip()) for ln in text.split("\n") if ln.strip()]
     return '<ul class="outcome-list">' + "".join(f"<li>{inline(x)}</li>" for x in items) + "</ul>"
 
 
@@ -164,6 +236,9 @@ def page(slug, d):
             first, _, rest = dec.strip().partition("\n")
             flip = " decision--flip" if n % 2 else ""
             body, code_html = render_body(rest.strip(), split_code=True)
+            extras = [render_equation(x) for x in EXTRA_EQUATIONS.get((slug, first.strip()), [])]
+            if extras:
+                body += "\n          " + "\n          ".join(e for e in extras if e)
             blocks.append(f'''        <h3>{inline(first.strip())}</h3>
         <div class="decision{flip}">
           <figure class="media"></figure>
@@ -181,9 +256,11 @@ def page(slug, d):
       </section>''')
 
     if d.get("outcome") and d["outcome"].strip().lower() not in ("n/a", "na"):
+        gallery_only = d["outcome"].strip().lower().startswith("gallery")
+        outcome_list = "" if gallery_only else render_outcome(d["outcome"])
         sections.append(f'''      <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
-        {render_outcome(d["outcome"])}
+        {outcome_list}
         <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
           <div class="gallery__row gallery__row--3">
@@ -288,6 +365,16 @@ def date_key(label):
     return f"{m.group(2)}-{SEASON_MONTH[m.group(1).lower()]}" if m else ""
 
 
+def cover_for(title):
+    slug = re.sub(r"[^a-z0-9]+", "-", TODO_RE.sub("", title).lower()).strip("-")
+    f = ROOT / "assets/img/covers" / f"{slug}.jpg"
+    return f"assets/img/covers/{slug}.jpg" if f.exists() else ""
+
+
+def read_opener(ws):
+    return cell(ws, 2, 1) if cell(ws, 1, 1).lower() == "opener" else ""
+
+
 def read_mini(ws):
     rows = {cell(ws, r, 2).lower(): r for r in range(1, ws.max_row + 1) if cell(ws, r, 2)}
     out = []
@@ -303,7 +390,7 @@ def read_mini(ws):
             "date": date_key(label),
             "dateLabel": label,
             "effort": 0,
-            "image": "",
+            "image": cover_for(title),
             "link": "",
         })
     return out
@@ -312,6 +399,17 @@ def read_mini(ws):
 def update_projects_js(main, mini):
     p = ROOT / "assets/js/projects.js"
     js = p.read_text()
+    # remove Selected Work entries that are no longer columns in the sheet
+    block = re.search(r"window\.SELECTED_WORK = \[\n(.*?)\n\];", js, re.S)
+    entries = re.findall(r"  \{ slug: \"[^\"]+\".*?\},?(?=\n  \{ slug:|\s*$)", block.group(1), re.S)
+    kept = []
+    for e in entries:
+        slug = re.match(r'  \{ slug: "([^"]+)"', e).group(1)
+        if slug in main:
+            kept.append(e.rstrip(","))
+        else:
+            print(f"  - removed {slug} from Selected Work (not in sheet)")
+    js = js[:block.start(1)] + ",\n".join(kept) + js[block.end(1):]
     # card blurbs = Hook row
     for slug, d in main.items():
         if not d["hook"]:
@@ -343,6 +441,15 @@ def main():
         print(f"  ✓ projects/{slug}.html")
     mini = read_mini(wb["Mini Projects"]) if "Mini Projects" in wb.sheetnames else []
     update_projects_js(projects, mini)
+    opener = read_opener(wb["Mini Projects"]) if "Mini Projects" in wb.sheetnames else ""
+    if opener:
+        for f in ("more-projects-by-date.html", "more-projects-by-effort.html"):
+            fp = ROOT / f
+            h = fp.read_text()
+            h = re.sub(r"(<header class=\"masthead masthead--more\">\s*<h1>).*?(</h1>)",
+                       lambda m: m.group(1) + esc(opener) + m.group(2), h, count=1, flags=re.S)
+            fp.write_text(h)
+        print("  ✓ More Projects opener")
     print(f"  ✓ assets/js/projects.js ({len(mini)} More Projects)")
 
 

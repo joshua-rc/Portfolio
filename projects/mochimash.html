@@ -19,16 +19,15 @@
       <div class="project__hero">
         <figure class="media"><img src="../assets/img/covers/mochimash.jpg" alt="MochiMash"></figure>
         <div class="project__info">
-          <p><span class="info__label info__label--head">Design methodology</span><br>User-centered/interaction design<br>Mechanism design<br>Game design</p>
-          <p><span class="info__label">Course</span>4.043: Design Studio: Interaction Intelligence (Project I)<br><span class="info__label">Timeline</span>5 weeks, Spring 2026<br><span class="info__label">Team</span>Joanne Hong (MIT '27), Lucy Li (MIT Media Lab)</p>
-          <p><span class="info__label info__label--head">Tools</span><br>SOLIDWORKS<br>Electronics<br>Casting<br>FDM 3D printing</p>
+          <p>User-centered/interaction design<br>Mechanism design<br>Game design</p>
+          <p>4.043: Design Studio: Interaction Intelligence (Project I)<br>5 weeks, Spring 2026<br>Joanne Hong (MIT '27), Lucy Li (MIT Media Lab)</p>
+          <p>SOLIDWORKS<br>Electronics<br>Casting<br>FDM 3D printing</p>
         </div>
       </div>
 
       <section id="overview" data-nav="Project Overview">
         <div class="project__summary">
-          <p class="summary-text">MochiMash is a two-player rhythm game inspired by the tradition of mochi pounding. As circles and squares flash across a one-pixel-row display, Player 1 swivels the mochi bowl to match the colors on screen and folds the mochi on the beat, while Player 2 pounds it with the hammer. Every fold and pound releases "flour" that clouds the screen, and Player 2 wipes it away by squeezing a trigger on the hammer's handle. I built MochiMash with Joanne Hong and Lucy Li.</p>
-          <p class="summary-text"><span class="todo">[CONFIRM: add your role — e.g., mechanisms, fabrication, electronics.]</span></p>
+          <p class="summary-text">MochiMash is a two-player rhythm game inspired by the tradition of mochi pounding. As circles and squares flash across a one-pixel-row display, Player 1 swivels the mochi bowl to match the colors on screen and folds the mochi on the beat, while Player 2 pounds it with the hammer. Every fold and pound releases "flour" that clouds the screen, and Player 2 wipes it away by squeezing a trigger on the hammer's handle. I built MochiMash with Joanne Hong and Lucy Li, focusing on the mechanical design, fabrication, and electronics.</p>
         </div>
       </section>
       <section id="context" data-nav="Context/ Motivation">
@@ -42,48 +41,45 @@
       <section id="process" data-nav="Process">
         <h2>Process</h2>
 
-        <h3>Materiality</h3>
-        <div class="decision">
-          <figure class="media"></figure>
-          <div class="decision__text">
-          <p class="body-text">We wanted the controllers to feel like the real tools, so we explored casting and 3D printing stone and wood textures, followed by post-processing.</p>
-          <p class="body-text"><span class="todo">[NEEDS INPUT: what was cast vs. printed, and what finishing made it read as stone/wood?]</span></p>
-          </div>
-        </div>
-
         <h3>Swivel mechanism</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
-          <div class="decision__text">
-          <p class="body-text">The bowl swivels so Player 1 can change the mochi's color to match the cues on screen.</p>
-          <p class="body-text"><span class="todo">[NEEDS INPUT: how the swivel senses position, and why rotation felt right for this action.]</span></p>
-          </div>
-        </div>
-
-        <h3>Hammer mechanism</h3>
         <div class="decision">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">Player 2 pounds on the beat and squeezes a trigger in the handle to wipe away flour, so one tool carries two actions.</p>
-          <p class="body-text"><span class="todo">[NEEDS INPUT: how the hammer senses a hit, and how you made it feel weighty but safe.]</span></p>
+          <p class="body-text">The bowl swivels so Player 1 can change the mochi's color to match the cues on screen. Because the mochi would take repeated impacts, I used a lazy susan mechanism rather than a more complex bearing assembly. It also left a rigid, stationary pole at the center to build the fold mechanism and electronics on.</p>
           </div>
         </div>
 
-        <h3>Tuning the LED strip</h3>
+        <h3>Sensing the fold</h3>
         <div class="decision decision--flip">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text"><span class="todo">[NEEDS INPUT: what needed fine-tuning — timing, brightness, how the rhythm is visualized?]</span></p>
+          <p class="body-text">With only five weeks, we retrofitted available electronics wherever possible to leave room to experiment with materiality. The silicone-cast mochi is essentially an oversized joystick cap; because it was so heavy, I built a spring box to support its weight so the joystick could return to its origin. When the joystick reads x/y values outside a calibrated deadzone, the game registers the slap as a "fold."</p>
+          </div>
+        </div>
+
+        <h3>Sensing the pound</h3>
+        <div class="decision">
+          <figure class="media"></figure>
+          <div class="decision__text">
+          <p class="body-text">The hammer took several tries. A button under the hammer face didn't reliably click; moving all the sensing into the mochi made it hard to tell folds from pounds; and a capacitive sensor wasn't dependable. A force sensor was the most reliable, but real hits often weren't hard or square enough to register — until I designed a compliant mechanism under the hammer face, so any hit deflects its center beam firmly into the sensor.</p>
+          </div>
+        </div>
+
+        <h3>Materiality</h3>
+        <div class="decision decision--flip">
+          <figure class="media"></figure>
+          <div class="decision__text">
+          <p class="body-text">With gameplay limited to one dimension, we wanted to deepen immersion through the controllers themselves: every input should feel satisfying and physical. We aimed to stay authentic, but with most of our five weeks already spent on ideation, turning a wooden hammer — let alone carving a stone bowl — wasn't feasible. Instead, we cast the mochi in soft silicone, printed the bowl in a carefully chosen PLA color with a texture applied to the CAD, and printed the hammer in wood-fill filament with the same textured CAD, which let us stain it to a satisfying finish.</p>
           </div>
         </div>
       </section>
       <section id="improvement" data-nav="Room for Improvement">
         <h2>Room for Improvement</h2>
-          <p class="body-text"><span class="todo">[NEEDS INPUT]</span></p>
+          <p class="body-text">Though I ultimately brought all the subsystems together, I crammed in a lot of mechanisms out of my own love for cool, complex, over-the-top mechanics. That pushed me toward solutions that weren't necessarily ideal, just fun to design and fabricate. In hindsight, simpler — and perhaps more elegant — solutions would have freed up time to develop the digital game (maybe even add a second song) and saved me a few all-nighters.</p>
       </section>
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
-        <ul class="outcome-list"><li><span class="todo">[NEEDS INPUT: playtest observations, e.g., how many people played, how long rounds lasted.]</span></li></ul>
+        
         <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
           <div class="gallery__row gallery__row--3">
@@ -99,7 +95,7 @@
       </section>
       <section id="reflection" data-nav="Reflection">
         <h2>Reflection</h2>
-          <p class="body-text"><span class="todo">[NEEDS INPUT]</span></p>
+          <p class="body-text">MochiMash was my first real taste of the cost of over-engineering. I learned the hard way that the best solution is often the simplest one — and that every hour spent on a clever mechanism is an hour not spent on the experience it's meant to serve.</p>
       </section>
     </main>
   </div>

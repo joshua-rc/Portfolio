@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>en clair — Joshua Rivera Camacho</title>
-  <meta name="description" content="A handheld device that retranslates the world your hear through filters you desire — because nothing is ever in plain language.">
+  <meta name="description" content="A handheld device that retranslates the world you hear through filters you request — because nothing is ever in plain language.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <!-- Generated from the content spreadsheet by tools/build_from_sheet.py.
@@ -19,17 +19,15 @@
       <div class="project__hero">
         <figure class="media"><img src="../assets/img/covers/en-clair.jpg" alt="en clair"></figure>
         <div class="project__info">
-          <p><span class="info__label info__label--head">Design methodology</span><br>HCI design<br>Large language objects (LLOs)<br>Mechanism design</p>
-          <p><span class="info__label">Course</span>4.043: Design Studio: Interaction Intelligence (Project II)<br><span class="info__label">Timeline</span>8 weeks, Spring 2026<br><span class="info__label">Team</span>Elaine Liu, Krystal Montgomery (MIT '26)</p>
-          <p><span class="info__label info__label--head">Tools</span><br>Fusion<br>Waterjet cutting<br>FDM 3D printing<br>Arduino IDE</p>
-          <p><span class="info__label">Output</span>research paper</p>
+          <p>HCI design<br>Large language objects (LLOs)<br>Mechanism design</p>
+          <p>4.043: Design Studio: Interaction Intelligence (Project II)<br>8 weeks, Spring 2026<br>Elaine Liu, Krystal Montgomery (both MIT '26)</p>
+          <p>Fusion<br>Waterjet cutting<br>FDM 3D printing<br>Arduino IDE</p>
         </div>
       </div>
 
       <section id="overview" data-nav="Project Overview">
         <div class="project__summary">
-          <p class="summary-text">Is what someone says ever what they really mean? en clair is a portable device for that gap. Worn at the hip like a Walkman, it captures speech directed at the listener, rewrites it through a large language model conditioned by a perceptual filter, and plays the result back through noise-cancelling headphones. Filters live on swappable NFC cartridges: slot one in, describe how you want to hear the world, and everything retranslates. I built en clair with Elaine Liu and Krystal Montgomery.</p>
-          <p class="summary-text"><span class="todo">[CONFIRM: add your role — e.g., object design, scissor linkage, enclosure.]</span></p>
+          <p class="summary-text">Is what someone says ever what they really mean? en clair is a portable device for that gap. Handheld or worn at the hip like a Walkman, it captures speech directed at the listener, rewrites it through a large language model conditioned by a perceptual filter, and plays the result through noise-cancelling headphones. Filters live on swappable NFC cartridges: slot one in, describe how you want to hear the world, and everything retranslates. I built en clair with Elaine Liu and Krystal Montgomery; alongside our shared object design, I led the linkage and enclosure design, as well as fabrication.</p>
         </div>
       </section>
       <section id="context" data-nav="Context/ Motivation">
@@ -69,11 +67,11 @@
       </section>
       <section id="improvement" data-nav="Room for Improvement">
         <h2>Room for Improvement</h2>
-          <p class="body-text">The pipeline adds several seconds of latency between speech and filtered playback, so the filtered voice often arrives after the conversation has moved on — sometimes disorienting, sometimes revelatory. The device still depends on a tethered laptop, so it isn't yet truly portable. And some filters surfaced stereotypes we never designed: a filter described as "an Asian mom" turned "I'm proud of you" into "you can do better."</p>
+          <p class="body-text">Every subsystem worked well on its own, but because we developed them independently for too long, we never fully integrated the device. Testing the pipeline also surfaced its limits: several seconds of latency meant the filtered voice often arrived after the conversation had moved on, and some filters produced stereotypes we never designed.</p>
       </section>
       <section id="outcome" data-nav="Outcome">
         <h2>Outcome</h2>
-        <ul class="outcome-list"><li>Working end-to-end pipeline: ESP32-S3 device ↔ laptop server (Whisper → Claude → ElevenLabs)</li><li>Filters consistently produced recognizable — but meaningfully different — versions of the input</li><li>Two-stage meta-prompt proved more reliable than user-written system prompts</li><li>Per-turn perspective anchors substantially reduced POV drift</li><li>Research paper co-authored</li></ul>
+        
         <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
         <div class="gallery">
           <div class="gallery__row gallery__row--3">
@@ -89,7 +87,7 @@
       </section>
       <section id="reflection" data-nav="Reflection">
         <h2>Reflection</h2>
-          <p class="body-text"><span class="todo">[NEEDS INPUT: 2–3 sentences in your voice.]</span></p>
+          <p class="body-text">en clair taught me the value of early integration testing the hard way. Every subsystem worked in isolation, but we developed them separately for too long and ran out of time to bring them together. Now I plan integration checkpoints from the start, even when the parts are still rough.</p>
       </section>
     </main>
   </div>

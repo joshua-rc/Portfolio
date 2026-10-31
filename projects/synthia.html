@@ -19,24 +19,24 @@
       <div class="project__hero">
         <figure class="media"><img src="../assets/img/covers/synthia.jpg" alt="Synthia"></figure>
         <div class="project__info">
-          <p><span class="info__label info__label--head">Design methodology</span><br>HCI/interaction design<br>Wizard-of-Oz prototyping</p>
-          <p><span class="info__label">Course</span>4.031: Design Studio: Objects and Interaction (Prof. Marcelo Coelho)<br><span class="info__label">Timeline</span>6 weeks, Winter 2025 (second half of the Fall 2025 semester)<br><span class="info__label">Team</span>Joanne Hong (MIT '27), Pria Sawhney (MIT '27)</p>
-          <p><span class="info__label info__label--head">Tools</span><br>SOLIDWORKS<br>Arduino IDE<br>TouchDesigner<br>Electronics/circuitry<br>Laser cutting<br>FDM 3D printing<br>Sheet metal forming</p>
+          <p>HCI/interaction design<br>Wizard-of-Oz prototyping</p>
+          <p>4.031: Design Studio: Objects and Interaction (Prof. Marcelo Coelho)<br>6 weeks, Winter 2025 (second half of the Fall 2025 semester)<br>Joanne Hong (MIT '27), Pria Sawhney (MIT '27)</p>
+          <p>SOLIDWORKS<br>Arduino IDE<br>TouchDesigner<br>Electronics/circuitry<br>Laser cutting<br>FDM 3D printing<br>Sheet metal forming</p>
         </div>
       </div>
 
       <section id="overview" data-nav="Project Overview">
         <div class="project__summary">
-          <p class="summary-text">Synthia combines live video and ambient audio to generate audio-reactive visuals that can be projected back into the room. Synthia's camera module can be rotated to point towards the user or an audience, with an x-axis mirror button available to flip graphics upside down, ensuring usability in either direction. A three-state switch picks between three graphic modes — dots (a particle simulation), lines (edge detection), and solids (pixelation) — while knobs tune audio sensitivity, video threshold and contrast, and color. I built Synthia with Joanne Hong and Pria Sawhney; though work wa heavily collaborative, the focus of my contribution was the mechanical design, fabrication, and electronics.</p>
+          <p class="summary-text">Synthia combines live video and ambient audio to generate audio-reactive visuals, projected back into the room. A three-state switch picks between three graphic modes — dots (a particle simulation), lines (edge detection), and solids (pixelation) — while knobs tune audio sensitivity, video threshold and contrast, and color. The camera rotates to face either the user or an audience, and a mirror button flips the graphics to match. I built Synthia with Joanne Hong and Pria Sawhney; the work was heavily collaborative, but my focus was the mechanical design, fabrication, and electronics.</p>
         </div>
       </section>
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
-          <p class="body-text">For the second half of the class 4.031 with Marcelo Coelho, our project brief was to design an interactive digital camera using Wizard-of-Oz prototyping — and to reimagine what it means for something to be a "digital camera" and to challenge how people interact with one.</p>
+          <p class="body-text">In the second half of 4.031, taught by Marcelo Coelho, our brief was to design an interactive digital camera using Wizard-of-Oz prototyping — reimagining what it means for something to be a "digital camera" and challenging how people interact with one.</p>
       </section>
       <section id="problem" data-nav="Problem Framing">
         <h2>Problem Framing</h2>
-          <p class="body-text">My team drew inspiration from music technology, especially the audio-reactive visuals of live concerts which seemed to flood the floors with life and excitement -- an atmosphere which we felt could be harder to achieve in other less-equiped, environments. Additionally, we were drawn to the ability of a "transforming" form factor to incite curiousity and excitment in the user. These two requirements shaped everything after that. At a minimum, the camera needed a pitch degree of freedom so it could be aimed. And because the visuals had so many parameters, the controls had to be as intuitive as possible — and fun to play with — using components we could acquire within the limited timeframe.</p>
+          <p class="body-text">My team drew inspiration from music technology — especially the audio-reactive visuals of live concerts, which seem to flood the floor with life and excitement, an atmosphere that's much harder to create in less-equipped spaces like a home. We were also drawn to the way a "transforming" form factor can spark curiosity and excitement. Those two goals shaped everything after. At a minimum, the camera needed a pitch degree of freedom so it could be aimed. And because the visuals had so many parameters, the controls had to be intuitive and fun to play with — built from components we could get within a six-week timeline.</p>
       </section>
       <section id="process" data-nav="Process">
         <h2>Process</h2>
@@ -45,7 +45,7 @@
         <div class="decision">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">We explored transforming forms through sketches, a cardboard prototype, and a first 3D-printed prototype, then settling on two asymmetrical halves. One half is curved, inviting the user to rotate the camera; the other is a near-rectangular module that holds the control panel, with the slant providing critical directionality for the user to situate themselves. The volume of the electronics we planned to use influenced much of the final size, though we aimed to keep it concise and compact.</p>
+          <p class="body-text">We explored transforming forms through sketches, a cardboard prototype, and a first 3D-printed prototype before settling on two asymmetrical halves. One half is curved, inviting the user to rotate the camera; the other is a near-rectangular module holding the control panel, whose slant gives the user a clear sense of where to stand. The volume of the electronics drove much of the final size, though we worked to keep it compact.</p>
           </div>
         </div>
 
@@ -53,9 +53,8 @@
         <div class="decision decision--flip">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">Our team desired a high-quality finish that we felt wasn't attainable through a FDM printed alpha prototype. We dreamt of a seamless aluminum facade, but the challenge of matching the continuous curves on our form factor nearly ruled it out. To avoid abandoning the the target form factor and/or material, I designed custom 3D-printed stamping jigs that worked with the clamps we already had in-house, using the sheet metal springback equation* to drive the jig geometry so the aluminum would follow exactly along the intended curve.</p>
-          <p class="equation">R_i / R_f = 4(R_i/t × Y/E)³ − 3(R_i/t × Y/E) + 1</p>
-          <p class="footnote">*springback equation used</p>
+          <p class="body-text">We wanted a finish we didn't think an FDM-printed prototype could deliver: a seamless aluminum facade. Matching the continuous curves of our form nearly ruled it out. Rather than give up the form or the material, I designed custom 3D-printed stamping jigs that worked with clamps we already had in-house, using the sheet metal springback equation to set the jig geometry so the aluminum would settle exactly onto the intended curve.</p>
+          <figure class="eq"><figcaption class="eq__label">Springback</figcaption><div class="eq__math">R<sub>i</sub>/R<sub>f</sub> = 4(R<sub>i</sub>Y/Et)³ − 3(R<sub>i</sub>Y/Et) + 1</div><dl class="eq__vars"><dt><var>R<sub>i</sub></var>, <var>R<sub>f</sub></var></dt><dd>the bend radii before and after release</dd><dt><var>Y</var></dt><dd>yield strength</dd><dt><var>E</var></dt><dd>elastic modulus</dd><dt><var>t</var></dt><dd>sheet thickness</dd></dl></figure>
           </div>
         </div>
 
@@ -63,25 +62,41 @@
         <div class="decision">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">Because the class heavily encouraged Wizard-of-Oz prototyping to focus on physical object design, we used a laptop running TouchDesigner to generate the visuals, and I built the hardware that fed it: an Arduino Micro streaming serial data into TouchDesigner, with a protoboard connecting the encoders, buttons, switches, microphone, and camera. The hardest constraints were housing volume, which shaped the device's overall form, and building an intuitive, fun interaction from available components — which led us to design custom button, knob, and switch caps, using Synthia's signature pop of orange where appropriate.</p>
+          <p class="body-text">Because the class encouraged Wizard-of-Oz prototyping to keep the focus on physical object design, a laptop running TouchDesigner generated the visuals, and I built the hardware that fed it: an Arduino Micro streaming serial data into TouchDesigner, with a protoboard connecting the encoders, buttons, switches, microphone, and camera. The hardest constraints were housing volume, which shaped the device's overall form, and building an intuitive, fun interaction from available components — which led us to design custom button, knob, and switch caps, with Synthia's signature pop of orange where it counted.</p>
           </div>
         </div>
 
-        <h3>Pitch magnet-bearing assembly</h3>
+        <h3>Pitch magnet–bearing assembly</h3>
         <div class="decision decision--flip">
           <figure class="media"></figure>
           <div class="decision__text">
-          <p class="body-text">We wanted the camera to turn smoothly, but time was short, so I leaned into the constraint and used a simple bearing assembly. I 3D-printed the tube shaft in its most favorable print orientation for strength, while keeping it hollow so wiring could pass through and avoid interfering with the shaft in rotation. We found that the rotation of the camera half was smooth, but keeping it at the desire angle was difficult -- likely due to weight imbalance from the irregular geometry and excaberated by the tension from the cables running inside. To resolve this, I imbedded magnets within the immediately adjacent walls of the camera- and control-halves. This resolved the issue, providing the user with 8 distinct angles to use, as well as providing tactile feedback into the rotation of the camera.</p>
+          <p class="body-text">We wanted the camera to turn smoothly, but time was short, so I leaned into the constraint with a simple bearing assembly. I 3D-printed the tube shaft in its strongest print orientation and kept it hollow, so wiring could pass through without interfering with rotation. The camera half turned smoothly but wouldn't hold its angle — likely from the weight imbalance of its irregular geometry, worsened by tension from the cables inside. To fix this, I embedded magnets in the adjacent walls of the camera and control halves, giving the user eight distinct angles and tactile feedback as the camera rotates.</p>
           </div>
         </div>
       </section>
       <section id="improvement" data-nav="Room for Improvement">
         <h2>Room for Improvement</h2>
-          <p class="body-text">Synthia was a huge hit at the final class exhibition, creating stunning visuals and providing tons of fun and wonder to all who used. However -- given more time -- there were a few design choices that I could have made to make the design more rigorously engineered. Though I chose to print the tube-shaft since there wasn't time or budget to procure a metal rod, I would opt against doing so in most other situations. I was incredibly proud of thinking of and designing the sheet metal stamps, but thinking about a more gradual release mechanism would definitely improve user experience. Electrnoics housing could have been more concise to improve assembly, although I will concede it was my first experience designing electronics housing.</p>
+          <p class="body-text">Given more time, I would have made a few choices more rigorously. I printed the tube shaft because there wasn't time or budget to source a metal rod, but I'd avoid that in most other situations. I'm proud of the sheet metal stamps, but a more gradual release mechanism on the jigs would make them easier to use. And the electronics housing could have been more compact for easier assembly — though, in fairness, it was my first time designing one.</p>
+      </section>
+      <section id="outcome" data-nav="Outcome">
+        <h2>Outcome</h2>
+        
+        <!-- Gallery: put <img> tags inside the figures; rows of 3 / 2 / 4 -->
+        <div class="gallery">
+          <div class="gallery__row gallery__row--3">
+            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
+          </div>
+          <div class="gallery__row gallery__row--2">
+            <figure class="media"></figure><figure class="media"></figure>
+          </div>
+          <div class="gallery__row gallery__row--4">
+            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
+          </div>
+        </div>
       </section>
       <section id="reflection" data-nav="Reflection">
         <h2>Reflection</h2>
-          <p class="body-text">Creating Synthia was an invaluable experience that introduced me to many valuable skills, such as hardware integration and sheet metal forming. However, it was most valuable as my first time working on a truly multi-disciplinary team. If I had to sum up what I took from it: being a good teammate on an interdisciplinary project means being reliable enough that people can build on what you own, and being humble enough to actually rely on their expertise where yours runs out.</p>
+          <p class="body-text">Synthia introduced me to valuable skills like hardware integration and sheet metal forming, but its biggest lesson came from being my first truly multidisciplinary team. If I had to sum it up: being a good teammate on an interdisciplinary project means being reliable enough that people can build on what you own, and humble enough to rely on their expertise where yours runs out.</p>
       </section>
     </main>
   </div>
