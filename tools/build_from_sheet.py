@@ -88,6 +88,10 @@ EXTRA_EQUATIONS = {
         "Contact pressure from the interference fit: P = (E / r_i)·δ·[(r_o^2 − r_i^2)(r_i^2 − r_e^2)] / [2r_i^2(r_o^2 − r_e^2)] ≈ 139.6 psi nominal / 46.5 psi minimum, where E = 217,557 psi is the elastic modulus, δ = 0.0075 in nominal / 0.0025 in minimum is the interference, r_o = 1.18 in is the outer radius, r_i = 1.08 in is the interface radius, and r_e = 0.98 in is the inner radius.",
         "Holding force: F_hold = μ·P·2π·r_i·L ≈ 37.9 lb nominal (SF ≈ 1.41) / 12.6 lb minimum (SF ≈ 0.47), where μ = 0.2 is the friction coefficient, and L = 0.200 in is the length of engagement.",
     ],
+    ("pool-boiling", "Sizing the bubble generation"): [
+        "Critical gas flow rate per hole (Oguz & Prosperetti, 1993): Q_c = π·(16 / 3g^2)^(1/6)·(σ·r_n / ρ)^(5/6) ≈ 18–125 mL/min, where r_n = 0.1–1 mm is the needle (hole) radius, σ = 0.0679 N/m is the surface tension of water at 50 °C, ρ = 988 kg/m³ is its density, and g is gravitational acceleration.",
+        "Bubble radius at detachment (buoyancy vs. surface tension): R_b = (3σ·r_n / 2ρg)^(1/3) ≈ 1.0–2.2 mm, where r_n = 0.1–1 mm is the needle (hole) radius, σ is the surface tension, ρ is the water density, and g is gravitational acceleration.",
+    ],
     ("layer-by-layer", "Automating the analysis"): [
         "Flexural modulus (three-point bending): E = L^3·m / 48I, where L = 120 mm is the support span, m is the slope of the linear regime of the load–displacement curve, and I is the beam's measured moment of inertia.",
     ],

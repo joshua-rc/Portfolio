@@ -29,6 +29,7 @@
         <div class="project__summary">
           <p class="summary-text">I designed and fabricated an experiment vessel to investigate how bubble agitation affects the heat transfer coefficient of water. Boiling is mimicked with a perforated heater and gas input, and the vessel is built to be filmed by infrared and high-speed cameras at the same time. The project was selected for the MIT Energy Initiative's 2024 Summer Cohort, and I presented my summer progress at the MITEI Annual Research Conference.</p>
         </div>
+        
       </section>
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
@@ -43,23 +44,25 @@
 
         <h3>Adapting the previous facility</h3>
         <div class="decision">
-          <figure class="media"></figure>
+          <figure class="media media--contain" style="aspect-ratio:0.983"><img src="../assets/img/projects/pool-boiling/d1-system-diagram.png" alt="Cross-section of the pool boiling facility: gas intake below a perforated heater, bubbles rising through the pool" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">The lab's previous pool boiling facility could already record with ultra-high-speed and infrared cameras, but it couldn't generate bubbles. The challenge was adding bubble generation without giving up either recording capability.</p>
           </div>
         </div>
 
         <h3>Sizing the bubble generation</h3>
-        <div class="decision decision--flip">
-          <figure class="media"></figure>
+        <div class="decision-stack">
           <div class="decision__text">
           <p class="body-text">I wrote two MATLAB scripts to size the system. The first found the critical gas flow rate — the flow needed for bubbles to nucleate in a way that mimics boiling. The second modeled how needle radius affects bubble radius; because the relationship was fairly linear, I let manufacturing feasibility set the needle radius.</p>
+          <figure class="eq"><figcaption class="eq__label">Critical gas flow rate per hole (Oguz &amp; Prosperetti, 1993)</figcaption><div class="eq__math">Q<sub>c</sub> = π·(16 / 3g<sup>2</sup>)<sup>1/6</sup>·(σ·r<sub>n</sub> / ρ)<sup>5/6</sup> ≈ 18–125 mL/min</div><dl class="eq__vars"><dt><var>r<sub>n</sub></var></dt><dd>the needle (hole) radius <span class="eq__val">(0.1–1 mm)</span></dd><dt><var>σ</var></dt><dd>the surface tension of water at 50 °C <span class="eq__val">(0.0679 N/m)</span></dd><dt><var>ρ</var></dt><dd>its density <span class="eq__val">(988 kg/m³)</span></dd><dt><var>g</var></dt><dd>gravitational acceleration</dd></dl></figure>
+          <figure class="eq"><figcaption class="eq__label">Bubble radius at detachment (buoyancy vs. surface tension)</figcaption><div class="eq__math">R<sub>b</sub> = (3σ·r<sub>n</sub> / 2ρg)<sup>1/3</sup> ≈ 1.0–2.2 mm</div><dl class="eq__vars"><dt><var>r<sub>n</sub></var></dt><dd>the needle (hole) radius <span class="eq__val">(0.1–1 mm)</span></dd><dt><var>σ</var></dt><dd>the surface tension</dd><dt><var>ρ</var></dt><dd>the water density</dd><dt><var>g</var></dt><dd>gravitational acceleration</dd></dl></figure>
           </div>
+          <div class="media-rows"><div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--contain" style="flex:1.455 1 0;aspect-ratio:1.455;--ar:1.455"><img src="../assets/img/projects/pool-boiling/d2_a-bubble-radius.png" alt="Bubble radius at detachment vs. needle radius at 27, 62, and 100 °C" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.455 1 0;aspect-ratio:1.455;--ar:1.455"><img src="../assets/img/projects/pool-boiling/d2_b-flow-rate.png" alt="Critical gas flow rate per hole vs. needle radius at 50 °C" loading="lazy"></figure></div></div>
         </div>
 
         <h3>Gas compartment and heater</h3>
         <div class="decision">
-          <figure class="media"></figure>
+          <figure class="media media--contain" style="aspect-ratio:1.705"><img src="../assets/img/projects/pool-boiling/d3-bottom-plate.png" alt="CAD of the bottom plate with the NPT gas nozzle" loading="lazy"></figure>
           <div class="decision__text">
           <p class="body-text">Gas enters the compartment through an NPT-threaded nozzle, whose tapered thread seals with minimal leakage. A sapphire bottom plate closes the compartment, and the heater is perforated sapphire, so gas can pass through it while infrared cameras still see through. O-rings and gasket sealant keep water and gas separated throughout the assembly.</p>
           </div>
@@ -73,15 +76,7 @@
         <h2>Outcome</h2>
         <ul class="outcome-list"><li>Selected for the MITEI Summer Cohort 2024</li><li>Flash talk and poster at the MITEI Annual Research Conference</li><li>Captured high-speed footage of bubble formation</li></ul>
         <div class="gallery">
-          <div class="gallery__row gallery__row--3">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--2">
-            <figure class="media"></figure><figure class="media"></figure>
-          </div>
-          <div class="gallery__row gallery__row--4">
-            <figure class="media"></figure><figure class="media"></figure><figure class="media"></figure><figure class="media"></figure>
-          </div>
+          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--contain" style="flex:1.531 1 0;aspect-ratio:1.531"><img src="../assets/img/projects/pool-boiling/g1-gas-compartment.png" alt="CAD of the gas compartment" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.569 1 0;aspect-ratio:1.569"><img src="../assets/img/projects/pool-boiling/g2-pool-section.png" alt="CAD of the heater cartridge" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.486 1 0;aspect-ratio:1.486"><img src="../assets/img/projects/pool-boiling/g3-pool-frame.png" alt="CAD of the pool section" loading="lazy"></figure></div>
         </div>
       </section>
       <section id="reflection" data-nav="Reflection">

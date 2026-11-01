@@ -581,5 +581,61 @@
         "alt": ""
       }
     ]
+  },
+  "pool-boiling": {
+    "_note": "Images from the MITEI poster (Summer 2024). Plots redrawn from the MATLAB scripts with the surface-tension fix.",
+    "decisions": {
+      "1": {
+        "src": "assets/img/projects/pool-boiling/d1-system-diagram.png",
+        "fit": "contain",
+        "ar": 0.983,
+        "alt": "Cross-section of the pool boiling facility: gas intake below a perforated heater, bubbles rising through the pool"
+      },
+      "2": {
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/pool-boiling/d2_a-bubble-radius.png",
+              "fit": "contain",
+              "ar": 1.455,
+              "alt": "Bubble radius at detachment vs. needle radius at 27, 62, and 100 °C"
+            },
+            {
+              "src": "assets/img/projects/pool-boiling/d2_b-flow-rate.png",
+              "fit": "contain",
+              "ar": 1.455,
+              "alt": "Critical gas flow rate per hole vs. needle radius at 50 °C"
+            }
+          ]
+        ]
+      },
+      "3": {
+        "src": "assets/img/projects/pool-boiling/d3-bottom-plate.png",
+        "fit": "contain",
+        "ar": 1.705,
+        "alt": "CAD of the bottom plate with the NPT gas nozzle"
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/projects/pool-boiling/g1-gas-compartment.png",
+        "fit": "contain",
+        "ar": 1.531,
+        "alt": "CAD of the gas compartment"
+      },
+      {
+        "src": "assets/img/projects/pool-boiling/g2-pool-section.png",
+        "fit": "contain",
+        "ar": 1.569,
+        "alt": "CAD of the heater cartridge"
+      },
+      {
+        "src": "assets/img/projects/pool-boiling/g3-pool-frame.png",
+        "fit": "contain",
+        "ar": 1.486,
+        "alt": "CAD of the pool section"
+      }
+    ]
   }
 }
