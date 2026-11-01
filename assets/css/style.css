@@ -490,7 +490,6 @@ details.code pre {
 .eq {
   margin: calc(var(--s) * 30) 0 0;
   background: var(--panel);
-  border-left: calc(var(--s) * 6) solid var(--accent);
   border-radius: calc(var(--radius) / 2);
   padding: calc(var(--s) * 24) calc(var(--s) * 30);
   color: var(--accent);
@@ -522,6 +521,16 @@ details.code pre {
   padding: 0 .3em;
 }
 .eq__val { opacity: .75; white-space: nowrap; }
+/* Stacked fractions in equation boxes */
+.frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 .2em; line-height: 1.25; }
+.frac__num { padding: 0 .25em .12em; border-bottom: max(1px, .045em) solid currentColor; }
+.frac__den { padding: .12em .25em 0; }
+.frac .frac { font-size: .82em; }
+.fence { display: inline-block; font-size: 1.9em; line-height: 1; vertical-align: middle; font-weight: 300; transform: translateY(-.06em); }
+.frac .fence { font-size: 1.5em; }
+.eq__math { line-height: 1.6; }
+.eq__res { display: inline-block; }
+
 .eq + .eq { margin-top: calc(var(--s) * 18); }
 
 
@@ -554,6 +563,10 @@ details.code pre {
 .section-split { display: grid; column-gap: calc(var(--s) * 95); align-items: start; }
 .section-split > section { min-width: 0; }
 .section-split { margin-top: calc(var(--s) * 100); }
+.media-groups { display: flex; gap: calc(var(--s) * 40); }
+.media-group { min-width: 0; }
+.media-group__label { font-size: calc(var(--s) * 26); color: var(--accent); margin: 0 0 calc(var(--s) * 12); }
+.media-note { font-size: calc(var(--s) * 22); color: var(--accent); opacity: .8; margin-top: calc(var(--s) * 12); }
 .project .section-split > section > h2 { margin-top: 0; }
 .decision-stack > .decision__text { max-width: none; }
 .media-pair { display: grid; grid-template-columns: 853fr 872fr; gap: calc(var(--s) * 20); align-items: center; }
@@ -574,6 +587,8 @@ details.code pre {
   .media-pair__eq { margin-top: 12px; }
   .decision-tall > .media { max-width: 60%; margin: 0 auto 16px; }
   .media-rows { gap: 8px; }
+  .media-groups { flex-direction: column; gap: 14px; }
+  .media-group__label { font-size: 13px; margin-bottom: 6px; }
   .media-rows .gallery__row--flex { flex-wrap: nowrap; gap: 6px; }
   .media-rows .gallery__row--flex .gallery__item { flex: var(--ar) 1 0 !important; }
   :root { --s: 0.5px; }
@@ -638,7 +653,7 @@ details.code pre {
   .project h3 { font-size: 20px; line-height: 28px; margin-top: 24px; }
   .body-text, .project section > p, .summary-text, .body-list, .outcome-list { font-size: 15px; line-height: 24px; }
   .equation { font-size: 13px; line-height: 22px; }
-  .eq { padding: 12px 14px; border-left-width: 3px; }
+  .eq { padding: 12px 14px; }
   .eq__label { font-size: 11px; }
   .eq__math { font-size: 16px; }
   .eq__vars { font-size: 12px; column-gap: 10px; }

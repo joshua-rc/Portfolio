@@ -85,12 +85,17 @@ EXTRA_EQUATIONS = {
     ("yubbayubba", "Interference fit analysis and validation"): [
         "Impact speed from the drop test: v_impact = √(2·g·h_drop) ≈ 16.05 ft/s, where g = 32.2 ft/s² is gravitational acceleration, and h_drop = 4 ft is the drop height.",
         "Force the joint must survive: F_escape = m·v_impact / t_stop ≈ 26.96 lb, where m = 0.00336 slug is the mass of the yo-yo assembly, and t_stop = 0.002 s is the stopping time on impact.",
-        "Contact pressure from the interference fit: P = (E / r_i)·δ·[(r_o^2 − r_i^2)(r_i^2 − r_e^2)] / [2r_i^2(r_o^2 − r_e^2)] ≈ 139.6 psi nominal / 46.5 psi minimum, where E = 217,557 psi is the elastic modulus, δ = 0.0075 in nominal / 0.0025 in minimum is the interference, r_o = 1.18 in is the outer radius, r_i = 1.08 in is the interface radius, and r_e = 0.98 in is the inner radius.",
+        "Contact pressure from the interference fit: P = E·δ·(r_o^2 − r_i^2)(r_i^2 − r_e^2) / [2r_i^3(r_o^2 − r_e^2)] ≈ 139.6 psi nominal / 46.5 psi minimum, where E = 217,557 psi is the elastic modulus, δ = 0.0075 in nominal / 0.0025 in minimum is the interference, r_o = 1.18 in is the outer radius, r_i = 1.08 in is the interface radius, and r_e = 0.98 in is the inner radius.",
         "Holding force: F_hold = μ·P·2π·r_i·L ≈ 37.9 lb nominal (SF ≈ 1.41) / 12.6 lb minimum (SF ≈ 0.47), where μ = 0.2 is the friction coefficient, and L = 0.200 in is the length of engagement.",
     ],
     ("pool-boiling", "Sizing the bubble generation"): [
         "Critical gas flow rate per hole (Oguz & Prosperetti, 1993): Q_c = π·(16 / 3g^2)^(1/6)·(σ·r_n / ρ)^(5/6) ≈ 18–125 mL/min, where r_n = 0.1–1 mm is the needle (hole) radius, σ = 0.0679 N/m is the surface tension of water at 50 °C, ρ = 988 kg/m³ is its density, and g is gravitational acceleration.",
         "Bubble radius at detachment (buoyancy vs. surface tension): R_b = (3σ·r_n / 2ρg)^(1/3) ≈ 1.0–2.2 mm, where r_n = 0.1–1 mm is the needle (hole) radius, σ is the surface tension, ρ is the water density, and g is gravitational acceleration.",
+    ],
+    ("cantilevered-deltaxy", "Z-axis linkage stiffness"): [
+        "Bearing radial compliance: c_r = δ / C_0 ≈ 0.020 µm/N, where δ = 8.2 µm is the bearing's deflection at its static load rating, taken as 0.5% of the ball diameter (rule of thumb), d_b = 1.64 mm is the ball diameter, and C_0 = 400 N is the static load rating.",
+        "Pitch compliance of one bearing set: c_θ = 2c_r / S^2, where S = 70.6–102.6 mm is the span between the set's two bearings.",
+        "Compliance at the toolhead: c_tool = L^2·(c_θ1 + c_θ2 + c_θ3) ≈ 0.90 µm/N vs. 2.42 µm/N originally, where L = 210 mm (linkage in front) vs. 323 mm (linkage in back) is the lever arm to the toolhead, and c_θ1–c_θ3 are the top, middle, and lower bearing sets.",
     ],
     ("layer-by-layer", "Automating the analysis"): [
         "Flexural modulus (three-point bending): E = L^3·m / 48I, where L = 120 mm is the support span, m is the slope of the linear regime of the load–displacement curve, and I is the beam's measured moment of inertia.",
@@ -107,8 +112,120 @@ def math_html(expr):
     t = re.sub("[" + "".join(sub) + "]+", lambda m: "<sub>" + "".join(sub[c] for c in m.group(0)) + "</sub>", t)
     t = re.sub(r"\^\(([^)]+)\)", r"<sup>\1</sup>", t)
     t = re.sub(r"\^([0-9A-Za-z]+)", r"<sup>\1</sup>", t)
-    t = re.sub(r"(?<=[A-Za-zΣ])_([A-Za-z0-9]+)", r"<sub>\1</sub>", t)
+    t = re.sub(r"(?<=[A-Za-zΣ])_([A-Za-z0-9α-ωΑ-Ω]+)", r"<sub>\1</sub>", t)
     return t
+
+
+# ---------- Stacked fractions for equation boxes ----------
+OPEN, CLOSE = "([", ")]"
+
+
+def _leaf(s):
+    """math_html, but keep the spaces around the piece (math_html strips them)."""
+    if not s.strip():
+        return s
+    lead = " " if s[0] == " " else ""
+    trail = " " if s[-1] == " " else ""
+    return lead + math_html(s) + trail
+
+
+def _top_level(s):
+    """Yield (index, char) for characters not inside ( ) or [ ] groups."""
+    depth = 0
+    for i, ch in enumerate(s):
+        if ch in OPEN:
+            depth += 1
+        elif ch in CLOSE:
+            depth -= 1
+        elif depth == 0:
+            yield i, ch
+
+
+def _split_top(s, seps):
+    """Split on any of the spaced operators in seps (e.g. ' = '), only at the top level. Keeps the operators."""
+    parts, last, i = [], 0, 0
+    idx = {i for i, _ in _top_level(s)}
+    while i < len(s):
+        hit = next((sep for sep in seps if s.startswith(sep, i) and all(j in idx for j in range(i, i + len(sep)))), None)
+        if hit:
+            parts.append(s[last:i]); parts.append(hit); i += len(hit); last = i
+        else:
+            i += 1
+    parts.append(s[last:])
+    return parts
+
+
+def _strip_wrap(s):
+    """'(a + b)' -> 'a + b' when one pair of brackets wraps the whole string."""
+    s = s.strip()
+    if len(s) > 1 and s[0] in OPEN:
+        depth = 0
+        for i, ch in enumerate(s):
+            depth += ch in OPEN
+            depth -= ch in CLOSE
+            if depth == 0:
+                return s[1:-1].strip() if i == len(s) - 1 else s
+    return s
+
+
+def _frac(num, den):
+    return (f'<span class="frac"><span class="frac__num">{_expr(_strip_wrap(num))}</span>'
+            f'<span class="frac__den">{_expr(_strip_wrap(den))}</span></span>')
+
+
+def _seq(s):
+    """A term with no top-level fraction: typeset bracket groups that contain a fraction with tall fences."""
+    out, buf, i = [], "", 0
+    while i < len(s):
+        ch = s[i]
+        if ch in OPEN and not (i > 0 and s[i - 1] == "^"):
+            depth, j = 0, i
+            while j < len(s):
+                depth += s[j] in OPEN
+                depth -= s[j] in CLOSE
+                if depth == 0:
+                    break
+                j += 1
+            inner = s[i + 1:j]
+            if any(c == "/" for _, c in _top_level(inner)):
+                out.append(_leaf(buf)) if buf else None
+                buf = ""
+                out.append(f'<span class="fence">{ch}</span>{_expr(inner)}<span class="fence">{s[j]}</span>')
+                i = j + 1
+                continue
+            buf += s[i:j + 1]
+            i = j + 1
+            continue
+        buf += ch
+        i += 1
+    if buf:
+        out.append(_leaf(buf))
+    return "".join(out)
+
+
+def _term(t):
+    slash = next((i for i, c in _top_level(t) if c == "/"), None)
+    if slash is None:
+        return _seq(t)
+    return _frac(t[:slash], t[slash + 1:])
+
+
+def _expr(s):
+    parts = _split_top(s, [" + ", " − ", " - "])
+    return "".join(_leaf(p) if p in (" + ", " − ", " - ") else _term(p.strip()) for p in parts)
+
+
+def eq_math_html(expr):
+    """Equation-box math with stacked fractions. Anything after the first '≈' (a result, which may
+    contain 'nominal / minimum' or units like mL/min) stays on one line."""
+    expr = expr.strip()
+    sym, approx = expr, ""
+    cut = next((i for i, c in _top_level(expr) if expr.startswith(" ≈ ", i)), None)
+    if cut is not None:
+        sym, approx = expr[:cut], expr[cut:]
+    sides = _split_top(sym, [" = "])
+    html_ = "".join(_leaf(p) if p == " = " else _expr(p.strip()) for p in sides)
+    return html_ + (f' <span class="eq__res">{math_html(approx)}</span>' if approx else "")
 
 
 def split_where(where):
@@ -144,7 +261,7 @@ def render_equation(line):
             defs.append(f"<dt>{vars_html}</dt><dd>{esc(meaning)}{extra}</dd>")
         rows = f'<dl class="eq__vars">{"".join(defs)}</dl>'
     return (f'<figure class="eq"><figcaption class="eq__label">{esc(m.group("label"))}</figcaption>'
-            f'<div class="eq__math">{math_html(m.group("eq"))}</div>{rows}</figure>')
+            f'<div class="eq__math">{eq_math_html(m.group("eq"))}</div>{rows}</figure>')
 
 
 def render_body(text, para_class="body-text", split_code=False):
@@ -307,6 +424,15 @@ def media_rows(rows, eq_html=""):
     """Rows of media for custom layouts. A row containing {"eq": true} becomes an image beside the equation box(es)."""
     out = []
     for row in rows:
+        if isinstance(row, dict) and row.get("groups"):
+            # labeled groups side by side, e.g. 1. Original / 2. Offset plane / 3. No lead-in
+            gs = []
+            for g in row["groups"]:
+                w = sum(item_ar(it) for it in g["items"])
+                gs.append(f'<div class="media-group" style="flex:{w:.3f} 1 0">'
+                          f'<p class="media-group__label">{inline(g.get("label", ""))}</p>{media_row(g["items"])}</div>')
+            out.append('<div class="media-groups">' + "".join(gs) + "</div>")
+            continue
         if any(it.get("eq") for it in row):
             pics = [it for it in row if not it.get("eq")]
             left = "".join(media_el(it, "media media--inset", f' style="aspect-ratio:{item_ar(it):.3f}"') for it in pics)
@@ -319,7 +445,7 @@ def media_rows(rows, eq_html=""):
 def custom_decision(cfg, title, body, code_html):
     """Per-page decision layouts set in images.json ("layout": "stack" | "tall")."""
     eqs = "".join(EQ_FIG_RE.findall(body))
-    uses_eq = any(it.get("eq") for row in cfg.get("rows", []) for it in row)
+    uses_eq = any(it.get("eq") for row in cfg.get("rows", []) if isinstance(row, list) for it in row)
     if uses_eq:
         body = EQ_FIG_RE.sub("", body)
     code = (chr(10) + "        " + code_html) if code_html else ""
@@ -356,6 +482,7 @@ def page(slug, d):
           {render_body(d["overview"], "summary-text")}
         </div>
         {media_rows(IMAGES[slug]["overview_rows"]) if IMAGES.get(slug, {}).get("overview_rows") else ""}
+        {f'<p class="media-note">{esc(IMAGES[slug]["overview_note"])}</p>' if IMAGES.get(slug, {}).get("overview_note") else ""}
       </section>''')
 
     pair = []

@@ -497,87 +497,259 @@
     ]
   },
   "yubbayubba": {
+    "_note": "Ordered to follow the 2.008 final presentation slides.",
+    "overview_rows": [
+      [
+        {
+          "src": "assets/img/projects/yubbayubba/overview1.jpg",
+          "ar": 1.241,
+          "fit": "contain",
+          "alt": "Exploded render of the yo-yo"
+        },
+        {
+          "src": "assets/img/projects/yubbayubba/overview2.jpg",
+          "ar": 2.367,
+          "fit": "contain",
+          "alt": "Three colorways"
+        }
+      ]
+    ],
     "decisions": {
       "1": {
-        "src": "assets/img/projects/yubbayubba/d1.png",
-        "fit": "contain",
-        "ar": 1.752,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/yubbayubba/d1_a.png",
+              "ar": 1.614,
+              "fit": "contain",
+              "alt": "Body part CAD"
+            },
+            {
+              "src": "assets/img/projects/yubbayubba/d1_b.png",
+              "ar": 1.512,
+              "fit": "contain",
+              "alt": "Ring part CAD"
+            },
+            {
+              "src": "assets/img/projects/yubbayubba/d1_c.png",
+              "ar": 2.795,
+              "fit": "contain",
+              "alt": "Interference fit: 0.200 in length of engagement, 0.030 ± 0.005 in interference"
+            }
+          ],
+          [
+            {
+              "src": "assets/img/projects/yubbayubba/d1_d.png",
+              "ar": 1.724,
+              "fit": "contain",
+              "alt": "Ring outer diameter measurements"
+            },
+            {
+              "src": "assets/img/projects/yubbayubba/d1_e.png",
+              "ar": 1.724,
+              "fit": "contain",
+              "alt": "Body inner diameter measurements"
+            },
+            {
+              "src": "assets/img/projects/yubbayubba/d1_f.png",
+              "ar": 1.752,
+              "fit": "contain",
+              "alt": "Interference measurements"
+            }
+          ]
+        ]
       },
       "2": {
-        "src": "assets/img/projects/yubbayubba/d2.png",
-        "fit": "contain",
-        "ar": 1.0,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          {
+            "groups": [
+              {
+                "label": "Ring mold: cavity and core",
+                "items": [
+                  {
+                    "src": "assets/img/projects/yubbayubba/d2_a.png",
+                    "ar": 1.0,
+                    "fit": "contain",
+                    "alt": "Ring mold cavity"
+                  },
+                  {
+                    "src": "assets/img/projects/yubbayubba/d2_b.png",
+                    "ar": 1.001,
+                    "fit": "contain",
+                    "alt": "Ring mold core"
+                  }
+                ]
+              },
+              {
+                "label": "Body mold: core and cavity (a provided blank)",
+                "items": [
+                  {
+                    "src": "assets/img/projects/yubbayubba/d2_c.png",
+                    "ar": 0.999,
+                    "fit": "contain",
+                    "alt": "Body mold core"
+                  },
+                  {
+                    "src": "assets/img/projects/yubbayubba/d2_d.png",
+                    "ar": 1.0,
+                    "fit": "contain",
+                    "alt": "Body mold cavity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       "3": {
-        "src": "assets/img/projects/yubbayubba/d3.mp4",
-        "fit": "contain",
-        "ar": 1.052,
-        "alt": "",
-        "poster": "assets/img/projects/yubbayubba/d3-poster.jpg"
+        "layout": "stack",
+        "rows": [
+          {
+            "groups": [
+              {
+                "label": "1. Original toolpath",
+                "items": [
+                  {
+                    "src": "assets/img/projects/yubbayubba/d3_a.jpg",
+                    "ar": 0.75,
+                    "fit": "cover",
+                    "alt": "Groove left in the ring mold"
+                  },
+                  {
+                    "src": "assets/img/projects/yubbayubba/d3_b.jpg",
+                    "ar": 1.005,
+                    "fit": "cover",
+                    "alt": "Ridged surface defect on a molded ring"
+                  }
+                ]
+              },
+              {
+                "label": "2. Offset plane",
+                "items": [
+                  {
+                    "src": "assets/img/projects/yubbayubba/d3_c.mp4",
+                    "ar": 0.973,
+                    "fit": "contain",
+                    "alt": "Toolpath with a 0.010 in plane offset",
+                    "poster": "assets/img/projects/yubbayubba/d3_c-poster.jpg"
+                  },
+                  {
+                    "src": "assets/img/projects/yubbayubba/d3_d.jpg",
+                    "ar": 1.073,
+                    "fit": "cover",
+                    "alt": "Ring still showing the defect"
+                  }
+                ]
+              },
+              {
+                "label": "3. No lead-in",
+                "items": [
+                  {
+                    "src": "assets/img/projects/yubbayubba/d3_e.mp4",
+                    "ar": 1.052,
+                    "fit": "contain",
+                    "alt": "Toolpath with lead-ins removed",
+                    "poster": "assets/img/projects/yubbayubba/d3_e-poster.jpg"
+                  },
+                  {
+                    "src": "assets/img/projects/yubbayubba/d3_f.jpg",
+                    "ar": 1.071,
+                    "fit": "cover",
+                    "alt": "Clean molded ring"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       "4": {
-        "src": "assets/img/projects/yubbayubba/d4.png",
-        "fit": "contain",
-        "ar": 1.153,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          {
+            "groups": [
+              {
+                "label": "Decal sandwiched between two thermoforms",
+                "items": [
+                  {
+                    "src": "assets/img/projects/yubbayubba/d4_a.png",
+                    "ar": 1.153,
+                    "fit": "contain",
+                    "alt": "Layer stack: thermoform, decal, thermoform"
+                  },
+                  {
+                    "src": "assets/img/projects/yubbayubba/d4_b.jpg",
+                    "ar": 1.0,
+                    "fit": "contain",
+                    "alt": "Yubba Yubba decal"
+                  }
+                ]
+              },
+              {
+                "label": "Sticker alignment guide",
+                "items": [
+                  {
+                    "src": "assets/img/projects/yubbayubba/d4_c.mp4",
+                    "ar": 1.716,
+                    "fit": "contain",
+                    "alt": "Sticker alignment guide",
+                    "poster": "assets/img/projects/yubbayubba/d4_c-poster.jpg"
+                  }
+                ]
+              },
+              {
+                "label": "Top and bottom thermoforms",
+                "items": [
+                  {
+                    "src": "assets/img/projects/yubbayubba/d4_d.jpg",
+                    "ar": 1.358,
+                    "fit": "contain",
+                    "alt": "Top and bottom thermoforms with alignment features"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     "gallery": [
       {
         "src": "assets/img/projects/yubbayubba/g1.jpg",
-        "fit": "cover",
         "ar": 1.777,
+        "fit": "cover",
         "alt": ""
       },
       {
         "src": "assets/img/projects/yubbayubba/g2.jpg",
-        "fit": "cover",
         "ar": 1.777,
+        "fit": "cover",
         "alt": ""
       },
       {
         "src": "assets/img/projects/yubbayubba/g3.jpg",
+        "ar": 1.006,
         "fit": "contain",
-        "ar": 1.241,
-        "alt": ""
+        "alt": "Bubble-gum scented yo-yo string"
       },
       {
         "src": "assets/img/projects/yubbayubba/g4.png",
+        "ar": 0.75,
         "fit": "contain",
-        "ar": 1.95,
-        "alt": ""
+        "alt": "Bubble gum fragrance oil"
       },
       {
-        "src": "assets/img/projects/yubbayubba/g5.mp4",
-        "fit": "contain",
-        "ar": 1.716,
-        "alt": "",
-        "poster": "assets/img/projects/yubbayubba/g5-poster.jpg"
+        "src": "assets/img/projects/yubbayubba/g5.jpg",
+        "ar": 0.75,
+        "fit": "cover",
+        "alt": ""
       },
       {
         "src": "assets/img/projects/yubbayubba/g6.jpg",
-        "fit": "cover",
         "ar": 0.75,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/yubbayubba/g7.jpg",
         "fit": "cover",
-        "ar": 1.005,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/yubbayubba/g8.jpg",
-        "fit": "contain",
-        "ar": 1.006,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/yubbayubba/g9.jpg",
-        "fit": "cover",
-        "ar": 1.777,
         "alt": ""
       }
     ]
@@ -635,6 +807,153 @@
         "fit": "contain",
         "ar": 1.486,
         "alt": "CAD of the pool section"
+      }
+    ]
+  },
+  "cantilevered-deltaxy": {
+    "_note": "Images from photos/cantilevered deltaxy/portfolio images; original file names are in the alt text comments below.",
+    "overview_rows": [
+      [
+        {
+          "src": "assets/img/projects/cantilevered-deltaxy/overview1.jpg",
+          "ar": 1.973,
+          "fit": "contain",
+          "alt": "Diagram of the Cantilevered DeltaXY and the toolhead's range"
+        },
+        {
+          "src": "assets/img/projects/cantilevered-deltaxy/overview2.jpg",
+          "ar": 1.367,
+          "fit": "contain",
+          "alt": "CAD of the FabUnit printer"
+        }
+      ]
+    ],
+    "overview_note": "Diagram and CAD by Ilan Moyer.",
+    "decisions": {
+      "1": {
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d1_a.jpg",
+              "ar": 1.146,
+              "fit": "contain",
+              "alt": "Non-concentric toolhead kinematics diagram and equations"
+            },
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d1_b.jpg",
+              "ar": 1.935,
+              "fit": "contain",
+              "alt": "Python script generating the G-code grid test print"
+            },
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d1_c.jpg",
+              "ar": 0.75,
+              "fit": "cover",
+              "alt": "Grid test print in progress"
+            },
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d1_d.jpg",
+              "ar": 1.005,
+              "fit": "cover",
+              "alt": "Finished grid test print"
+            }
+          ]
+        ]
+      },
+      "2": {
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d2_a.jpg",
+              "ar": 1.032,
+              "fit": "contain",
+              "alt": "CAD of the equally spaced Sarrus linkage"
+            },
+            {
+              "eq": true
+            }
+          ],
+          [
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d2_b.jpg",
+              "ar": 1.006,
+              "fit": "contain",
+              "alt": "CAD of the high-fidelity z-axis"
+            },
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d2_c.jpg",
+              "ar": 1.692,
+              "fit": "contain",
+              "alt": "Bearing compliance spreadsheet"
+            }
+          ]
+        ]
+      },
+      "3": {
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d3_a.jpg",
+              "ar": 0.9,
+              "fit": "cover",
+              "alt": "Low-fidelity prototype linkage with living hinges"
+            },
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d3_b.jpg",
+              "ar": 0.9,
+              "fit": "cover",
+              "alt": "Living-hinge linkage, side view"
+            },
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d3_c.jpg",
+              "ar": 0.9,
+              "fit": "cover",
+              "alt": "Low-fidelity prototype assembled"
+            }
+          ]
+        ]
+      },
+      "4": {
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d4_a.jpg",
+              "ar": 0.75,
+              "fit": "cover",
+              "alt": "Low-fidelity prototype parts laid out around the aluminum extrusion"
+            },
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d4_b.jpg",
+              "ar": 1.333,
+              "fit": "cover",
+              "alt": "Extrusion carriage with NEMA 14 motor"
+            },
+            {
+              "src": "assets/img/projects/cantilevered-deltaxy/d4_c.jpg",
+              "ar": 1.333,
+              "fit": "cover",
+              "alt": "DeltaXY arms on the extrusion frame"
+            }
+          ]
+        ]
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/projects/cantilevered-deltaxy/g1.jpg",
+        "ar": 0.75,
+        "fit": "cover",
+        "alt": "Finished low-fidelity prototype"
+      },
+      {
+        "src": "assets/img/projects/cantilevered-deltaxy/g2.jpg",
+        "ar": 0.971,
+        "fit": "contain",
+        "alt": "Elevation views of multiple machines side by side"
       }
     ]
   }
