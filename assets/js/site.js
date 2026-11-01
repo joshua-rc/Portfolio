@@ -44,21 +44,24 @@
       // The active section is the last one whose heading has passed 20% of the way down the window.
       // At the very bottom of the page the last section wins, so short final sections
       // (Room for Improvement, Reflection) still get highlighted.
-      const setActive = (id) => links.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === "#" + id));
+      const setActive = (ids) => links.forEach((a) => a.classList.toggle("is-active", ids.includes(a.getAttribute("href").slice(1))));
       let clickedId = null;
       const spy = () => {
-        if (clickedId) return setActive(clickedId);
+        if (clickedId) return setActive([clickedId]);
         const line = Math.max(window.innerHeight * 0.2, 90);
         let current = sections[0];
         for (const s of sections) if (s.getBoundingClientRect().top <= line) current = s;
         const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
         if (atBottom) current = sections[sections.length - 1];
-        if (current) setActive(current.id);
+        if (!current) return;
+        // Sections laid out side by side (same top) light up together
+        const top = current.getBoundingClientRect().top;
+        setActive(sections.filter((s) => Math.abs(s.getBoundingClientRect().top - top) < 3).map((s) => s.id));
       };
       // Clicking a link highlights it straight away, even if that section can't scroll to the top
       links.forEach((a) => a.addEventListener("click", () => {
         clickedId = a.getAttribute("href").slice(1);
-        setActive(clickedId);
+        setActive([clickedId]);
       }));
       // ...and stays highlighted until the reader scrolls on their own
       const release = () => { if (clickedId) { clickedId = null; spy(); } };

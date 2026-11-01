@@ -164,103 +164,173 @@
     ]
   },
   "synthia": {
+    "_note": "Layout from Joshua's Figma frame (node 57:5). Rows are justified: items share a height; 'ar' sets each item's shape.",
+    "hero": "assets/img/projects/synthia/hero.jpg",
+    "overview_rows": [
+      [
+        {
+          "src": "assets/img/projects/synthia/overview1.mp4",
+          "poster": "assets/img/projects/synthia/overview1-poster.jpg",
+          "ar": 1.778
+        },
+        {
+          "src": "assets/img/projects/synthia/overview2.jpg",
+          "ar": 1.501
+        },
+        {
+          "src": "assets/img/projects/synthia/overview3.jpg",
+          "ar": 1.501
+        }
+      ],
+      [
+        {
+          "src": "assets/img/projects/synthia/overview4.mp4",
+          "poster": "assets/img/projects/synthia/overview4-poster.jpg",
+          "ar": 1.78
+        },
+        {
+          "src": "assets/img/projects/synthia/overview5.mp4",
+          "poster": "assets/img/projects/synthia/overview5-poster.jpg",
+          "ar": 1.78
+        },
+        {
+          "src": "assets/img/projects/synthia/overview6.mp4",
+          "poster": "assets/img/projects/synthia/overview6-poster.jpg",
+          "ar": 1.78
+        }
+      ]
+    ],
+    "split_context": [
+      528,
+      1123
+    ],
     "decisions": {
       "1": {
-        "src": "assets/img/projects/synthia/d1.jpg",
-        "fit": "cover",
-        "ar": 1.333,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/synthia/d1_a.jpg",
+              "ar": 1.333
+            },
+            {
+              "src": "assets/img/projects/synthia/d1_b.jpg",
+              "ar": 1.333
+            },
+            {
+              "src": "assets/img/projects/synthia/d1_c.jpg",
+              "ar": 1.333
+            }
+          ]
+        ]
       },
       "2": {
-        "src": "assets/img/projects/synthia/d2.mp4",
-        "fit": "cover",
-        "ar": 1.783,
-        "alt": "",
-        "poster": "assets/img/projects/synthia/d2-poster.jpg"
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/synthia/d2_a.jpg",
+              "ar": 1.522
+            },
+            {
+              "eq": true
+            }
+          ],
+          [
+            {
+              "src": "assets/img/projects/synthia/d2_b.mp4",
+              "poster": "assets/img/projects/synthia/d2_b-poster.jpg",
+              "ar": 1.69
+            },
+            {
+              "src": "assets/img/projects/synthia/d2_c.mp4",
+              "poster": "assets/img/projects/synthia/d2_c-poster.jpg",
+              "ar": 1.69
+            },
+            {
+              "src": "assets/img/projects/synthia/d2_d.mp4",
+              "poster": "assets/img/projects/synthia/d2_d-poster.jpg",
+              "ar": 1.69
+            }
+          ]
+        ]
       },
       "3": {
-        "src": "assets/img/projects/synthia/d3.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
+        "layout": "tall",
+        "tall": {
+          "src": "assets/img/projects/synthia/d3_a.mp4",
+          "poster": "assets/img/projects/synthia/d3_a-poster.jpg",
+          "ar": 0.612
+        },
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/synthia/d3_b.mp4",
+              "poster": "assets/img/projects/synthia/d3_b-poster.jpg",
+              "ar": 2.0
+            },
+            {
+              "src": "assets/img/projects/synthia/d3_c.mp4",
+              "poster": "assets/img/projects/synthia/d3_c-poster.jpg",
+              "ar": 2.0
+            }
+          ]
+        ]
       },
       "4": {
         "src": "assets/img/projects/synthia/d4.mp4",
-        "fit": "cover",
-        "ar": 1.782,
-        "alt": "",
-        "poster": "assets/img/projects/synthia/d4-poster.jpg"
+        "poster": "assets/img/projects/synthia/d4-poster.jpg",
+        "ar": 1.6
       }
     },
     "gallery": [
       {
         "src": "assets/img/projects/synthia/g1.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
+        "ar": 1.778
       },
       {
-        "src": "assets/img/projects/synthia/g2.mp4",
-        "fit": "cover",
-        "ar": 1.78,
-        "alt": "",
-        "poster": "assets/img/projects/synthia/g2-poster.jpg"
+        "src": "assets/img/projects/synthia/g2.jpg",
+        "ar": 1.501
       },
       {
-        "src": "assets/img/projects/synthia/g3.mp4",
-        "fit": "cover",
-        "ar": 1.778,
-        "alt": "",
-        "poster": "assets/img/projects/synthia/g3-poster.jpg"
+        "src": "assets/img/projects/synthia/g3.jpg",
+        "ar": 1.501
       },
       {
-        "src": "assets/img/projects/synthia/g4.mp4",
-        "fit": "cover",
-        "ar": 1.777,
-        "alt": "",
-        "poster": "assets/img/projects/synthia/g4-poster.jpg"
+        "src": "assets/img/projects/synthia/g4.jpg",
+        "ar": 1.501
       },
       {
         "src": "assets/img/projects/synthia/g5.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
+        "ar": 1.501
       },
       {
         "src": "assets/img/projects/synthia/g6.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
+        "ar": 1.778
       },
       {
         "src": "assets/img/projects/synthia/g7.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
+        "ar": 0.75
       },
       {
         "src": "assets/img/projects/synthia/g8.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
+        "ar": 1.501
       },
       {
         "src": "assets/img/projects/synthia/g9.jpg",
-        "fit": "cover",
-        "ar": 1.777,
-        "alt": ""
+        "ar": 1.778
       },
       {
-        "src": "assets/img/projects/synthia/g10.png",
-        "fit": "contain",
-        "ar": 2.052,
-        "alt": ""
+        "src": "assets/img/projects/synthia/g10.jpg",
+        "ar": 1.501
       },
       {
-        "src": "assets/img/projects/synthia/g11.png",
-        "fit": "contain",
-        "ar": 2.586,
-        "alt": ""
+        "src": "assets/img/projects/synthia/g11.jpg",
+        "ar": 1.501
+      },
+      {
+        "src": "assets/img/projects/synthia/g12.jpg",
+        "ar": 1.501
       }
     ]
   },

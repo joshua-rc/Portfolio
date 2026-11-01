@@ -284,6 +284,64 @@ def gallery_html(slug):
     return '<div class="gallery">\n          ' + "\n          ".join(out) + "\n        </div>"
 
 
+def item_ar(it):
+    return float(it.get("ar", 1))
+
+
+def media_row(items):
+    """One justified row: images share a height and keep their shape (or the "ar" you give them)."""
+    figs = "".join(media_el(it, "media gallery__item",
+                            f' style="flex:{item_ar(it):.3f} 1 0;aspect-ratio:{item_ar(it):.3f};--ar:{item_ar(it):.3f}"')
+                   for it in items)
+    return f'<div class="gallery__row gallery__row--flex">{figs}</div>'
+
+
+EQ_FIG_RE = re.compile(r'<figure class="eq">.*?</figure>', re.S)
+
+
+def media_rows(rows, eq_html=""):
+    """Rows of media for custom layouts. A row containing {"eq": true} becomes an image beside the equation box(es)."""
+    out = []
+    for row in rows:
+        if any(it.get("eq") for it in row):
+            pics = [it for it in row if not it.get("eq")]
+            left = "".join(media_el(it, "media media--inset", f' style="aspect-ratio:{item_ar(it):.3f}"') for it in pics)
+            out.append(f'<div class="media-pair"><div class="media-pair__pic">{left}</div><div class="media-pair__eq">{eq_html}</div></div>')
+        else:
+            out.append(media_row(row))
+    return '<div class="media-rows">' + "".join(out) + "</div>"
+
+
+def custom_decision(cfg, title, body, code_html):
+    """Per-page decision layouts set in images.json ("layout": "stack" | "tall")."""
+    eqs = "".join(EQ_FIG_RE.findall(body))
+    uses_eq = any(it.get("eq") for row in cfg.get("rows", []) for it in row)
+    if uses_eq:
+        body = EQ_FIG_RE.sub("", body)
+    code = (chr(10) + "        " + code_html) if code_html else ""
+    if cfg["layout"] == "stack":       # text across the top, rows of media underneath
+        return f'''        <h3>{title}</h3>
+        <div class="decision-stack">
+          <div class="decision__text">
+          {body}
+          </div>
+          {media_rows(cfg.get("rows", []), eqs if uses_eq else "")}
+        </div>{code}'''
+    if cfg["layout"] == "tall":        # tall media on the left; text, then a row of media, on the right
+        tall = cfg["tall"]
+        return f'''        <h3>{title}</h3>
+        <div class="decision-tall">
+          {media_el(tall, "media", f' style="aspect-ratio:{item_ar(tall):.3f}"')}
+          <div class="decision-tall__side">
+            <div class="decision__text">
+            {body}
+            </div>
+            {media_rows(cfg.get("rows", []))}
+          </div>
+        </div>{code}'''
+    raise ValueError("unknown layout " + cfg["layout"])
+
+
 def page(slug, d):
     title = d["title"]
     sections = []
@@ -293,22 +351,37 @@ def page(slug, d):
         <div class="project__summary">
           {render_body(d["overview"], "summary-text")}
         </div>
+        {media_rows(IMAGES[slug]["overview_rows"]) if IMAGES.get(slug, {}).get("overview_rows") else ""}
       </section>''')
 
+    pair = []
     for key, sid, nav, heading in [
         ("context", "context", "Context/ Motivation", "Context/Motivation"),
         ("framing", "problem", "Problem Framing", "Problem Framing"),
     ]:
         if d.get(key):
-            sections.append(f'''      <section id="{sid}" data-nav="{nav}">
+            pair.append(f'''      <section id="{sid}" data-nav="{nav}">
         <h2>{heading}</h2>
           {render_body(d[key])}
       </section>''')
+    split = IMAGES.get(slug, {}).get("split_context")   # e.g. [528, 1123]: side by side, column widths from Figma
+    if split and len(pair) == 2:
+        sections.append(f'      <div class="section-split" style="grid-template-columns:{split[0]}fr {split[1]}fr">\n'
+                        + "\n".join(pair) + "\n      </div>")
+    else:
+        sections.extend(pair)
 
     if d["decisions"]:
         blocks = []
         for n, dec in enumerate(d["decisions"]):
             first, _, rest = dec.strip().partition("\n")
+            cfg = (IMAGES.get(slug, {}).get("decisions", {}) or {}).get(str(n + 1)) or {}
+            if cfg.get("layout"):
+                body, code_html = render_body(rest.strip(), split_code=True)
+                extras = [render_equation(x) for x in EXTRA_EQUATIONS.get((slug, first.strip()), [])]
+                body += "".join("\n          " + e for e in extras if e)
+                blocks.append(custom_decision(cfg, inline(first.strip()), body, code_html))
+                continue
             fig = decision_media(slug, n + 1)
             flip = " decision--flip" if n % 2 else ""
             if not fig:
