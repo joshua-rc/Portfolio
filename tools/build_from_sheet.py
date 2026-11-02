@@ -100,6 +100,18 @@ EXTRA_EQUATIONS = {
     ("pearcat", "Diagnosing the gearbox shortfall"): [
         "Torque requirements: T_req = F_req·(D_gear / 2) = (F_gear + m_robot·g·sin θ)·(D_gear / 2), where F_req is the force needed at the gear, F_gear is the force to turn the gear (measured with a force meter), m_robot is the expected robot mass, θ is the ramp angle (the hot air balloon is the θ = 90° case), and D_gear is the gear diameter.",
     ],
+    ("unit-cell-tessellation", "Designing for stiffness"): [
+        "Normalized stiffness: E*/E_s = 362.5 / 1,713 ≈ 0.212, where E* = 362.5 MPa is the tessellation's measured effective modulus, and E_s = 1,713 MPa is the modulus of the base resin.",
+    ],
+    ("unit-cell-tessellation", "Validating with FEA"): [
+        "FEA vs. experiment: (E_FEA − E*) / E* = (370.5 − 362.5) / 362.5 ≈ 2.2%, where E_FEA = 370.5 MPa is the modulus predicted for the full 2×2×2 tessellation, and E* = 362.5 MPa is the measured modulus.",
+    ],
+    ("unit-cell-tessellation", "Testing in situ"): [
+        "Engineering stress: σ = F / L^2, where F is the load measured by the nanoindenter, and L = 167.9 µm is the side of the square footprint.",
+        "Engineering strain: ε = δ / H, where δ is the indenter displacement, and H = 146.09 µm is the sample height.",
+        "Effective modulus: E* = Δσ / Δε ≈ 362.5 MPa, where Δσ / Δε is the slope of the steepest linear fit over any 1% strain window of the loading curve.",
+        "Toughness (area under the loading curve, up to peak stress): W = ∫ σ dε ≈ 6.47 MJ/m³.",
+    ],
     ("layer-by-layer", "Automating the analysis"): [
         "Flexural modulus (three-point bending): E = L^3·m / 48I, where L = 120 mm is the support span, m is the slope of the linear regime of the load–displacement curve, and I is the beam's measured moment of inertia.",
     ],
@@ -396,7 +408,7 @@ def gallery_html(slug):
         </div>"""
     # Fill each row until its images' combined width/height ratio reaches ~3.4, so every
     # row is about the same height; images in a row share one height and keep their shape.
-    TARGET = 3.4
+    TARGET = float(IMAGES.get(slug, {}).get("gallery_target", 3.4))   # lower = taller rows
     rows, row, total = [], [], 0.0
     for it in items:
         row.append(it); total += float(it.get("ar", 1))
@@ -494,8 +506,9 @@ def custom_decision(cfg, title, body, code_html):
                 out += '<div class="decision__text">' + "".join(text_blocks[i] for i in spec["text"] if i < len(text_blocks)) + "</div>"
             if spec.get("rows"):
                 out += media_rows(spec["rows"])
-            if spec.get("eq"):
-                out += '<div class="seg__eq">' + "".join(eq_blocks) + "</div>"
+            if spec.get("eq"):   # true = every equation, or a list of indices to pick some
+                picked = eq_blocks if spec["eq"] is True else [eq_blocks[i] for i in spec["eq"] if i < len(eq_blocks)]
+                out += '<div class="seg__eq">' + "".join(picked) + "</div>"
             return out
         segs = []
         for seg in cfg["segments"]:

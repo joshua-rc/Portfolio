@@ -1,1384 +1,1467 @@
 {
-  "_help": "Images for each project page. Paths are from the site root. 'fit': 'cover' fills the box (photos), 'contain' shows the whole image on white (diagrams, charts). 'ar' is width/height. Decisions are numbered in sheet order; a decision with no image shows its text full width. Videos (.mp4) autoplay muted and loop.",
-  "layer-by-layer": {
-    "decisions": {
-      "1": {
-        "src": "assets/img/projects/layer-by-layer/d1-beams.png",
-        "fit": "contain",
-        "ar": 3.87,
-        "alt": "Wide-flange and rectangular beam geometries"
-      },
-      "2": {
-        "src": "assets/img/projects/layer-by-layer/d2-orientation.png",
-        "fit": "contain",
-        "ar": 2.2,
-        "alt": "Vertical and horizontal print orientations"
-      },
-      "3": {
-        "src": "assets/img/projects/layer-by-layer/d3-flexural-trial.png",
-        "fit": "contain",
-        "ar": 1.0,
-        "alt": "Force-displacement curve from a flexural trial, with the fitted slope"
-      }
-    },
-    "gallery": [
-      {
-        "src": "assets/img/projects/layer-by-layer/g1-poster.jpg",
-        "fit": "contain",
-        "ar": 1.166,
-        "alt": "Research poster: Layer by Layer"
-      },
-      {
-        "src": "assets/img/projects/layer-by-layer/g2-bar-chart.png",
-        "fit": "contain",
-        "ar": 2.0,
-        "alt": "Mean flexural modulus and max force by condition"
-      },
-      {
-        "src": "assets/img/projects/layer-by-layer/g3-modulus-scatter.png",
-        "fit": "contain",
-        "ar": 1.0,
-        "alt": "Flexural modulus vs layer height"
-      },
-      {
-        "src": "assets/img/projects/layer-by-layer/g4-maxforce-scatter.png",
-        "fit": "contain",
-        "ar": 1.0,
-        "alt": "Max force vs layer height"
-      },
-      {
-        "src": "assets/img/projects/layer-by-layer/g5-failure-trial.png",
-        "fit": "contain",
-        "ar": 1.0,
-        "alt": "Force-displacement curve from a failure trial"
-      }
-    ]
+ "_help": "Images for each project page. Paths are from the site root. 'fit': 'cover' fills the box (photos), 'contain' shows the whole image on white (diagrams, charts). 'ar' is width/height. Decisions are numbered in sheet order; a decision with no image shows its text full width. Videos (.mp4) autoplay muted and loop.",
+ "layer-by-layer": {
+  "decisions": {
+   "1": {
+    "src": "assets/img/projects/layer-by-layer/d1-beams.png",
+    "fit": "contain",
+    "ar": 3.87,
+    "alt": "Wide-flange and rectangular beam geometries"
+   },
+   "2": {
+    "src": "assets/img/projects/layer-by-layer/d2-orientation.png",
+    "fit": "contain",
+    "ar": 2.2,
+    "alt": "Vertical and horizontal print orientations"
+   },
+   "3": {
+    "src": "assets/img/projects/layer-by-layer/d3-flexural-trial.png",
+    "fit": "contain",
+    "ar": 1.0,
+    "alt": "Force-displacement curve from a flexural trial, with the fitted slope"
+   }
   },
-  "pearcat": {
-    "_note": "Layout from Joshua's Figma frame (node 57:406).",
-    "hero": "assets/img/projects/pearcat/hero.jpg",
-    "overview_rows": [
-      [
-        {
-          "src": "assets/img/projects/pearcat/overview1.jpg",
-          "ar": 1.656,
-          "fit": "cover",
-          "alt": "Strategy and module overview slide"
-        },
-        {
-          "src": "assets/img/projects/pearcat/overview2.jpg",
-          "ar": 0.945,
-          "fit": "cover",
-          "alt": "PearCat"
-        }
+  "gallery": [
+   {
+    "src": "assets/img/projects/layer-by-layer/g1-poster.jpg",
+    "fit": "contain",
+    "ar": 1.166,
+    "alt": "Research poster: Layer by Layer"
+   },
+   {
+    "src": "assets/img/projects/layer-by-layer/g2-bar-chart.png",
+    "fit": "contain",
+    "ar": 2.0,
+    "alt": "Mean flexural modulus and max force by condition"
+   },
+   {
+    "src": "assets/img/projects/layer-by-layer/g3-modulus-scatter.png",
+    "fit": "contain",
+    "ar": 1.0,
+    "alt": "Flexural modulus vs layer height"
+   },
+   {
+    "src": "assets/img/projects/layer-by-layer/g4-maxforce-scatter.png",
+    "fit": "contain",
+    "ar": 1.0,
+    "alt": "Max force vs layer height"
+   },
+   {
+    "src": "assets/img/projects/layer-by-layer/g5-failure-trial.png",
+    "fit": "contain",
+    "ar": 1.0,
+    "alt": "Force-displacement curve from a failure trial"
+   }
+  ]
+ },
+ "pearcat": {
+  "_note": "Layout from Joshua's Figma frame (node 57:406).",
+  "hero": "assets/img/projects/pearcat/hero.jpg",
+  "overview_rows": [
+   [
+    {
+     "src": "assets/img/projects/pearcat/overview1.jpg",
+     "ar": 1.656,
+     "fit": "cover",
+     "alt": "Strategy and module overview slide"
+    },
+    {
+     "src": "assets/img/projects/pearcat/overview2.jpg",
+     "ar": 0.945,
+     "fit": "cover",
+     "alt": "PearCat"
+    }
+   ],
+   [
+    {
+     "src": "assets/img/projects/pearcat/overview3.mp4",
+     "poster": "assets/img/projects/pearcat/overview3-poster.jpg",
+     "ar": 1.5,
+     "fit": "cover",
+     "alt": "PearCat on the gameboard"
+    },
+    {
+     "src": "assets/img/projects/pearcat/overview4.mp4",
+     "poster": "assets/img/projects/pearcat/overview4-poster.jpg",
+     "ar": 1.0,
+     "fit": "cover",
+     "alt": "Gear spinner in action"
+    },
+    {
+     "src": "assets/img/projects/pearcat/overview5.jpg",
+     "ar": 1.615,
+     "fit": "contain",
+     "alt": "Torque-speed curves"
+    }
+   ]
+  ],
+  "section_rows": {
+   "problem": [
+    [
+     {
+      "src": "assets/img/projects/pearcat/problem1.jpg",
+      "ar": 1.777,
+      "fit": "cover",
+      "alt": "Strategy and analysis"
+     },
+     {
+      "src": "assets/img/projects/pearcat/problem2.jpg",
+      "ar": 1.777,
+      "fit": "cover",
+      "alt": "Concept generation"
+     }
+    ]
+   ]
+  },
+  "decisions": {
+   "1": {
+    "layout": "segments",
+    "segments": [
+     {
+      "cols": [
+       810,
+       872
       ],
-      [
-        {
-          "src": "assets/img/projects/pearcat/overview3.mp4",
-          "poster": "assets/img/projects/pearcat/overview3-poster.jpg",
-          "ar": 1.5,
-          "fit": "cover",
-          "alt": "PearCat on the gameboard"
-        },
-        {
-          "src": "assets/img/projects/pearcat/overview4.mp4",
-          "poster": "assets/img/projects/pearcat/overview4-poster.jpg",
-          "ar": 1.0,
-          "fit": "cover",
-          "alt": "Gear spinner in action"
-        },
-        {
-          "src": "assets/img/projects/pearcat/overview5.jpg",
-          "ar": 1.615,
-          "fit": "contain",
-          "alt": "Torque-speed curves"
-        }
-      ]
-    ],
-    "section_rows": {
-      "problem": [
+      "left": {
+       "text": [
+        0
+       ]
+      },
+      "right": {
+       "rows": [
         [
-          {
-            "src": "assets/img/projects/pearcat/problem1.jpg",
-            "ar": 1.777,
+         {
+          "stack": [
+           {
+            "src": "assets/img/projects/pearcat/d1_a.jpg",
+            "ar": 1.0,
             "fit": "cover",
-            "alt": "Strategy and analysis"
-          },
-          {
-            "src": "assets/img/projects/pearcat/problem2.jpg",
-            "ar": 1.777,
+            "alt": "Dovetail rail carriage"
+           },
+           {
+            "src": "assets/img/projects/pearcat/d1_b.jpg",
+            "ar": 1.16,
             "fit": "cover",
-            "alt": "Concept generation"
-          }
+            "alt": "Lift CAD"
+           }
+          ]
+         },
+         {
+          "src": "assets/img/projects/pearcat/d1_c.jpg",
+          "ar": 0.75,
+          "fit": "cover",
+          "alt": "Belt-driven lift"
+         }
         ]
-      ]
-    },
-    "decisions": {
-      "1": {
-        "layout": "segments",
-        "segments": [
-          {
-            "cols": [
-              810,
-              872
-            ],
-            "left": {
-              "text": [
-                0
-              ]
-            },
-            "right": {
-              "rows": [
-                [
-                  {
-                    "stack": [
-                      {
-                        "src": "assets/img/projects/pearcat/d1_a.jpg",
-                        "ar": 1.0,
-                        "fit": "cover",
-                        "alt": "Dovetail rail carriage"
-                      },
-                      {
-                        "src": "assets/img/projects/pearcat/d1_b.jpg",
-                        "ar": 1.16,
-                        "fit": "cover",
-                        "alt": "Lift CAD"
-                      }
-                    ]
-                  },
-                  {
-                    "src": "assets/img/projects/pearcat/d1_c.jpg",
-                    "ar": 0.75,
-                    "fit": "cover",
-                    "alt": "Belt-driven lift"
-                  }
-                ]
-              ]
-            }
-          }
-        ]
-      },
-      "2": {
-        "layout": "segments",
-        "segments": [
-          {
-            "full": {
-              "text": [
-                0
-              ]
-            }
-          },
-          {
-            "full": {
-              "rows": [
-                [
-                  {
-                    "src": "assets/img/projects/pearcat/d2_a.jpg",
-                    "ar": 1.007,
-                    "fit": "cover",
-                    "alt": "Original box chassis"
-                  },
-                  {
-                    "src": "assets/img/projects/pearcat/d2_b.mp4",
-                    "poster": "assets/img/projects/pearcat/d2_b-poster.jpg",
-                    "ar": 0.624,
-                    "fit": "cover",
-                    "alt": "Chassis in motion"
-                  },
-                  {
-                    "src": "assets/img/projects/pearcat/d2_c.jpg",
-                    "ar": 1.294,
-                    "fit": "cover",
-                    "alt": "Redesigned chassis CAD"
-                  },
-                  {
-                    "src": "assets/img/projects/pearcat/d2_d.jpg",
-                    "ar": 0.749,
-                    "fit": "cover",
-                    "alt": "Waterjet-cut chassis"
-                  }
-                ]
-              ]
-            }
-          }
-        ]
-      },
-      "3": {
-        "layout": "segments",
-        "segments": [
-          {
-            "cols": [
-              1175,
-              523
-            ],
-            "left": {
-              "text": [
-                0,
-                1
-              ]
-            },
-            "right": {
-              "rows": [
-                [
-                  {
-                    "src": "assets/img/projects/pearcat/d3_a.mp4",
-                    "poster": "assets/img/projects/pearcat/d3_a-poster.jpg",
-                    "ar": 0.859,
-                    "fit": "cover",
-                    "alt": "Chassis V2 climbing"
-                  }
-                ]
-              ]
-            }
-          },
-          {
-            "cols": [
-              962,
-              759
-            ],
-            "left": {
-              "text": [
-                2
-              ]
-            },
-            "right": {
-              "rows": [
-                [
-                  {
-                    "src": "assets/img/projects/pearcat/d3_b.jpg",
-                    "ar": 1.834,
-                    "fit": "cover",
-                    "alt": "Rederived torque and speed requirements"
-                  }
-                ]
-              ]
-            }
-          },
-          {
-            "cols": [
-              737,
-              920
-            ],
-            "left": {
-              "rows": [
-                [
-                  {
-                    "src": "assets/img/projects/pearcat/d3_c.jpg",
-                    "ar": 1.662,
-                    "fit": "cover",
-                    "alt": "Train to Oz and hot air balloon gear diagrams"
-                  }
-                ]
-              ]
-            },
-            "right": {
-              "eq": true
-            }
-          }
-        ]
-      },
-      "4": {
-        "layout": "segments",
-        "segments": [
-          {
-            "cols": [
-              827,
-              868
-            ],
-            "left": {
-              "text": [
-                0
-              ]
-            },
-            "right": {
-              "rows": [
-                [
-                  {
-                    "src": "assets/img/projects/pearcat/d4_a.jpg",
-                    "ar": 1.351,
-                    "fit": "cover",
-                    "alt": "Drivetrain wheel caps"
-                  },
-                  {
-                    "src": "assets/img/projects/pearcat/d4_b.jpg",
-                    "ar": 1.349,
-                    "fit": "cover",
-                    "alt": "A-shaped belt tensioners"
-                  }
-                ]
-              ]
-            }
-          },
-          {
-            "full": {
-              "text": [
-                1
-              ]
-            }
-          },
-          {
-            "full": {
-              "rows": [
-                [
-                  {
-                    "src": "assets/img/projects/pearcat/d4_f.jpg",
-                    "ar": 2.542,
-                    "fit": "cover",
-                    "alt": "Drivetrain belts and cantilevered axle"
-                  },
-                  {
-                    "src": "assets/img/projects/pearcat/d4_d.jpg",
-                    "ar": 1.087,
-                    "fit": "cover",
-                    "alt": "Tow hook"
-                  },
-                  {
-                    "src": "assets/img/projects/pearcat/d4_e.jpg",
-                    "ar": 0.762,
-                    "fit": "cover",
-                    "alt": "Tow hook motor adapter"
-                  }
-                ]
-              ]
-            }
-          }
-        ]
-      },
-      "5": {
-        "layout": "segments",
-        "segments": [
-          {
-            "full": {
-              "text": [
-                0
-              ]
-            }
-          },
-          {
-            "full": {
-              "rows": [
-                [
-                  {
-                    "src": "assets/img/projects/pearcat/d5_a.jpg",
-                    "ar": 2.601,
-                    "fit": "cover",
-                    "alt": "Dual-motor gearbox"
-                  },
-                  {
-                    "src": "assets/img/projects/pearcat/d5_b.jpg",
-                    "ar": 1.719,
-                    "fit": "cover",
-                    "alt": "Torque-speed curves, 3:1 ratio"
-                  }
-                ]
-              ]
-            }
-          }
-        ]
-      },
-      "6": {
-        "layout": "segments",
-        "segments": [
-          {
-            "cols": [
-              800,
-              866
-            ],
-            "left": {
-              "text": [
-                0
-              ]
-            },
-            "right": {
-              "rows": [
-                [
-                  {
-                    "src": "assets/img/projects/pearcat/d6_a.jpg",
-                    "ar": 0.651,
-                    "fit": "cover",
-                    "alt": "Photoresistor circuit"
-                  },
-                  {
-                    "src": "assets/img/projects/pearcat/d6_b.jpg",
-                    "ar": 1.304,
-                    "fit": "cover",
-                    "alt": "Autonomous routine code"
-                  }
-                ]
-              ]
-            }
-          }
-        ]
+       ]
       }
-    },
-    "gallery": [
-      {
-        "src": "assets/img/projects/pearcat/g1.jpg",
-        "fit": "cover",
-        "ar": 1.006,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g2.jpg",
-        "fit": "cover",
-        "ar": 0.75,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g3.jpg",
-        "fit": "cover",
-        "ar": 0.75,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g4.jpg",
-        "fit": "contain",
-        "ar": 1.357,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g5.jpg",
-        "fit": "contain",
-        "ar": 1.779,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g6.jpg",
-        "fit": "contain",
-        "ar": 1.758,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g7.jpg",
-        "fit": "cover",
-        "ar": 0.75,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g8.jpg",
-        "fit": "cover",
-        "ar": 0.75,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g9.jpg",
-        "fit": "cover",
-        "ar": 2.161,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g11.jpg",
-        "fit": "cover",
-        "ar": 0.75,
-        "alt": ""
-      }
+     }
     ]
-  },
-  "synthia": {
-    "_note": "Layout from Joshua's Figma frame (node 57:5). Rows are justified: items share a height; 'ar' sets each item's shape.",
-    "hero": "assets/img/projects/synthia/hero.jpg",
-    "overview_rows": [
-      [
-        {
-          "src": "assets/img/projects/synthia/overview1.mp4",
-          "poster": "assets/img/projects/synthia/overview1-poster.jpg",
-          "ar": 1.778
-        },
-        {
-          "src": "assets/img/projects/synthia/overview2.jpg",
-          "ar": 1.501
-        },
-        {
-          "src": "assets/img/projects/synthia/overview3.jpg",
-          "ar": 1.501
-        }
+   },
+   "2": {
+    "layout": "segments",
+    "segments": [
+     {
+      "full": {
+       "text": [
+        0
+       ]
+      }
+     },
+     {
+      "full": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/pearcat/d2_a.jpg",
+          "ar": 1.007,
+          "fit": "cover",
+          "alt": "Original box chassis"
+         },
+         {
+          "src": "assets/img/projects/pearcat/d2_b.mp4",
+          "poster": "assets/img/projects/pearcat/d2_b-poster.jpg",
+          "ar": 0.624,
+          "fit": "cover",
+          "alt": "Chassis in motion"
+         },
+         {
+          "src": "assets/img/projects/pearcat/d2_c.jpg",
+          "ar": 1.294,
+          "fit": "cover",
+          "alt": "Redesigned chassis CAD"
+         },
+         {
+          "src": "assets/img/projects/pearcat/d2_d.jpg",
+          "ar": 0.749,
+          "fit": "cover",
+          "alt": "Waterjet-cut chassis"
+         }
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   "3": {
+    "layout": "segments",
+    "segments": [
+     {
+      "cols": [
+       1175,
+       523
       ],
-      [
-        {
-          "src": "assets/img/projects/synthia/overview4.mp4",
-          "poster": "assets/img/projects/synthia/overview4-poster.jpg",
-          "ar": 1.78
-        },
-        {
-          "src": "assets/img/projects/synthia/overview5.mp4",
-          "poster": "assets/img/projects/synthia/overview5-poster.jpg",
-          "ar": 1.78
-        },
-        {
-          "src": "assets/img/projects/synthia/overview6.mp4",
-          "poster": "assets/img/projects/synthia/overview6-poster.jpg",
-          "ar": 1.78
-        }
-      ]
-    ],
-    "split_context": [
-      528,
-      1123
-    ],
-    "decisions": {
-      "1": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/synthia/d1_a.jpg",
-              "ar": 1.333
-            },
-            {
-              "src": "assets/img/projects/synthia/d1_b.jpg",
-              "ar": 1.333
-            },
-            {
-              "src": "assets/img/projects/synthia/d1_c.jpg",
-              "ar": 1.333
-            }
-          ]
-        ]
+      "left": {
+       "text": [
+        0,
+        1
+       ]
       },
-      "2": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/synthia/d2_a.jpg",
-              "ar": 1.522
-            },
-            {
-              "eq": true
-            }
-          ],
-          [
-            {
-              "src": "assets/img/projects/synthia/d2_b.mp4",
-              "poster": "assets/img/projects/synthia/d2_b-poster.jpg",
-              "ar": 1.69
-            },
-            {
-              "src": "assets/img/projects/synthia/d2_c.mp4",
-              "poster": "assets/img/projects/synthia/d2_c-poster.jpg",
-              "ar": 1.69
-            },
-            {
-              "src": "assets/img/projects/synthia/d2_d.mp4",
-              "poster": "assets/img/projects/synthia/d2_d-poster.jpg",
-              "ar": 1.69
-            }
-          ]
-        ]
-      },
-      "3": {
-        "layout": "tall",
-        "tall": {
-          "src": "assets/img/projects/synthia/d3_a.mp4",
-          "poster": "assets/img/projects/synthia/d3_a-poster.jpg",
-          "ar": 0.612
-        },
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/synthia/d3_b.mp4",
-              "poster": "assets/img/projects/synthia/d3_b-poster.jpg",
-              "ar": 2.0
-            },
-            {
-              "src": "assets/img/projects/synthia/d3_c.mp4",
-              "poster": "assets/img/projects/synthia/d3_c-poster.jpg",
-              "ar": 2.0
-            }
-          ]
-        ]
-      },
-      "4": {
-        "src": "assets/img/projects/synthia/d4.mp4",
-        "poster": "assets/img/projects/synthia/d4-poster.jpg",
-        "ar": 1.6
-      }
-    },
-    "gallery": [
-      {
-        "src": "assets/img/projects/synthia/g1.jpg",
-        "ar": 1.778
-      },
-      {
-        "src": "assets/img/projects/synthia/g2.jpg",
-        "ar": 1.501
-      },
-      {
-        "src": "assets/img/projects/synthia/g3.jpg",
-        "ar": 1.501
-      },
-      {
-        "src": "assets/img/projects/synthia/g4.jpg",
-        "ar": 1.501
-      },
-      {
-        "src": "assets/img/projects/synthia/g5.jpg",
-        "ar": 1.501
-      },
-      {
-        "src": "assets/img/projects/synthia/g6.jpg",
-        "ar": 1.778
-      },
-      {
-        "src": "assets/img/projects/synthia/g7.jpg",
-        "ar": 0.75
-      },
-      {
-        "src": "assets/img/projects/synthia/g8.jpg",
-        "ar": 1.501
-      },
-      {
-        "src": "assets/img/projects/synthia/g9.jpg",
-        "ar": 1.778
-      },
-      {
-        "src": "assets/img/projects/synthia/g10.jpg",
-        "ar": 1.501
-      },
-      {
-        "src": "assets/img/projects/synthia/g11.jpg",
-        "ar": 1.501
-      },
-      {
-        "src": "assets/img/projects/synthia/g12.jpg",
-        "ar": 1.501
-      }
-    ]
-  },
-  "mochimash": {
-    "_note": "Ordered to follow the 4.043 MochiMash presentation slides; d1_a, d1_b, d2_a, d3_b, d4_a–c are full-slide pictures.",
-    "overview_rows": [
-      [
-        {
-          "src": "assets/img/projects/mochimash/overview1.jpg",
-          "ar": 1.5,
+      "right": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/pearcat/d3_a.mp4",
+          "poster": "assets/img/projects/pearcat/d3_a-poster.jpg",
+          "ar": 0.859,
           "fit": "cover",
-          "alt": "Playing MochiMash"
-        },
-        {
-          "src": "assets/img/projects/mochimash/overview2.jpg",
-          "ar": 1.777,
-          "fit": "cover",
-          "alt": "The one-pixel-row game screen"
-        }
+          "alt": "Chassis V2 climbing"
+         }
+        ]
+       ]
+      }
+     },
+     {
+      "cols": [
+       962,
+       759
       ],
-      [
-        {
-          "src": "assets/img/projects/mochimash/overview3.jpg",
-          "ar": 1.897,
-          "fit": "contain",
-          "alt": "Sketches and cardboard prototypes"
-        },
-        {
-          "src": "assets/img/projects/mochimash/overview4.png",
-          "ar": 1.931,
-          "fit": "contain",
-          "alt": "Game state diagram"
-        }
-      ]
-    ],
-    "decisions": {
-      "1": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/mochimash/d1_a.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Exploded view of the bowl: silicone mochi, LED housing and joystick cap, spring housing, bowl base, rotary encoder gear"
-            },
-            {
-              "src": "assets/img/projects/mochimash/d1_b.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Bowl CAD"
-            }
-          ]
-        ]
+      "left": {
+       "text": [
+        2
+       ]
       },
-      "2": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/mochimash/d2_a.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "TPU-printed mochi and fold sketches"
-            },
-            {
-              "src": "assets/img/projects/mochimash/d2_b.jpg",
-              "ar": 1.283,
-              "fit": "cover",
-              "alt": "Mochi shape tests"
-            }
-          ]
-        ]
-      },
-      "3": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/mochimash/d3_a.jpg",
-              "ar": 1.777,
-              "fit": "cover",
-              "alt": "Cardboard hammer prototype with sensing sketches"
-            },
-            {
-              "src": "assets/img/projects/mochimash/d3_b.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Hammer CAD"
-            }
-          ]
-        ]
-      },
-      "4": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/mochimash/d4_a.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Silicone-cast mochi and PLA-printed molds"
-            },
-            {
-              "src": "assets/img/projects/mochimash/d4_b.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Stone texture tests"
-            },
-            {
-              "src": "assets/img/projects/mochimash/d4_c.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Wood grain depth tests: 0.3, 0.5, 0.8 mm"
-            }
-          ]
-        ]
-      }
-    },
-    "gallery": [
-      {
-        "src": "assets/img/projects/mochimash/g1.jpg",
-        "ar": 1.5,
-        "fit": "cover",
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g2.jpg",
-        "ar": 0.667,
-        "fit": "cover",
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g3.jpg",
-        "ar": 1.5,
-        "fit": "cover",
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g4.jpg",
-        "ar": 1.5,
-        "fit": "cover",
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g5.jpg",
-        "ar": 1.5,
-        "fit": "cover",
-        "alt": ""
-      }
-    ]
-  },
-  "en-clair": {
-    "_note": "Ordered to follow the 4.043 LLO presentation slides; d1_b, d1_c, d2_a, d3_c, d3_d are full-slide pictures.",
-    "overview_rows": [
-      [
-        {
-          "src": "assets/img/projects/en-clair/overview1.jpg",
-          "ar": 1.5,
+      "right": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/pearcat/d3_b.jpg",
+          "ar": 1.834,
           "fit": "cover",
-          "alt": "Sliding a filter cartridge in"
-        },
-        {
-          "src": "assets/img/projects/en-clair/overview2.jpg",
-          "ar": 1.5,
+          "alt": "Rederived torque and speed requirements"
+         }
+        ]
+       ]
+      }
+     },
+     {
+      "cols": [
+       737,
+       920
+      ],
+      "left": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/pearcat/d3_c.jpg",
+          "ar": 1.662,
           "fit": "cover",
-          "alt": "en clair opened, showing the e-ink display"
-        },
-        {
-          "src": "assets/img/projects/en-clair/overview3.jpg",
-          "ar": 1.5,
+          "alt": "Train to Oz and hot air balloon gear diagrams"
+         }
+        ]
+       ]
+      },
+      "right": {
+       "eq": true
+      }
+     }
+    ]
+   },
+   "4": {
+    "layout": "segments",
+    "segments": [
+     {
+      "cols": [
+       827,
+       868
+      ],
+      "left": {
+       "text": [
+        0
+       ]
+      },
+      "right": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/pearcat/d4_a.jpg",
+          "ar": 1.351,
           "fit": "cover",
-          "alt": "Pressing the cartridge"
-        }
-      ]
-    ],
-    "decisions": {
-      "1": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/en-clair/d1_a.jpg",
-              "ar": 1.5,
-              "fit": "cover",
-              "alt": "Cardboard form-factor prototypes"
-            },
-            {
-              "src": "assets/img/projects/en-clair/d1_b.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Form-factor sketches"
-            }
-          ],
-          [
-            {
-              "src": "assets/img/projects/en-clair/d1_c.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Form-factor studies"
-            },
-            {
-              "src": "assets/img/projects/en-clair/d1_d.png",
-              "ar": 1.139,
-              "fit": "contain",
-              "alt": "Line drawing of the opened scissor linkage"
-            }
-          ]
+          "alt": "Drivetrain wheel caps"
+         },
+         {
+          "src": "assets/img/projects/pearcat/d4_b.jpg",
+          "ar": 1.349,
+          "fit": "cover",
+          "alt": "A-shaped belt tensioners"
+         }
         ]
-      },
-      "2": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/en-clair/d2_a.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Cartridge designs"
-            },
-            {
-              "src": "assets/img/projects/en-clair/d2_b.png",
-              "ar": 1.819,
-              "fit": "contain",
-              "alt": "Exploded line drawing of the enclosure"
-            }
-          ]
-        ]
-      },
-      "3": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/en-clair/d3_a.png",
-              "ar": 1.765,
-              "fit": "contain",
-              "alt": "Phase 1: filter setup flow"
-            },
-            {
-              "src": "assets/img/projects/en-clair/d3_b.png",
-              "ar": 3.707,
-              "fit": "contain",
-              "alt": "Phase 2: live conversation flow"
-            }
-          ],
-          [
-            {
-              "src": "assets/img/projects/en-clair/d3_c.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Filter interface"
-            },
-            {
-              "src": "assets/img/projects/en-clair/d3_d.jpg",
-              "ar": 1.776,
-              "fit": "cover",
-              "alt": "Screen UI"
-            }
-          ]
-        ]
+       ]
       }
-    },
-    "gallery": [
-      {
-        "src": "assets/img/projects/en-clair/g1.jpg",
-        "ar": 1.5,
-        "fit": "cover",
-        "alt": "en clair with headphones"
-      },
-      {
-        "src": "assets/img/projects/en-clair/g2.png",
-        "ar": 1.819,
-        "fit": "contain",
-        "alt": "Exploded line drawing"
+     },
+     {
+      "full": {
+       "text": [
+        1
+       ]
       }
+     },
+     {
+      "full": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/pearcat/d4_f.jpg",
+          "ar": 2.542,
+          "fit": "cover",
+          "alt": "Drivetrain belts and cantilevered axle"
+         },
+         {
+          "src": "assets/img/projects/pearcat/d4_d.jpg",
+          "ar": 1.087,
+          "fit": "cover",
+          "alt": "Tow hook"
+         },
+         {
+          "src": "assets/img/projects/pearcat/d4_e.jpg",
+          "ar": 0.762,
+          "fit": "cover",
+          "alt": "Tow hook motor adapter"
+         }
+        ]
+       ]
+      }
+     }
     ]
+   },
+   "5": {
+    "layout": "segments",
+    "segments": [
+     {
+      "full": {
+       "text": [
+        0
+       ]
+      }
+     },
+     {
+      "full": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/pearcat/d5_a.jpg",
+          "ar": 2.601,
+          "fit": "cover",
+          "alt": "Dual-motor gearbox"
+         },
+         {
+          "src": "assets/img/projects/pearcat/d5_b.jpg",
+          "ar": 1.719,
+          "fit": "cover",
+          "alt": "Torque-speed curves, 3:1 ratio"
+         }
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   "6": {
+    "layout": "segments",
+    "segments": [
+     {
+      "cols": [
+       800,
+       866
+      ],
+      "left": {
+       "text": [
+        0
+       ]
+      },
+      "right": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/pearcat/d6_a.jpg",
+          "ar": 0.651,
+          "fit": "cover",
+          "alt": "Photoresistor circuit"
+         },
+         {
+          "src": "assets/img/projects/pearcat/d6_b.jpg",
+          "ar": 1.304,
+          "fit": "cover",
+          "alt": "Autonomous routine code"
+         }
+        ]
+       ]
+      }
+     }
+    ]
+   }
   },
-  "yubbayubba": {
-    "_note": "Ordered to follow the 2.008 final presentation slides.",
-    "overview_rows": [
-      [
-        {
-          "src": "assets/img/projects/yubbayubba/overview1.jpg",
-          "ar": 1.241,
-          "fit": "contain",
-          "alt": "Exploded render of the yo-yo"
-        },
-        {
-          "src": "assets/img/projects/yubbayubba/overview2.jpg",
-          "ar": 2.367,
-          "fit": "contain",
-          "alt": "Three colorways"
-        }
-      ]
-    ],
-    "decisions": {
-      "1": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/yubbayubba/d1_a.png",
-              "ar": 1.614,
-              "fit": "contain",
-              "alt": "Body part CAD"
-            },
-            {
-              "src": "assets/img/projects/yubbayubba/d1_b.png",
-              "ar": 1.512,
-              "fit": "contain",
-              "alt": "Ring part CAD"
-            },
-            {
-              "src": "assets/img/projects/yubbayubba/d1_c.png",
-              "ar": 2.795,
-              "fit": "contain",
-              "alt": "Interference fit: 0.200 in length of engagement, 0.030 ± 0.005 in interference"
-            }
-          ],
-          [
-            {
-              "src": "assets/img/projects/yubbayubba/d1_d.png",
-              "ar": 1.724,
-              "fit": "contain",
-              "alt": "Ring outer diameter measurements"
-            },
-            {
-              "src": "assets/img/projects/yubbayubba/d1_e.png",
-              "ar": 1.724,
-              "fit": "contain",
-              "alt": "Body inner diameter measurements"
-            },
-            {
-              "src": "assets/img/projects/yubbayubba/d1_f.png",
-              "ar": 1.752,
-              "fit": "contain",
-              "alt": "Interference measurements"
-            }
-          ]
-        ]
-      },
-      "2": {
-        "layout": "stack",
-        "rows": [
-          {
-            "groups": [
-              {
-                "label": "Ring mold: cavity and core",
-                "items": [
-                  {
-                    "src": "assets/img/projects/yubbayubba/d2_a.png",
-                    "ar": 1.0,
-                    "fit": "contain",
-                    "alt": "Ring mold cavity"
-                  },
-                  {
-                    "src": "assets/img/projects/yubbayubba/d2_b.png",
-                    "ar": 1.001,
-                    "fit": "contain",
-                    "alt": "Ring mold core"
-                  }
-                ]
-              },
-              {
-                "label": "Body mold: core and cavity (a provided blank)",
-                "items": [
-                  {
-                    "src": "assets/img/projects/yubbayubba/d2_c.png",
-                    "ar": 0.999,
-                    "fit": "contain",
-                    "alt": "Body mold core"
-                  },
-                  {
-                    "src": "assets/img/projects/yubbayubba/d2_d.png",
-                    "ar": 1.0,
-                    "fit": "contain",
-                    "alt": "Body mold cavity"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "3": {
-        "layout": "stack",
-        "rows": [
-          {
-            "groups": [
-              {
-                "label": "1. Original toolpath",
-                "items": [
-                  {
-                    "src": "assets/img/projects/yubbayubba/d3_a.jpg",
-                    "ar": 0.75,
-                    "fit": "cover",
-                    "alt": "Groove left in the ring mold"
-                  },
-                  {
-                    "src": "assets/img/projects/yubbayubba/d3_b.jpg",
-                    "ar": 1.005,
-                    "fit": "cover",
-                    "alt": "Ridged surface defect on a molded ring"
-                  }
-                ]
-              },
-              {
-                "label": "2. Offset plane",
-                "items": [
-                  {
-                    "src": "assets/img/projects/yubbayubba/d3_c.mp4",
-                    "ar": 0.973,
-                    "fit": "contain",
-                    "alt": "Toolpath with a 0.010 in plane offset",
-                    "poster": "assets/img/projects/yubbayubba/d3_c-poster.jpg"
-                  },
-                  {
-                    "src": "assets/img/projects/yubbayubba/d3_d.jpg",
-                    "ar": 1.073,
-                    "fit": "cover",
-                    "alt": "Ring still showing the defect"
-                  }
-                ]
-              },
-              {
-                "label": "3. No lead-in",
-                "items": [
-                  {
-                    "src": "assets/img/projects/yubbayubba/d3_e.mp4",
-                    "ar": 1.052,
-                    "fit": "contain",
-                    "alt": "Toolpath with lead-ins removed",
-                    "poster": "assets/img/projects/yubbayubba/d3_e-poster.jpg"
-                  },
-                  {
-                    "src": "assets/img/projects/yubbayubba/d3_f.jpg",
-                    "ar": 1.071,
-                    "fit": "cover",
-                    "alt": "Clean molded ring"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "4": {
-        "layout": "stack",
-        "rows": [
-          {
-            "groups": [
-              {
-                "label": "Decal sandwiched between two thermoforms",
-                "items": [
-                  {
-                    "src": "assets/img/projects/yubbayubba/d4_a.png",
-                    "ar": 1.153,
-                    "fit": "contain",
-                    "alt": "Layer stack: thermoform, decal, thermoform"
-                  },
-                  {
-                    "src": "assets/img/projects/yubbayubba/d4_b.jpg",
-                    "ar": 1.0,
-                    "fit": "contain",
-                    "alt": "Yubba Yubba decal"
-                  }
-                ]
-              },
-              {
-                "label": "Sticker alignment guide",
-                "items": [
-                  {
-                    "src": "assets/img/projects/yubbayubba/d4_c.mp4",
-                    "ar": 1.716,
-                    "fit": "contain",
-                    "alt": "Sticker alignment guide",
-                    "poster": "assets/img/projects/yubbayubba/d4_c-poster.jpg"
-                  }
-                ]
-              },
-              {
-                "label": "Top and bottom thermoforms",
-                "items": [
-                  {
-                    "src": "assets/img/projects/yubbayubba/d4_d.jpg",
-                    "ar": 1.358,
-                    "fit": "contain",
-                    "alt": "Top and bottom thermoforms with alignment features"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
+  "gallery": [
+   {
+    "src": "assets/img/projects/pearcat/g1.jpg",
+    "fit": "cover",
+    "ar": 1.006,
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/pearcat/g2.jpg",
+    "fit": "cover",
+    "ar": 0.75,
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/pearcat/g3.jpg",
+    "fit": "cover",
+    "ar": 0.75,
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/pearcat/g4.jpg",
+    "fit": "contain",
+    "ar": 1.357,
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/pearcat/g5.jpg",
+    "fit": "contain",
+    "ar": 1.779,
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/pearcat/g6.jpg",
+    "fit": "contain",
+    "ar": 1.758,
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/pearcat/g7.jpg",
+    "fit": "cover",
+    "ar": 0.75,
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/pearcat/g8.jpg",
+    "fit": "cover",
+    "ar": 0.75,
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/pearcat/g9.jpg",
+    "fit": "cover",
+    "ar": 2.161,
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/pearcat/g11.jpg",
+    "fit": "cover",
+    "ar": 0.75,
+    "alt": ""
+   }
+  ]
+ },
+ "synthia": {
+  "_note": "Layout from Joshua's Figma frame (node 57:5). Rows are justified: items share a height; 'ar' sets each item's shape.",
+  "hero": "assets/img/projects/synthia/hero.jpg",
+  "overview_rows": [
+   [
+    {
+     "src": "assets/img/projects/synthia/overview1.mp4",
+     "poster": "assets/img/projects/synthia/overview1-poster.jpg",
+     "ar": 1.778
     },
-    "gallery": [
+    {
+     "src": "assets/img/projects/synthia/overview2.jpg",
+     "ar": 1.501
+    },
+    {
+     "src": "assets/img/projects/synthia/overview3.jpg",
+     "ar": 1.501
+    }
+   ],
+   [
+    {
+     "src": "assets/img/projects/synthia/overview4.mp4",
+     "poster": "assets/img/projects/synthia/overview4-poster.jpg",
+     "ar": 1.78
+    },
+    {
+     "src": "assets/img/projects/synthia/overview5.mp4",
+     "poster": "assets/img/projects/synthia/overview5-poster.jpg",
+     "ar": 1.78
+    },
+    {
+     "src": "assets/img/projects/synthia/overview6.mp4",
+     "poster": "assets/img/projects/synthia/overview6-poster.jpg",
+     "ar": 1.78
+    }
+   ]
+  ],
+  "split_context": [
+   528,
+   1123
+  ],
+  "decisions": {
+   "1": {
+    "layout": "stack",
+    "rows": [
+     [
       {
-        "src": "assets/img/projects/yubbayubba/g1.jpg",
-        "ar": 1.777,
-        "fit": "cover",
-        "alt": ""
+       "src": "assets/img/projects/synthia/d1_a.jpg",
+       "ar": 1.333
       },
       {
-        "src": "assets/img/projects/yubbayubba/g2.jpg",
-        "ar": 1.777,
-        "fit": "cover",
-        "alt": ""
+       "src": "assets/img/projects/synthia/d1_b.jpg",
+       "ar": 1.333
       },
       {
-        "src": "assets/img/projects/yubbayubba/g3.jpg",
-        "ar": 1.006,
-        "fit": "contain",
-        "alt": "Bubble-gum scented yo-yo string"
-      },
-      {
-        "src": "assets/img/projects/yubbayubba/g4.png",
-        "ar": 0.75,
-        "fit": "contain",
-        "alt": "Bubble gum fragrance oil"
-      },
-      {
-        "src": "assets/img/projects/yubbayubba/g5.jpg",
-        "ar": 0.75,
-        "fit": "cover",
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/yubbayubba/g6.jpg",
-        "ar": 0.75,
-        "fit": "cover",
-        "alt": ""
+       "src": "assets/img/projects/synthia/d1_c.jpg",
+       "ar": 1.333
       }
+     ]
     ]
+   },
+   "2": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/synthia/d2_a.jpg",
+       "ar": 1.522
+      },
+      {
+       "eq": true
+      }
+     ],
+     [
+      {
+       "src": "assets/img/projects/synthia/d2_b.mp4",
+       "poster": "assets/img/projects/synthia/d2_b-poster.jpg",
+       "ar": 1.69
+      },
+      {
+       "src": "assets/img/projects/synthia/d2_c.mp4",
+       "poster": "assets/img/projects/synthia/d2_c-poster.jpg",
+       "ar": 1.69
+      },
+      {
+       "src": "assets/img/projects/synthia/d2_d.mp4",
+       "poster": "assets/img/projects/synthia/d2_d-poster.jpg",
+       "ar": 1.69
+      }
+     ]
+    ]
+   },
+   "3": {
+    "layout": "tall",
+    "tall": {
+     "src": "assets/img/projects/synthia/d3_a.mp4",
+     "poster": "assets/img/projects/synthia/d3_a-poster.jpg",
+     "ar": 0.612
+    },
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/synthia/d3_b.mp4",
+       "poster": "assets/img/projects/synthia/d3_b-poster.jpg",
+       "ar": 2.0
+      },
+      {
+       "src": "assets/img/projects/synthia/d3_c.mp4",
+       "poster": "assets/img/projects/synthia/d3_c-poster.jpg",
+       "ar": 2.0
+      }
+     ]
+    ]
+   },
+   "4": {
+    "src": "assets/img/projects/synthia/d4.mp4",
+    "poster": "assets/img/projects/synthia/d4-poster.jpg",
+    "ar": 1.6
+   }
   },
-  "pool-boiling": {
-    "_note": "Images from the MITEI poster (Summer 2024). Plots redrawn from the MATLAB scripts with the surface-tension fix.",
-    "decisions": {
-      "1": {
-        "src": "assets/img/projects/pool-boiling/d1-system-diagram.png",
-        "fit": "contain",
-        "ar": 0.983,
-        "alt": "Cross-section of the pool boiling facility: gas intake below a perforated heater, bubbles rising through the pool"
-      },
-      "2": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/pool-boiling/d2_a-bubble-radius.png",
-              "fit": "contain",
-              "ar": 1.455,
-              "alt": "Bubble radius at detachment vs. needle radius at 27, 62, and 100 °C"
-            },
-            {
-              "src": "assets/img/projects/pool-boiling/d2_b-flow-rate.png",
-              "fit": "contain",
-              "ar": 1.455,
-              "alt": "Critical gas flow rate per hole vs. needle radius at 50 °C"
-            }
-          ]
-        ]
-      },
-      "3": {
-        "src": "assets/img/projects/pool-boiling/d3-bottom-plate.png",
-        "fit": "contain",
-        "ar": 1.705,
-        "alt": "CAD of the bottom plate with the NPT gas nozzle"
-      }
+  "gallery": [
+   {
+    "src": "assets/img/projects/synthia/g1.jpg",
+    "ar": 1.778
+   },
+   {
+    "src": "assets/img/projects/synthia/g2.jpg",
+    "ar": 1.501
+   },
+   {
+    "src": "assets/img/projects/synthia/g3.jpg",
+    "ar": 1.501
+   },
+   {
+    "src": "assets/img/projects/synthia/g4.jpg",
+    "ar": 1.501
+   },
+   {
+    "src": "assets/img/projects/synthia/g5.jpg",
+    "ar": 1.501
+   },
+   {
+    "src": "assets/img/projects/synthia/g6.jpg",
+    "ar": 1.778
+   },
+   {
+    "src": "assets/img/projects/synthia/g7.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/projects/synthia/g8.jpg",
+    "ar": 1.501
+   },
+   {
+    "src": "assets/img/projects/synthia/g9.jpg",
+    "ar": 1.778
+   },
+   {
+    "src": "assets/img/projects/synthia/g10.jpg",
+    "ar": 1.501
+   },
+   {
+    "src": "assets/img/projects/synthia/g11.jpg",
+    "ar": 1.501
+   },
+   {
+    "src": "assets/img/projects/synthia/g12.jpg",
+    "ar": 1.501
+   }
+  ]
+ },
+ "mochimash": {
+  "_note": "Ordered to follow the 4.043 MochiMash presentation slides; d1_a, d1_b, d2_a, d3_b, d4_a–c are full-slide pictures.",
+  "overview_rows": [
+   [
+    {
+     "src": "assets/img/projects/mochimash/overview1.jpg",
+     "ar": 1.5,
+     "fit": "cover",
+     "alt": "Playing MochiMash"
     },
-    "gallery": [
+    {
+     "src": "assets/img/projects/mochimash/overview2.jpg",
+     "ar": 1.777,
+     "fit": "cover",
+     "alt": "The one-pixel-row game screen"
+    }
+   ],
+   [
+    {
+     "src": "assets/img/projects/mochimash/overview3.jpg",
+     "ar": 1.897,
+     "fit": "contain",
+     "alt": "Sketches and cardboard prototypes"
+    },
+    {
+     "src": "assets/img/projects/mochimash/overview4.png",
+     "ar": 1.931,
+     "fit": "contain",
+     "alt": "Game state diagram"
+    }
+   ]
+  ],
+  "decisions": {
+   "1": {
+    "layout": "stack",
+    "rows": [
+     [
       {
-        "src": "assets/img/projects/pool-boiling/g1-gas-compartment.png",
-        "fit": "contain",
-        "ar": 1.531,
-        "alt": "CAD of the gas compartment"
+       "src": "assets/img/projects/mochimash/d1_a.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Exploded view of the bowl: silicone mochi, LED housing and joystick cap, spring housing, bowl base, rotary encoder gear"
       },
       {
-        "src": "assets/img/projects/pool-boiling/g2-pool-section.png",
-        "fit": "contain",
-        "ar": 1.569,
-        "alt": "CAD of the heater cartridge"
-      },
-      {
-        "src": "assets/img/projects/pool-boiling/g3-pool-frame.png",
-        "fit": "contain",
-        "ar": 1.486,
-        "alt": "CAD of the pool section"
+       "src": "assets/img/projects/mochimash/d1_b.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Bowl CAD"
       }
+     ]
     ]
+   },
+   "2": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/mochimash/d2_a.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "TPU-printed mochi and fold sketches"
+      },
+      {
+       "src": "assets/img/projects/mochimash/d2_b.jpg",
+       "ar": 1.283,
+       "fit": "cover",
+       "alt": "Mochi shape tests"
+      }
+     ]
+    ]
+   },
+   "3": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/mochimash/d3_a.jpg",
+       "ar": 1.777,
+       "fit": "cover",
+       "alt": "Cardboard hammer prototype with sensing sketches"
+      },
+      {
+       "src": "assets/img/projects/mochimash/d3_b.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Hammer CAD"
+      }
+     ]
+    ]
+   },
+   "4": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/mochimash/d4_a.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Silicone-cast mochi and PLA-printed molds"
+      },
+      {
+       "src": "assets/img/projects/mochimash/d4_b.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Stone texture tests"
+      },
+      {
+       "src": "assets/img/projects/mochimash/d4_c.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Wood grain depth tests: 0.3, 0.5, 0.8 mm"
+      }
+     ]
+    ]
+   }
   },
-  "cantilevered-deltaxy": {
-    "_note": "Images from photos/cantilevered deltaxy/portfolio images; original file names are in the alt text comments below.",
-    "overview_rows": [
-      [
-        {
-          "src": "assets/img/projects/cantilevered-deltaxy/overview1.jpg",
-          "ar": 1.973,
-          "fit": "contain",
-          "alt": "Diagram of the Cantilevered DeltaXY and the toolhead's range"
-        },
-        {
-          "src": "assets/img/projects/cantilevered-deltaxy/overview2.jpg",
-          "ar": 1.367,
-          "fit": "contain",
-          "alt": "CAD of the FabUnit printer"
-        }
-      ]
-    ],
-    "overview_note": "Diagram and CAD by Ilan Moyer.",
-    "decisions": {
-      "1": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d1_a.jpg",
-              "ar": 1.146,
-              "fit": "contain",
-              "alt": "Non-concentric toolhead kinematics diagram and equations"
-            },
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d1_b.jpg",
-              "ar": 1.935,
-              "fit": "contain",
-              "alt": "Python script generating the G-code grid test print"
-            },
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d1_c.jpg",
-              "ar": 0.75,
-              "fit": "cover",
-              "alt": "Grid test print in progress"
-            },
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d1_d.jpg",
-              "ar": 1.005,
-              "fit": "cover",
-              "alt": "Finished grid test print"
-            }
-          ]
-        ]
-      },
-      "2": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d2_a.jpg",
-              "ar": 1.032,
-              "fit": "contain",
-              "alt": "CAD of the equally spaced Sarrus linkage"
-            },
-            {
-              "eq": true
-            }
-          ],
-          [
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d2_b.jpg",
-              "ar": 1.006,
-              "fit": "contain",
-              "alt": "CAD of the high-fidelity z-axis"
-            },
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d2_c.jpg",
-              "ar": 1.692,
-              "fit": "contain",
-              "alt": "Bearing compliance spreadsheet"
-            }
-          ]
-        ]
-      },
-      "3": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d3_a.jpg",
-              "ar": 0.9,
-              "fit": "cover",
-              "alt": "Low-fidelity prototype linkage with living hinges"
-            },
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d3_b.jpg",
-              "ar": 0.9,
-              "fit": "cover",
-              "alt": "Living-hinge linkage, side view"
-            },
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d3_c.jpg",
-              "ar": 0.9,
-              "fit": "cover",
-              "alt": "Low-fidelity prototype assembled"
-            }
-          ]
-        ]
-      },
-      "4": {
-        "layout": "stack",
-        "rows": [
-          [
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d4_a.jpg",
-              "ar": 0.75,
-              "fit": "cover",
-              "alt": "Low-fidelity prototype parts laid out around the aluminum extrusion"
-            },
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d4_b.jpg",
-              "ar": 1.333,
-              "fit": "cover",
-              "alt": "Extrusion carriage with NEMA 14 motor"
-            },
-            {
-              "src": "assets/img/projects/cantilevered-deltaxy/d4_c.jpg",
-              "ar": 1.333,
-              "fit": "cover",
-              "alt": "DeltaXY arms on the extrusion frame"
-            }
-          ]
-        ]
-      }
+  "gallery": [
+   {
+    "src": "assets/img/projects/mochimash/g1.jpg",
+    "ar": 1.5,
+    "fit": "cover",
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/mochimash/g2.jpg",
+    "ar": 0.667,
+    "fit": "cover",
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/mochimash/g3.jpg",
+    "ar": 1.5,
+    "fit": "cover",
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/mochimash/g4.jpg",
+    "ar": 1.5,
+    "fit": "cover",
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/mochimash/g5.jpg",
+    "ar": 1.5,
+    "fit": "cover",
+    "alt": ""
+   }
+  ]
+ },
+ "en-clair": {
+  "_note": "Ordered to follow the 4.043 LLO presentation slides; d1_b, d1_c, d2_a, d3_c, d3_d are full-slide pictures.",
+  "overview_rows": [
+   [
+    {
+     "src": "assets/img/projects/en-clair/overview1.jpg",
+     "ar": 1.5,
+     "fit": "cover",
+     "alt": "Sliding a filter cartridge in"
     },
-    "gallery": [
+    {
+     "src": "assets/img/projects/en-clair/overview2.jpg",
+     "ar": 1.5,
+     "fit": "cover",
+     "alt": "en clair opened, showing the e-ink display"
+    },
+    {
+     "src": "assets/img/projects/en-clair/overview3.jpg",
+     "ar": 1.5,
+     "fit": "cover",
+     "alt": "Pressing the cartridge"
+    }
+   ]
+  ],
+  "decisions": {
+   "1": {
+    "layout": "stack",
+    "rows": [
+     [
       {
-        "src": "assets/img/projects/cantilevered-deltaxy/g1.jpg",
-        "ar": 0.75,
-        "fit": "cover",
-        "alt": "Finished low-fidelity prototype"
+       "src": "assets/img/projects/en-clair/d1_a.jpg",
+       "ar": 1.5,
+       "fit": "cover",
+       "alt": "Cardboard form-factor prototypes"
       },
       {
-        "src": "assets/img/projects/cantilevered-deltaxy/g2.jpg",
-        "ar": 0.971,
-        "fit": "contain",
-        "alt": "Elevation views of multiple machines side by side"
+       "src": "assets/img/projects/en-clair/d1_b.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Form-factor sketches"
       }
+     ],
+     [
+      {
+       "src": "assets/img/projects/en-clair/d1_c.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Form-factor studies"
+      },
+      {
+       "src": "assets/img/projects/en-clair/d1_d.png",
+       "ar": 1.139,
+       "fit": "contain",
+       "alt": "Line drawing of the opened scissor linkage"
+      }
+     ]
     ]
-  }
+   },
+   "2": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/en-clair/d2_a.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Cartridge designs"
+      },
+      {
+       "src": "assets/img/projects/en-clair/d2_b.png",
+       "ar": 1.819,
+       "fit": "contain",
+       "alt": "Exploded line drawing of the enclosure"
+      }
+     ]
+    ]
+   },
+   "3": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/en-clair/d3_a.png",
+       "ar": 1.765,
+       "fit": "contain",
+       "alt": "Phase 1: filter setup flow"
+      },
+      {
+       "src": "assets/img/projects/en-clair/d3_b.png",
+       "ar": 3.707,
+       "fit": "contain",
+       "alt": "Phase 2: live conversation flow"
+      }
+     ],
+     [
+      {
+       "src": "assets/img/projects/en-clair/d3_c.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Filter interface"
+      },
+      {
+       "src": "assets/img/projects/en-clair/d3_d.jpg",
+       "ar": 1.776,
+       "fit": "cover",
+       "alt": "Screen UI"
+      }
+     ]
+    ]
+   }
+  },
+  "gallery": [
+   {
+    "src": "assets/img/projects/en-clair/g1.jpg",
+    "ar": 1.5,
+    "fit": "cover",
+    "alt": "en clair with headphones"
+   },
+   {
+    "src": "assets/img/projects/en-clair/g2.png",
+    "ar": 1.819,
+    "fit": "contain",
+    "alt": "Exploded line drawing"
+   }
+  ]
+ },
+ "yubbayubba": {
+  "_note": "Ordered to follow the 2.008 final presentation slides.",
+  "overview_rows": [
+   [
+    {
+     "src": "assets/img/projects/yubbayubba/overview1.jpg",
+     "ar": 1.241,
+     "fit": "contain",
+     "alt": "Exploded render of the yo-yo"
+    },
+    {
+     "src": "assets/img/projects/yubbayubba/overview2.jpg",
+     "ar": 2.367,
+     "fit": "contain",
+     "alt": "Three colorways"
+    }
+   ]
+  ],
+  "decisions": {
+   "1": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/yubbayubba/d1_a.png",
+       "ar": 1.614,
+       "fit": "contain",
+       "alt": "Body part CAD"
+      },
+      {
+       "src": "assets/img/projects/yubbayubba/d1_b.png",
+       "ar": 1.512,
+       "fit": "contain",
+       "alt": "Ring part CAD"
+      },
+      {
+       "src": "assets/img/projects/yubbayubba/d1_c.png",
+       "ar": 2.795,
+       "fit": "contain",
+       "alt": "Interference fit: 0.200 in length of engagement, 0.030 ± 0.005 in interference"
+      }
+     ],
+     [
+      {
+       "src": "assets/img/projects/yubbayubba/d1_d.png",
+       "ar": 1.724,
+       "fit": "contain",
+       "alt": "Ring outer diameter measurements"
+      },
+      {
+       "src": "assets/img/projects/yubbayubba/d1_e.png",
+       "ar": 1.724,
+       "fit": "contain",
+       "alt": "Body inner diameter measurements"
+      },
+      {
+       "src": "assets/img/projects/yubbayubba/d1_f.png",
+       "ar": 1.752,
+       "fit": "contain",
+       "alt": "Interference measurements"
+      }
+     ]
+    ]
+   },
+   "2": {
+    "layout": "stack",
+    "rows": [
+     {
+      "groups": [
+       {
+        "label": "Ring mold: cavity and core",
+        "items": [
+         {
+          "src": "assets/img/projects/yubbayubba/d2_a.png",
+          "ar": 1.0,
+          "fit": "contain",
+          "alt": "Ring mold cavity"
+         },
+         {
+          "src": "assets/img/projects/yubbayubba/d2_b.png",
+          "ar": 1.001,
+          "fit": "contain",
+          "alt": "Ring mold core"
+         }
+        ]
+       },
+       {
+        "label": "Body mold: core and cavity (a provided blank)",
+        "items": [
+         {
+          "src": "assets/img/projects/yubbayubba/d2_c.png",
+          "ar": 0.999,
+          "fit": "contain",
+          "alt": "Body mold core"
+         },
+         {
+          "src": "assets/img/projects/yubbayubba/d2_d.png",
+          "ar": 1.0,
+          "fit": "contain",
+          "alt": "Body mold cavity"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "3": {
+    "layout": "stack",
+    "rows": [
+     {
+      "groups": [
+       {
+        "label": "1. Original toolpath",
+        "items": [
+         {
+          "src": "assets/img/projects/yubbayubba/d3_a.jpg",
+          "ar": 0.75,
+          "fit": "cover",
+          "alt": "Groove left in the ring mold"
+         },
+         {
+          "src": "assets/img/projects/yubbayubba/d3_b.jpg",
+          "ar": 1.005,
+          "fit": "cover",
+          "alt": "Ridged surface defect on a molded ring"
+         }
+        ]
+       },
+       {
+        "label": "2. Offset plane",
+        "items": [
+         {
+          "src": "assets/img/projects/yubbayubba/d3_c.mp4",
+          "ar": 0.973,
+          "fit": "contain",
+          "alt": "Toolpath with a 0.010 in plane offset",
+          "poster": "assets/img/projects/yubbayubba/d3_c-poster.jpg"
+         },
+         {
+          "src": "assets/img/projects/yubbayubba/d3_d.jpg",
+          "ar": 1.073,
+          "fit": "cover",
+          "alt": "Ring still showing the defect"
+         }
+        ]
+       },
+       {
+        "label": "3. No lead-in",
+        "items": [
+         {
+          "src": "assets/img/projects/yubbayubba/d3_e.mp4",
+          "ar": 1.052,
+          "fit": "contain",
+          "alt": "Toolpath with lead-ins removed",
+          "poster": "assets/img/projects/yubbayubba/d3_e-poster.jpg"
+         },
+         {
+          "src": "assets/img/projects/yubbayubba/d3_f.jpg",
+          "ar": 1.071,
+          "fit": "cover",
+          "alt": "Clean molded ring"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "4": {
+    "layout": "stack",
+    "rows": [
+     {
+      "groups": [
+       {
+        "label": "Decal sandwiched between two thermoforms",
+        "items": [
+         {
+          "src": "assets/img/projects/yubbayubba/d4_a.png",
+          "ar": 1.153,
+          "fit": "contain",
+          "alt": "Layer stack: thermoform, decal, thermoform"
+         },
+         {
+          "src": "assets/img/projects/yubbayubba/d4_b.jpg",
+          "ar": 1.0,
+          "fit": "contain",
+          "alt": "Yubba Yubba decal"
+         }
+        ]
+       },
+       {
+        "label": "Sticker alignment guide",
+        "items": [
+         {
+          "src": "assets/img/projects/yubbayubba/d4_c.mp4",
+          "ar": 1.716,
+          "fit": "contain",
+          "alt": "Sticker alignment guide",
+          "poster": "assets/img/projects/yubbayubba/d4_c-poster.jpg"
+         }
+        ]
+       },
+       {
+        "label": "Top and bottom thermoforms",
+        "items": [
+         {
+          "src": "assets/img/projects/yubbayubba/d4_d.jpg",
+          "ar": 1.358,
+          "fit": "contain",
+          "alt": "Top and bottom thermoforms with alignment features"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "gallery": [
+   {
+    "src": "assets/img/projects/yubbayubba/g1.jpg",
+    "ar": 1.777,
+    "fit": "cover",
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/yubbayubba/g2.jpg",
+    "ar": 1.777,
+    "fit": "cover",
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/yubbayubba/g3.jpg",
+    "ar": 1.006,
+    "fit": "contain",
+    "alt": "Bubble-gum scented yo-yo string"
+   },
+   {
+    "src": "assets/img/projects/yubbayubba/g4.png",
+    "ar": 0.75,
+    "fit": "contain",
+    "alt": "Bubble gum fragrance oil"
+   },
+   {
+    "src": "assets/img/projects/yubbayubba/g5.jpg",
+    "ar": 0.75,
+    "fit": "cover",
+    "alt": ""
+   },
+   {
+    "src": "assets/img/projects/yubbayubba/g6.jpg",
+    "ar": 0.75,
+    "fit": "cover",
+    "alt": ""
+   }
+  ]
+ },
+ "pool-boiling": {
+  "_note": "Images from the MITEI poster (Summer 2024). Plots redrawn from the MATLAB scripts with the surface-tension fix.",
+  "decisions": {
+   "1": {
+    "src": "assets/img/projects/pool-boiling/d1-system-diagram.png",
+    "fit": "contain",
+    "ar": 0.983,
+    "alt": "Cross-section of the pool boiling facility: gas intake below a perforated heater, bubbles rising through the pool"
+   },
+   "2": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/pool-boiling/d2_a-bubble-radius.png",
+       "fit": "contain",
+       "ar": 1.455,
+       "alt": "Bubble radius at detachment vs. needle radius at 27, 62, and 100 °C"
+      },
+      {
+       "src": "assets/img/projects/pool-boiling/d2_b-flow-rate.png",
+       "fit": "contain",
+       "ar": 1.455,
+       "alt": "Critical gas flow rate per hole vs. needle radius at 50 °C"
+      }
+     ]
+    ]
+   },
+   "3": {
+    "src": "assets/img/projects/pool-boiling/d3-bottom-plate.png",
+    "fit": "contain",
+    "ar": 1.705,
+    "alt": "CAD of the bottom plate with the NPT gas nozzle"
+   }
+  },
+  "gallery": [
+   {
+    "src": "assets/img/projects/pool-boiling/g1-gas-compartment.png",
+    "fit": "contain",
+    "ar": 1.531,
+    "alt": "CAD of the gas compartment"
+   },
+   {
+    "src": "assets/img/projects/pool-boiling/g2-pool-section.png",
+    "fit": "contain",
+    "ar": 1.569,
+    "alt": "CAD of the heater cartridge"
+   },
+   {
+    "src": "assets/img/projects/pool-boiling/g3-pool-frame.png",
+    "fit": "contain",
+    "ar": 1.486,
+    "alt": "CAD of the pool section"
+   }
+  ]
+ },
+ "cantilevered-deltaxy": {
+  "_note": "Images from photos/cantilevered deltaxy/portfolio images; original file names are in the alt text comments below.",
+  "overview_rows": [
+   [
+    {
+     "src": "assets/img/projects/cantilevered-deltaxy/overview1.jpg",
+     "ar": 1.973,
+     "fit": "contain",
+     "alt": "Diagram of the Cantilevered DeltaXY and the toolhead's range"
+    },
+    {
+     "src": "assets/img/projects/cantilevered-deltaxy/overview2.jpg",
+     "ar": 1.367,
+     "fit": "contain",
+     "alt": "CAD of the FabUnit printer"
+    }
+   ]
+  ],
+  "overview_note": "Diagram and CAD by Ilan Moyer.",
+  "decisions": {
+   "1": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d1_a.jpg",
+       "ar": 1.146,
+       "fit": "contain",
+       "alt": "Non-concentric toolhead kinematics diagram and equations"
+      },
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d1_b.jpg",
+       "ar": 1.935,
+       "fit": "contain",
+       "alt": "Python script generating the G-code grid test print"
+      },
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d1_c.jpg",
+       "ar": 0.75,
+       "fit": "cover",
+       "alt": "Grid test print in progress"
+      },
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d1_d.jpg",
+       "ar": 1.005,
+       "fit": "cover",
+       "alt": "Finished grid test print"
+      }
+     ]
+    ]
+   },
+   "2": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d2_a.jpg",
+       "ar": 1.032,
+       "fit": "contain",
+       "alt": "CAD of the equally spaced Sarrus linkage"
+      },
+      {
+       "eq": true
+      }
+     ],
+     [
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d2_b.jpg",
+       "ar": 1.006,
+       "fit": "contain",
+       "alt": "CAD of the high-fidelity z-axis"
+      },
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d2_c.jpg",
+       "ar": 1.692,
+       "fit": "contain",
+       "alt": "Bearing compliance spreadsheet"
+      }
+     ]
+    ]
+   },
+   "3": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d3_a.jpg",
+       "ar": 0.9,
+       "fit": "cover",
+       "alt": "Low-fidelity prototype linkage with living hinges"
+      },
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d3_b.jpg",
+       "ar": 0.9,
+       "fit": "cover",
+       "alt": "Living-hinge linkage, side view"
+      },
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d3_c.jpg",
+       "ar": 0.9,
+       "fit": "cover",
+       "alt": "Low-fidelity prototype assembled"
+      }
+     ]
+    ]
+   },
+   "4": {
+    "layout": "stack",
+    "rows": [
+     [
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d4_a.jpg",
+       "ar": 0.75,
+       "fit": "cover",
+       "alt": "Low-fidelity prototype parts laid out around the aluminum extrusion"
+      },
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d4_b.jpg",
+       "ar": 1.333,
+       "fit": "cover",
+       "alt": "Extrusion carriage with NEMA 14 motor"
+      },
+      {
+       "src": "assets/img/projects/cantilevered-deltaxy/d4_c.jpg",
+       "ar": 1.333,
+       "fit": "cover",
+       "alt": "DeltaXY arms on the extrusion frame"
+      }
+     ]
+    ]
+   }
+  },
+  "gallery": [
+   {
+    "src": "assets/img/projects/cantilevered-deltaxy/g1.jpg",
+    "ar": 0.75,
+    "fit": "cover",
+    "alt": "Finished low-fidelity prototype"
+   },
+   {
+    "src": "assets/img/projects/cantilevered-deltaxy/g2.jpg",
+    "ar": 0.971,
+    "fit": "contain",
+    "alt": "Elevation views of multiple machines side by side"
+   }
+  ]
+ },
+ "unit-cell-tessellation": {
+  "_note": "Images from photos/unit cell tesselation/portfolio photos. Stress-strain graph redrawn from force_displacement_D4.csv and the tetrakaidecahedron CSV, using the same envelope, E* window and W integral as L3_002.m / blahblah.m.",
+  "decisions": {
+   "1": {
+    "src": "assets/img/projects/unit-cell-tessellation/d1-unit-cell-cad.jpg",
+    "fit": "contain",
+    "ar": 0.986,
+    "alt": "CAD of the 2×2×2 tessellation of our unit cell"
+   },
+   "2": {
+    "src": "assets/img/projects/unit-cell-tessellation/d2-fea.png",
+    "fit": "contain",
+    "ar": 1.405,
+    "alt": "von Mises stress contours from FEA of a single unit cell under compression"
+   },
+   "3": {
+    "layout": "segments",
+    "segments": [
+     {
+      "full": {
+       "text": [
+        0
+       ]
+      }
+     },
+     {
+      "cols": [
+       1,
+       1
+      ],
+      "left": {
+       "eq": [
+        0,
+        1
+       ]
+      },
+      "right": {
+       "eq": [
+        2,
+        3
+       ]
+      }
+     },
+     {
+      "full": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/unit-cell-tessellation/d3_a-sem-before.jpg",
+          "fit": "contain",
+          "ar": 1.231,
+          "alt": "SEM image of the printed 2×2×2 tessellation before compression"
+         },
+         {
+          "src": "assets/img/projects/unit-cell-tessellation/d3_c.mp4",
+          "poster": "assets/img/projects/unit-cell-tessellation/d3_c-poster.jpg",
+          "fit": "contain",
+          "ar": 1.339,
+          "alt": "In-situ SEM video of the nanoindenter compressing the sample"
+         },
+         {
+          "src": "assets/img/projects/unit-cell-tessellation/d3_b-sem-after.jpg",
+          "fit": "contain",
+          "ar": 1.333,
+          "alt": "SEM image of the sample after compression"
+         }
+        ]
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "gallery": [
+   {
+    "src": "assets/img/projects/unit-cell-tessellation/g1-stress-strain.png",
+    "fit": "contain",
+    "ar": 1.515,
+    "alt": "Stress-strain curves for our unit cell and the reference tetrakaidecahedron, with experimental and FEA moduli and the yield point"
+   }
+  ],
+  "gallery_target": 2.4
+ }
 }
