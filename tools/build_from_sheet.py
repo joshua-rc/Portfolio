@@ -97,6 +97,9 @@ EXTRA_EQUATIONS = {
         "Pitch compliance of one bearing set: c_θ = 2c_r / S^2, where S = 70.6–102.6 mm is the span between the set's two bearings.",
         "Compliance at the toolhead: c_tool = L^2·(c_θ1 + c_θ2 + c_θ3) ≈ 0.90 µm/N vs. 2.42 µm/N originally, where L = 210 mm (linkage in front) vs. 323 mm (linkage in back) is the lever arm to the toolhead, and c_θ1–c_θ3 are the top, middle, and lower bearing sets.",
     ],
+    ("pearcat", "Diagnosing the gearbox shortfall"): [
+        "Torque requirements: T_req = F_req·(D_gear / 2) = (F_gear + m_robot·g·sin θ)·(D_gear / 2), where F_req is the force needed at the gear, F_gear is the force to turn the gear (measured with a force meter), m_robot is the expected robot mass, θ is the ramp angle (the hot air balloon is the θ = 90° case), and D_gear is the gear diameter.",
+    ],
     ("layer-by-layer", "Automating the analysis"): [
         "Flexural modulus (three-point bending): E = L^3·m / 48I, where L = 120 mm is the support span, m is the slope of the linear regime of the load–displacement curve, and I is the beam's measured moment of inertia.",
     ],
@@ -223,8 +226,9 @@ def eq_math_html(expr):
     cut = next((i for i, c in _top_level(expr) if expr.startswith(" ≈ ", i)), None)
     if cut is not None:
         sym, approx = expr[:cut], expr[cut:]
-    sides = _split_top(sym, [" = "])
-    html_ = "".join(_leaf(p) if p == " = " else _expr(p.strip()) for p in sides)
+    sides = [p.strip() for p in _split_top(sym, [" = "]) if p != " = "]
+    # each "= …" step stays in one piece, so a long chain wraps only at its equals signs
+    html_ = _expr(sides[0]) + "".join(f' <span class="eq__step">= {_expr(p)}</span>' for p in sides[1:])
     return html_ + (f' <span class="eq__res">{math_html(approx)}</span>' if approx else "")
 
 
@@ -348,6 +352,12 @@ def load_images():
 
 def media_el(item, cls="media", style=""):
     """<figure> for one image or video from images.json."""
+    if item.get("stack"):        # images stacked in one column, sharing the row's height
+        inner = "".join(media_el(it, "media", f' style="aspect-ratio:{item_ar(it):.3f}"') for it in item["stack"])
+        return f'<div class="{cls.replace("media ", "")} media-stack"{style}>{inner}</div>'
+    if not item.get("src"):      # gray placeholder until the image file exists
+        label = html.escape(item.get("label", ""))
+        return f'<figure class="{cls}"{style}>' + (f'<span class="media__label">{label}</span>' if label else "") + "</figure>"
     src = "../" + item["src"]
     fit = item.get("fit", "cover")
     alt = html.escape(item.get("alt") or "")
@@ -406,6 +416,8 @@ def gallery_html(slug):
 
 
 def item_ar(it):
+    if it.get("stack"):          # a column of images: widths equal, heights add up
+        return 1 / sum(1 / item_ar(x) for x in it["stack"])
     return float(it.get("ar", 1))
 
 
@@ -446,6 +458,8 @@ def custom_decision(cfg, title, body, code_html):
     """Per-page decision layouts set in images.json ("layout": "stack" | "tall")."""
     eqs = "".join(EQ_FIG_RE.findall(body))
     uses_eq = any(it.get("eq") for row in cfg.get("rows", []) if isinstance(row, list) for it in row)
+    if cfg["layout"] == "segments":
+        uses_eq = False
     if uses_eq:
         body = EQ_FIG_RE.sub("", body)
     code = (chr(10) + "        " + code_html) if code_html else ""
@@ -469,6 +483,32 @@ def custom_decision(cfg, title, body, code_html):
             {media_rows(cfg.get("rows", []))}
           </div>
         </div>{code}'''
+    if cfg["layout"] == "segments":    # free-form: rows of text / images / equations, full width or two columns
+        blocks = [b for b in body.split("\n          ") if b.strip()]
+        eq_blocks = [b for b in blocks if b.startswith('<figure class="eq">')]
+        text_blocks = [b for b in blocks if not b.startswith('<figure class="eq">')]
+
+        def part(spec):
+            out = ""
+            if "text" in spec:
+                out += '<div class="decision__text">' + "".join(text_blocks[i] for i in spec["text"] if i < len(text_blocks)) + "</div>"
+            if spec.get("rows"):
+                out += media_rows(spec["rows"])
+            if spec.get("eq"):
+                out += '<div class="seg__eq">' + "".join(eq_blocks) + "</div>"
+            return out
+        segs = []
+        for seg in cfg["segments"]:
+            if "full" in seg:
+                segs.append(f'<div class="seg seg--full">{part(seg["full"])}</div>')
+            else:
+                a, b = seg.get("cols", [1, 1])
+                segs.append(f'<div class="seg seg--split" style="grid-template-columns:{a}fr {b}fr">'
+                            f'<div class="seg__col">{part(seg["left"])}</div><div class="seg__col">{part(seg["right"])}</div></div>')
+        return f'''        <h3>{title}</h3>
+        <div class="decision-segments">
+          {"".join(segs)}
+        </div>{code}'''
     raise ValueError("unknown layout " + cfg["layout"])
 
 
@@ -491,9 +531,11 @@ def page(slug, d):
         ("framing", "problem", "Problem Framing", "Problem Framing"),
     ]:
         if d.get(key):
+            extra = (IMAGES.get(slug, {}).get("section_rows") or {}).get(sid)
             pair.append(f'''      <section id="{sid}" data-nav="{nav}">
         <h2>{heading}</h2>
           {render_body(d[key])}
+          {media_rows(extra) if extra else ""}
       </section>''')
     split = IMAGES.get(slug, {}).get("split_context")   # e.g. [528, 1123]: side by side, column widths from Figma
     if split and len(pair) == 2:

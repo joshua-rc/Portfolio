@@ -29,42 +29,44 @@
         <div class="project__summary">
           <p class="summary-text">Is what someone says ever what they really mean? en clair is a portable device for that gap. Handheld or worn at the hip like a Walkman, it captures speech directed at the listener, rewrites it through a large language model conditioned by a perceptual filter, and plays the result through noise-cancelling headphones. Filters live on swappable NFC cartridges: slot one in, describe how you want to hear the world, and everything retranslates. I built en clair with Elaine Liu and Krystal Montgomery; alongside our shared object design, I led the linkage and enclosure design, as well as fabrication.</p>
         </div>
-        
+        <div class="media-rows"><div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500;--ar:1.500"><img src="../assets/img/projects/en-clair/overview1.jpg" alt="Sliding a filter cartridge in" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500;--ar:1.500"><img src="../assets/img/projects/en-clair/overview2.jpg" alt="en clair opened, showing the e-ink display" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500;--ar:1.500"><img src="../assets/img/projects/en-clair/overview3.jpg" alt="Pressing the cartridge" loading="lazy"></figure></div></div>
         
       </section>
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
           <p class="body-text">4.043: Interaction Intelligence is a studio on designing interaction, behavior, and intelligence across objects and spaces, from physical interfaces to neural networks and large language models. Our final brief was to make a physical AI object — what Prof. Marcelo Coelho calls a Large Language Object, where the intelligence is inseparable from the form.</p>
+          
       </section>
       <section id="problem" data-nav="Problem Framing">
         <h2>Problem Framing</h2>
           <p class="body-text">I was interested in the separation between what someone means and what they actually say — one filter — and how the listener interprets it — another. Every conversation is already a multi-filtered experience. We set out to externalize that filtering rather than "fix" communication, and used that proposition to judge every later decision. Filtered speech would arrive as audio, in the same sensory channel as the original, and the act of physically inserting a filter was designed before any of the electronics that would make it work.</p>
+          
       </section>
       <section id="process" data-nav="Process">
         <h2>Process</h2>
 
         <h3>Form factor</h3>
-        <div class="decision">
-          <figure class="media media--contain" style="aspect-ratio:0.989"><img src="../assets/img/projects/en-clair/d1.png" alt="" loading="lazy"></figure>
+        <div class="decision-stack">
           <div class="decision__text">
           <p class="body-text">en clair can be handheld or worn at the waist, drawing directly on the Sony Walkman's reframing of listening as personal and portable. A modified scissor linkage lets it stay hip-mounted while rotating the e-ink display up to face the user whenever the device is opened. Since on-screen prompts are only needed while choosing a filter, the display is most accessible exactly then.</p>
           </div>
+          <div class="media-rows"><div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500;--ar:1.500"><img src="../assets/img/projects/en-clair/d1_a.jpg" alt="Cardboard form-factor prototypes" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.776 1 0;aspect-ratio:1.776;--ar:1.776"><img src="../assets/img/projects/en-clair/d1_b.jpg" alt="Form-factor sketches" loading="lazy"></figure></div><div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.776 1 0;aspect-ratio:1.776;--ar:1.776"><img src="../assets/img/projects/en-clair/d1_c.jpg" alt="Form-factor studies" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.139 1 0;aspect-ratio:1.139;--ar:1.139"><img src="../assets/img/projects/en-clair/d1_d.png" alt="Line drawing of the opened scissor linkage" loading="lazy"></figure></div></div>
         </div>
 
         <h3>Cartridges and electronics</h3>
-        <div class="decision decision--flip">
-          <figure class="media media--contain" style="aspect-ratio:1.819"><img src="../assets/img/projects/en-clair/d2.png" alt="" loading="lazy"></figure>
+        <div class="decision-stack">
           <div class="decision__text">
           <p class="body-text">Each cartridge carries an NFC tag, read by a PN532 module — giving every cartridge a unique, swappable identity without complex electrical signatures. The device runs on an ESP32-S3 with an INMP441 I2S microphone and a 2.13 in e-ink display, chosen over a high-resolution or touch screen for its low power draw, legibility in any lighting, and visually quiet aesthetic. Everything mounts to a custom double-sided PCB milled in-house.</p>
           </div>
+          <div class="media-rows"><div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.776 1 0;aspect-ratio:1.776;--ar:1.776"><img src="../assets/img/projects/en-clair/d2_a.jpg" alt="Cartridge designs" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.819 1 0;aspect-ratio:1.819;--ar:1.819"><img src="../assets/img/projects/en-clair/d2_b.png" alt="Exploded line drawing of the enclosure" loading="lazy"></figure></div></div>
         </div>
 
         <h3>Software and prompt design</h3>
-        <div class="decision">
-          <figure class="media media--cover" style="aspect-ratio:1.600"><img src="../assets/img/projects/en-clair/d3.jpg" alt="" loading="lazy"></figure>
+        <div class="decision-stack">
           <div class="decision__text">
           <p class="body-text">A laptop server transcribes speech with Whisper, filters it through Claude, and speaks the result back with ElevenLabs. New cartridges trigger a two-stage call: the user's spoken description is turned into a filter system prompt, which then drives all filtering on that cartridge — more reliable than asking users to write prompts themselves. To stop "POV drift" into narration as conversations grew, every turn is wrapped with an anchor that restates the listener's perspective.</p>
           </div>
+          <div class="media-rows"><div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--contain" style="flex:1.765 1 0;aspect-ratio:1.765;--ar:1.765"><img src="../assets/img/projects/en-clair/d3_a.png" alt="Phase 1: filter setup flow" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:3.707 1 0;aspect-ratio:3.707;--ar:3.707"><img src="../assets/img/projects/en-clair/d3_b.png" alt="Phase 2: live conversation flow" loading="lazy"></figure></div><div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.776 1 0;aspect-ratio:1.776;--ar:1.776"><img src="../assets/img/projects/en-clair/d3_c.jpg" alt="Filter interface" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.776 1 0;aspect-ratio:1.776;--ar:1.776"><img src="../assets/img/projects/en-clair/d3_d.jpg" alt="Screen UI" loading="lazy"></figure></div></div>
         </div>
       </section>
       <section id="improvement" data-nav="Room for Improvement">
@@ -75,9 +77,7 @@
         <h2>Outcome</h2>
         
         <div class="gallery">
-          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g1.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g2.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g3.jpg" alt="" loading="lazy"></figure></div>
-          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g4.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g5.jpg" alt="" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.556 1 0;aspect-ratio:1.556"><img src="../assets/img/projects/en-clair/g6.png" alt="" loading="lazy"></figure></div>
-          <div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--cover" style="flex:3.624 1 0;aspect-ratio:3.624"><img src="../assets/img/projects/en-clair/g7.jpg" alt="" loading="lazy"></figure></div>
+          <div class="gallery__row gallery__row--flex" style="max-width:calc(100% * 0.976)"><figure class="media gallery__item media--cover" style="flex:1.500 1 0;aspect-ratio:1.500"><img src="../assets/img/projects/en-clair/g1.jpg" alt="en clair with headphones" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.819 1 0;aspect-ratio:1.819"><img src="../assets/img/projects/en-clair/g2.png" alt="Exploded line drawing" loading="lazy"></figure></div>
         </div>
       </section>
       <section id="reflection" data-nav="Reflection">

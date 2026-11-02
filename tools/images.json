@@ -55,43 +55,360 @@
     ]
   },
   "pearcat": {
+    "_note": "Layout from Joshua's Figma frame (node 57:406).",
+    "hero": "assets/img/projects/pearcat/hero.jpg",
+    "overview_rows": [
+      [
+        {
+          "src": "assets/img/projects/pearcat/overview1.jpg",
+          "ar": 1.656,
+          "fit": "cover",
+          "alt": "Strategy and module overview slide"
+        },
+        {
+          "src": "assets/img/projects/pearcat/overview2.jpg",
+          "ar": 0.945,
+          "fit": "cover",
+          "alt": "PearCat"
+        }
+      ],
+      [
+        {
+          "src": "assets/img/projects/pearcat/overview3.mp4",
+          "poster": "assets/img/projects/pearcat/overview3-poster.jpg",
+          "ar": 1.5,
+          "fit": "cover",
+          "alt": "PearCat on the gameboard"
+        },
+        {
+          "src": "assets/img/projects/pearcat/overview4.mp4",
+          "poster": "assets/img/projects/pearcat/overview4-poster.jpg",
+          "ar": 1.0,
+          "fit": "cover",
+          "alt": "Gear spinner in action"
+        },
+        {
+          "src": "assets/img/projects/pearcat/overview5.jpg",
+          "ar": 1.615,
+          "fit": "contain",
+          "alt": "Torque-speed curves"
+        }
+      ]
+    ],
+    "section_rows": {
+      "problem": [
+        [
+          {
+            "src": "assets/img/projects/pearcat/problem1.jpg",
+            "ar": 1.777,
+            "fit": "cover",
+            "alt": "Strategy and analysis"
+          },
+          {
+            "src": "assets/img/projects/pearcat/problem2.jpg",
+            "ar": 1.777,
+            "fit": "cover",
+            "alt": "Concept generation"
+          }
+        ]
+      ]
+    },
     "decisions": {
       "1": {
-        "src": "assets/img/projects/pearcat/d1.mp4",
-        "fit": "cover",
-        "ar": 1.0,
-        "alt": "",
-        "poster": "assets/img/projects/pearcat/d1-poster.jpg"
+        "layout": "segments",
+        "segments": [
+          {
+            "cols": [
+              810,
+              872
+            ],
+            "left": {
+              "text": [
+                0
+              ]
+            },
+            "right": {
+              "rows": [
+                [
+                  {
+                    "stack": [
+                      {
+                        "src": "assets/img/projects/pearcat/d1_a.jpg",
+                        "ar": 1.0,
+                        "fit": "cover",
+                        "alt": "Dovetail rail carriage"
+                      },
+                      {
+                        "src": "assets/img/projects/pearcat/d1_b.jpg",
+                        "ar": 1.16,
+                        "fit": "cover",
+                        "alt": "Lift CAD"
+                      }
+                    ]
+                  },
+                  {
+                    "src": "assets/img/projects/pearcat/d1_c.jpg",
+                    "ar": 0.75,
+                    "fit": "cover",
+                    "alt": "Belt-driven lift"
+                  }
+                ]
+              ]
+            }
+          }
+        ]
       },
       "2": {
-        "src": "assets/img/projects/pearcat/d2.png",
-        "fit": "contain",
-        "ar": 1.313,
-        "alt": ""
+        "layout": "segments",
+        "segments": [
+          {
+            "full": {
+              "text": [
+                0
+              ]
+            }
+          },
+          {
+            "full": {
+              "rows": [
+                [
+                  {
+                    "src": "assets/img/projects/pearcat/d2_a.jpg",
+                    "ar": 1.007,
+                    "fit": "cover",
+                    "alt": "Original box chassis"
+                  },
+                  {
+                    "src": "assets/img/projects/pearcat/d2_b.mp4",
+                    "poster": "assets/img/projects/pearcat/d2_b-poster.jpg",
+                    "ar": 0.624,
+                    "fit": "cover",
+                    "alt": "Chassis in motion"
+                  },
+                  {
+                    "src": "assets/img/projects/pearcat/d2_c.jpg",
+                    "ar": 1.294,
+                    "fit": "cover",
+                    "alt": "Redesigned chassis CAD"
+                  },
+                  {
+                    "src": "assets/img/projects/pearcat/d2_d.jpg",
+                    "ar": 0.749,
+                    "fit": "cover",
+                    "alt": "Waterjet-cut chassis"
+                  }
+                ]
+              ]
+            }
+          }
+        ]
       },
       "3": {
-        "src": "assets/img/projects/pearcat/d3.png",
-        "fit": "contain",
-        "ar": 1.804,
-        "alt": ""
+        "layout": "segments",
+        "segments": [
+          {
+            "cols": [
+              1175,
+              523
+            ],
+            "left": {
+              "text": [
+                0,
+                1
+              ]
+            },
+            "right": {
+              "rows": [
+                [
+                  {
+                    "src": "assets/img/projects/pearcat/d3_a.mp4",
+                    "poster": "assets/img/projects/pearcat/d3_a-poster.jpg",
+                    "ar": 0.859,
+                    "fit": "cover",
+                    "alt": "Chassis V2 climbing"
+                  }
+                ]
+              ]
+            }
+          },
+          {
+            "cols": [
+              962,
+              759
+            ],
+            "left": {
+              "text": [
+                2
+              ]
+            },
+            "right": {
+              "rows": [
+                [
+                  {
+                    "src": "assets/img/projects/pearcat/d3_b.jpg",
+                    "ar": 1.834,
+                    "fit": "cover",
+                    "alt": "Rederived torque and speed requirements"
+                  }
+                ]
+              ]
+            }
+          },
+          {
+            "cols": [
+              737,
+              920
+            ],
+            "left": {
+              "rows": [
+                [
+                  {
+                    "src": "assets/img/projects/pearcat/d3_c.jpg",
+                    "ar": 1.662,
+                    "fit": "cover",
+                    "alt": "Train to Oz and hot air balloon gear diagrams"
+                  }
+                ]
+              ]
+            },
+            "right": {
+              "eq": true
+            }
+          }
+        ]
       },
       "4": {
-        "src": "assets/img/projects/pearcat/d4.jpg",
-        "fit": "cover",
-        "ar": 0.762,
-        "alt": ""
+        "layout": "segments",
+        "segments": [
+          {
+            "cols": [
+              827,
+              868
+            ],
+            "left": {
+              "text": [
+                0
+              ]
+            },
+            "right": {
+              "rows": [
+                [
+                  {
+                    "src": "assets/img/projects/pearcat/d4_a.jpg",
+                    "ar": 1.351,
+                    "fit": "cover",
+                    "alt": "Drivetrain wheel caps"
+                  },
+                  {
+                    "src": "assets/img/projects/pearcat/d4_b.jpg",
+                    "ar": 1.349,
+                    "fit": "cover",
+                    "alt": "A-shaped belt tensioners"
+                  }
+                ]
+              ]
+            }
+          },
+          {
+            "full": {
+              "text": [
+                1
+              ]
+            }
+          },
+          {
+            "full": {
+              "rows": [
+                [
+                  {
+                    "src": "assets/img/projects/pearcat/d4_f.jpg",
+                    "ar": 2.542,
+                    "fit": "cover",
+                    "alt": "Drivetrain belts and cantilevered axle"
+                  },
+                  {
+                    "src": "assets/img/projects/pearcat/d4_d.jpg",
+                    "ar": 1.087,
+                    "fit": "cover",
+                    "alt": "Tow hook"
+                  },
+                  {
+                    "src": "assets/img/projects/pearcat/d4_e.jpg",
+                    "ar": 0.762,
+                    "fit": "cover",
+                    "alt": "Tow hook motor adapter"
+                  }
+                ]
+              ]
+            }
+          }
+        ]
       },
       "5": {
-        "src": "assets/img/projects/pearcat/d5.png",
-        "fit": "contain",
-        "ar": 1.644,
-        "alt": ""
+        "layout": "segments",
+        "segments": [
+          {
+            "full": {
+              "text": [
+                0
+              ]
+            }
+          },
+          {
+            "full": {
+              "rows": [
+                [
+                  {
+                    "src": "assets/img/projects/pearcat/d5_a.jpg",
+                    "ar": 2.601,
+                    "fit": "cover",
+                    "alt": "Dual-motor gearbox"
+                  },
+                  {
+                    "src": "assets/img/projects/pearcat/d5_b.jpg",
+                    "ar": 1.719,
+                    "fit": "cover",
+                    "alt": "Torque-speed curves, 3:1 ratio"
+                  }
+                ]
+              ]
+            }
+          }
+        ]
       },
       "6": {
-        "src": "assets/img/projects/pearcat/d6.jpg",
-        "fit": "cover",
-        "ar": 1.304,
-        "alt": ""
+        "layout": "segments",
+        "segments": [
+          {
+            "cols": [
+              800,
+              866
+            ],
+            "left": {
+              "text": [
+                0
+              ]
+            },
+            "right": {
+              "rows": [
+                [
+                  {
+                    "src": "assets/img/projects/pearcat/d6_a.jpg",
+                    "ar": 0.651,
+                    "fit": "cover",
+                    "alt": "Photoresistor circuit"
+                  },
+                  {
+                    "src": "assets/img/projects/pearcat/d6_b.jpg",
+                    "ar": 1.304,
+                    "fit": "cover",
+                    "alt": "Autonomous routine code"
+                  }
+                ]
+              ]
+            }
+          }
+        ]
       }
     },
     "gallery": [
@@ -147,12 +464,6 @@
         "src": "assets/img/projects/pearcat/g9.jpg",
         "fit": "cover",
         "ar": 2.161,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/pearcat/g10.jpg",
-        "fit": "contain",
-        "ar": 1.186,
         "alt": ""
       },
       {
@@ -335,164 +646,277 @@
     ]
   },
   "mochimash": {
+    "_note": "Ordered to follow the 4.043 MochiMash presentation slides; d1_a, d1_b, d2_a, d3_b, d4_a–c are full-slide pictures.",
+    "overview_rows": [
+      [
+        {
+          "src": "assets/img/projects/mochimash/overview1.jpg",
+          "ar": 1.5,
+          "fit": "cover",
+          "alt": "Playing MochiMash"
+        },
+        {
+          "src": "assets/img/projects/mochimash/overview2.jpg",
+          "ar": 1.777,
+          "fit": "cover",
+          "alt": "The one-pixel-row game screen"
+        }
+      ],
+      [
+        {
+          "src": "assets/img/projects/mochimash/overview3.jpg",
+          "ar": 1.897,
+          "fit": "contain",
+          "alt": "Sketches and cardboard prototypes"
+        },
+        {
+          "src": "assets/img/projects/mochimash/overview4.png",
+          "ar": 1.931,
+          "fit": "contain",
+          "alt": "Game state diagram"
+        }
+      ]
+    ],
     "decisions": {
       "1": {
-        "src": "assets/img/projects/mochimash/d1.jpg",
-        "fit": "contain",
-        "ar": 1.221,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/mochimash/d1_a.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Exploded view of the bowl: silicone mochi, LED housing and joystick cap, spring housing, bowl base, rotary encoder gear"
+            },
+            {
+              "src": "assets/img/projects/mochimash/d1_b.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Bowl CAD"
+            }
+          ]
+        ]
       },
       "2": {
-        "src": "assets/img/projects/mochimash/d2.jpg",
-        "fit": "cover",
-        "ar": 1.777,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/mochimash/d2_a.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "TPU-printed mochi and fold sketches"
+            },
+            {
+              "src": "assets/img/projects/mochimash/d2_b.jpg",
+              "ar": 1.283,
+              "fit": "cover",
+              "alt": "Mochi shape tests"
+            }
+          ]
+        ]
       },
       "3": {
-        "src": "assets/img/projects/mochimash/d3.png",
-        "fit": "contain",
-        "ar": 1.257,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/mochimash/d3_a.jpg",
+              "ar": 1.777,
+              "fit": "cover",
+              "alt": "Cardboard hammer prototype with sensing sketches"
+            },
+            {
+              "src": "assets/img/projects/mochimash/d3_b.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Hammer CAD"
+            }
+          ]
+        ]
       },
       "4": {
-        "src": "assets/img/projects/mochimash/d4.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/mochimash/d4_a.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Silicone-cast mochi and PLA-printed molds"
+            },
+            {
+              "src": "assets/img/projects/mochimash/d4_b.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Stone texture tests"
+            },
+            {
+              "src": "assets/img/projects/mochimash/d4_c.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Wood grain depth tests: 0.3, 0.5, 0.8 mm"
+            }
+          ]
+        ]
       }
     },
     "gallery": [
       {
         "src": "assets/img/projects/mochimash/g1.jpg",
-        "fit": "cover",
         "ar": 1.5,
+        "fit": "cover",
         "alt": ""
       },
       {
         "src": "assets/img/projects/mochimash/g2.jpg",
+        "ar": 0.667,
         "fit": "cover",
-        "ar": 1.5,
         "alt": ""
       },
       {
         "src": "assets/img/projects/mochimash/g3.jpg",
-        "fit": "cover",
         "ar": 1.5,
+        "fit": "cover",
         "alt": ""
       },
       {
         "src": "assets/img/projects/mochimash/g4.jpg",
+        "ar": 1.5,
         "fit": "cover",
-        "ar": 0.667,
         "alt": ""
       },
       {
         "src": "assets/img/projects/mochimash/g5.jpg",
-        "fit": "cover",
         "ar": 1.5,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g6.jpg",
         "fit": "cover",
-        "ar": 1.283,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g7.jpg",
-        "fit": "cover",
-        "ar": 1.777,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g8.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g9.jpg",
-        "fit": "cover",
-        "ar": 1.777,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g10.jpg",
-        "fit": "cover",
-        "ar": 1.777,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/mochimash/g11.png",
-        "fit": "contain",
-        "ar": 1.931,
         "alt": ""
       }
     ]
   },
   "en-clair": {
+    "_note": "Ordered to follow the 4.043 LLO presentation slides; d1_b, d1_c, d2_a, d3_c, d3_d are full-slide pictures.",
+    "overview_rows": [
+      [
+        {
+          "src": "assets/img/projects/en-clair/overview1.jpg",
+          "ar": 1.5,
+          "fit": "cover",
+          "alt": "Sliding a filter cartridge in"
+        },
+        {
+          "src": "assets/img/projects/en-clair/overview2.jpg",
+          "ar": 1.5,
+          "fit": "cover",
+          "alt": "en clair opened, showing the e-ink display"
+        },
+        {
+          "src": "assets/img/projects/en-clair/overview3.jpg",
+          "ar": 1.5,
+          "fit": "cover",
+          "alt": "Pressing the cartridge"
+        }
+      ]
+    ],
     "decisions": {
       "1": {
-        "src": "assets/img/projects/en-clair/d1.png",
-        "fit": "contain",
-        "ar": 0.989,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/en-clair/d1_a.jpg",
+              "ar": 1.5,
+              "fit": "cover",
+              "alt": "Cardboard form-factor prototypes"
+            },
+            {
+              "src": "assets/img/projects/en-clair/d1_b.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Form-factor sketches"
+            }
+          ],
+          [
+            {
+              "src": "assets/img/projects/en-clair/d1_c.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Form-factor studies"
+            },
+            {
+              "src": "assets/img/projects/en-clair/d1_d.png",
+              "ar": 1.139,
+              "fit": "contain",
+              "alt": "Line drawing of the opened scissor linkage"
+            }
+          ]
+        ]
       },
       "2": {
-        "src": "assets/img/projects/en-clair/d2.png",
-        "fit": "contain",
-        "ar": 1.819,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/en-clair/d2_a.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Cartridge designs"
+            },
+            {
+              "src": "assets/img/projects/en-clair/d2_b.png",
+              "ar": 1.819,
+              "fit": "contain",
+              "alt": "Exploded line drawing of the enclosure"
+            }
+          ]
+        ]
       },
       "3": {
-        "src": "assets/img/projects/en-clair/d3.jpg",
-        "fit": "cover",
-        "ar": 1.718,
-        "alt": ""
+        "layout": "stack",
+        "rows": [
+          [
+            {
+              "src": "assets/img/projects/en-clair/d3_a.png",
+              "ar": 1.765,
+              "fit": "contain",
+              "alt": "Phase 1: filter setup flow"
+            },
+            {
+              "src": "assets/img/projects/en-clair/d3_b.png",
+              "ar": 3.707,
+              "fit": "contain",
+              "alt": "Phase 2: live conversation flow"
+            }
+          ],
+          [
+            {
+              "src": "assets/img/projects/en-clair/d3_c.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Filter interface"
+            },
+            {
+              "src": "assets/img/projects/en-clair/d3_d.jpg",
+              "ar": 1.776,
+              "fit": "cover",
+              "alt": "Screen UI"
+            }
+          ]
+        ]
       }
     },
     "gallery": [
       {
         "src": "assets/img/projects/en-clair/g1.jpg",
-        "fit": "cover",
         "ar": 1.5,
-        "alt": ""
+        "fit": "cover",
+        "alt": "en clair with headphones"
       },
       {
-        "src": "assets/img/projects/en-clair/g2.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/en-clair/g3.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/en-clair/g4.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/en-clair/g5.jpg",
-        "fit": "cover",
-        "ar": 1.5,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/en-clair/g6.png",
+        "src": "assets/img/projects/en-clair/g2.png",
+        "ar": 1.819,
         "fit": "contain",
-        "ar": 1.556,
-        "alt": ""
-      },
-      {
-        "src": "assets/img/projects/en-clair/g7.jpg",
-        "fit": "cover",
-        "ar": 3.624,
-        "alt": ""
+        "alt": "Exploded line drawing"
       }
     ]
   },
