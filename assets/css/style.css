@@ -515,12 +515,7 @@ details.code pre {
 }
 .eq__vars dt { margin: 0; color: var(--ink); }
 .eq__vars dd { margin: 0; }
-.eq__vars var {
-  font-style: italic;
-  background: #fff;
-  border-radius: 4px;
-  padding: 0 .3em;
-}
+.eq__vars var { font-style: italic; }
 .eq__val { opacity: .75; white-space: nowrap; }
 /* Stacked fractions in equation boxes */
 .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 .2em; line-height: 1.25; }
@@ -702,7 +697,7 @@ html.viewer-open { overflow: hidden; }
   .card__blurb { font-size: 13px; line-height: 20px; }
   .card__meta { font-size: 12px; }
   .card.has-image .card__overlay, .card.has-image .card__meta { opacity: 1; }
-  .card.has-image .card__overlay { background: linear-gradient(to top, rgba(255,255,255,.94) 0, rgba(255,255,255,.94) 38%, rgba(255,255,255,0) 70%); justify-content: flex-end; padding-bottom: 36px; }
+  .card.has-image .card__overlay { background: linear-gradient(to top, rgba(255,255,255,.86) 0, rgba(255,255,255,.62) 26%, rgba(255,255,255,0) 50%); justify-content: flex-end; padding-bottom: 36px; }
 
   .more-grid { grid-template-columns: 1fr 1fr; gap: 18px 10px; }
   .more-card .card__title { font-size: 18px; line-height: 22px; }
