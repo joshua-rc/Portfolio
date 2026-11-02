@@ -434,11 +434,15 @@ def item_ar(it):
 
 
 def media_row(items):
-    """One justified row: images share a height and keep their shape (or the "ar" you give them)."""
-    figs = "".join(media_el(it, "media gallery__item",
-                            f' style="flex:{item_ar(it):.3f} 1 0;aspect-ratio:{item_ar(it):.3f};--ar:{item_ar(it):.3f}"')
-                   for it in items)
-    return f'<div class="gallery__row gallery__row--flex">{figs}</div>'
+    """One justified row: images share a height and keep their shape (or the "ar" you give them).
+    An item with "w" (e.g. 0.4) takes that share of the row's width instead, and the row is centered."""
+    def style(it):
+        if it.get("w"):
+            return f' style="flex:0 0 {float(it["w"]) * 100:.1f}%;max-width:{float(it["w"]) * 100:.1f}%;aspect-ratio:{item_ar(it):.3f};--ar:{item_ar(it):.3f}"'
+        return f' style="flex:{item_ar(it):.3f} 1 0;aspect-ratio:{item_ar(it):.3f};--ar:{item_ar(it):.3f}"'
+    figs = "".join(media_el(it, "media gallery__item", style(it)) for it in items)
+    center = ' style="justify-content:center"' if any(it.get("w") for it in items) else ""
+    return f'<div class="gallery__row gallery__row--flex"{center}>{figs}</div>'
 
 
 EQ_FIG_RE = re.compile(r'<figure class="eq">.*?</figure>', re.S)
@@ -506,6 +510,9 @@ def custom_decision(cfg, title, body, code_html):
                 out += '<div class="decision__text">' + "".join(text_blocks[i] for i in spec["text"] if i < len(text_blocks)) + "</div>"
             if spec.get("rows"):
                 out += media_rows(spec["rows"])
+            if spec.get("note"):     # small caption under the images
+                centered = any(it.get("w") for row in spec.get("rows", []) if isinstance(row, list) for it in row)
+                out += f'<p class="media-note"{" style=\"text-align:center\"" if centered else ""}>{inline(spec["note"])}</p>'
             if spec.get("eq"):   # true = every equation, or a list of indices to pick some
                 picked = eq_blocks if spec["eq"] is True else [eq_blocks[i] for i in spec["eq"] if i < len(eq_blocks)]
                 out += '<div class="seg__eq">' + "".join(picked) + "</div>"
@@ -516,7 +523,8 @@ def custom_decision(cfg, title, body, code_html):
                 segs.append(f'<div class="seg seg--full">{part(seg["full"])}</div>')
             else:
                 a, b = seg.get("cols", [1, 1])
-                segs.append(f'<div class="seg seg--split" style="grid-template-columns:{a}fr {b}fr">'
+                align = f';align-items:{seg["align"]}' if seg.get("align") else ""   # e.g. "center"
+                segs.append(f'<div class="seg seg--split" style="grid-template-columns:{a}fr {b}fr{align}">'
                             f'<div class="seg__col">{part(seg["left"])}</div><div class="seg__col">{part(seg["right"])}</div></div>')
         return f'''        <h3>{title}</h3>
         <div class="decision-segments">
@@ -627,7 +635,7 @@ def page(slug, d):
       <h1 class="project__title">{esc(title)}</h1>
 
       <div class="project__hero">
-        <figure class="media"><img src="../{IMAGES.get(slug, {}).get("hero", f"assets/img/covers/{slug}.jpg")}" alt="{html.escape(title)}"></figure>
+        <figure class="media"{f' style="aspect-ratio:{IMAGES[slug]["hero_ar"]}"' if IMAGES.get(slug, {}).get("hero_ar") else ""}><img src="../{IMAGES.get(slug, {}).get("hero", f"assets/img/covers/{slug}.jpg")}" alt="{html.escape(title)}"></figure>
         <div class="project__info">
           {render_glance(d.get("glance") or "")}
         </div>
@@ -719,6 +727,12 @@ def read_mini(ws):
             "image": cover_for(title),
             "link": "",
         })
+        media = (IMAGES.get("more_projects") or {}).get(out[-1]["title"])
+        if media:   # photos/videos for the viewer; the first one is the card's cover
+            first = media[0]
+            out[-1]["image"] = first.get("poster") or first["src"]
+            out[-1]["coverFit"] = first.get("fit", "cover")
+            out[-1]["media"] = [{k: v for k, v in it.items() if k in ("src", "poster", "fit", "ar", "cutout")} for it in media]
     return out
 
 

@@ -186,15 +186,90 @@
       return m ? new Date(+y, +m - 1).toLocaleString("en-US", { month: "short", year: "numeric" }) : y;
     };
 
+    const STACK = '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="4.5" width="10" height="10" rx="1.5"/><path d="M4.5 2.5h8a1.5 1.5 0 0 1 1.5 1.5v8"/></svg>';
     more.innerHTML = items
-      .map((p) => {
+      .map((p, i) => {
         const meta = more.dataset.sort === "effort" ? "" : (p.dateLabel || fmtDate(p.date));
-        const box = `<div class="media">${cardInner({ ...p, meta: p.meta ?? meta })}</div>`;
-        const tag = p.link ? "a" : "div";
-        const href = p.link ? ` href="${esc(url(p.link))}"` : "";
-        return `<${tag} class="more-card${p.image ? " has-image" : ""}"${href}>${box}
-          ${p.caption ? `<p class="more-card__caption">${esc(p.caption)}</p>` : ""}</${tag}>`;
+        const n = (p.media || []).length;
+        const count = n > 1 ? `<span class="more-card__count" aria-hidden="true">${STACK}${n}</span>` : "";
+        const fit = p.coverFit === "contain" ? " media--contain" : "";
+        const box = `<div class="media${fit}">${cardInner({ ...p, meta: p.meta ?? meta })}${count}</div>`;
+        const cap = p.caption ? `<p class="more-card__caption">${esc(p.caption)}</p>` : "";
+        if (p.link) return `<a class="more-card${p.image ? " has-image" : ""}" href="${esc(url(p.link))}">${box}${cap}</a>`;
+        if (n) return `<button type="button" class="more-card has-image more-card--viewer" data-i="${i}"
+          aria-label="${esc(p.title)}: view ${n} ${n > 1 ? "photos and videos" : "photo"}">${box}${cap}</button>`;
+        return `<div class="more-card${p.image ? " has-image" : ""}">${box}${cap}</div>`;
       })
       .join("");
+    more.addEventListener("click", (e) => {
+      const card = e.target.closest(".more-card--viewer");
+      if (card) openViewer(items[+card.dataset.i], card);
+    });
+  }
+
+  /* ---------- More Projects viewer: every photo/video of a project, no page needed ---------- */
+  function openViewer(p, opener) {
+    const media = p.media || [];
+    let i = 0;
+    const v = document.createElement("div");
+    v.className = "viewer";
+    v.setAttribute("role", "dialog");
+    v.setAttribute("aria-modal", "true");
+    v.setAttribute("aria-label", p.title);
+    v.innerHTML = `
+      <button type="button" class="viewer__close" aria-label="Close">&times;</button>
+      <button type="button" class="viewer__nav viewer__nav--prev" aria-label="Previous">&lsaquo;</button>
+      <div class="viewer__stage"></div>
+      <button type="button" class="viewer__nav viewer__nav--next" aria-label="Next">&rsaquo;</button>
+      <div class="viewer__info">
+        <p class="viewer__title">${esc(p.title)}${p.dateLabel ? `<span class="viewer__date">${esc(p.dateLabel)}</span>` : ""}</p>
+        ${p.caption ? `<p class="viewer__caption">${esc(p.caption)}</p>` : ""}
+        ${media.length > 1 ? `<div class="viewer__thumbs">${media.map((m, k) =>
+          `<button type="button" data-k="${k}" aria-label="Show ${k + 1} of ${media.length}"><img src="${esc(url(m.poster || m.src))}" alt="" loading="lazy">${m.poster ? '<span class="viewer__play" aria-hidden="true"></span>' : ""}</button>`).join("")}</div>` : ""}
+      </div>`;
+    if (media.length < 2) v.classList.add("viewer--single");
+    const stage = v.querySelector(".viewer__stage");
+    const thumbs = [...v.querySelectorAll(".viewer__thumbs button")];
+    const el = (m) => m.poster
+      ? `<video src="${esc(url(m.src))}" poster="${esc(url(m.poster))}" autoplay muted loop playsinline controls></video>`
+      : `<img src="${esc(url(m.src))}" alt="${esc(p.title)}, ${media.indexOf(m) + 1} of ${media.length}">`;
+    const show = (k) => {
+      i = (k + media.length) % media.length;
+      const m = media[i];
+      stage.innerHTML = el(m);
+      stage.classList.toggle("is-cutout", !!m.cutout);
+      thumbs.forEach((t, j) => t.classList.toggle("is-current", j === i));
+      thumbs[i] && thumbs[i].scrollIntoView({ block: "nearest", inline: "nearest" });
+      [media[i + 1], media[i - 1]].forEach((n) => { if (n && !n.poster) new Image().src = url(n.src); });
+    };
+    const close = () => {
+      v.remove();
+      document.documentElement.classList.remove("viewer-open");
+      document.removeEventListener("keydown", onKey);
+      opener && opener.focus();
+    };
+    const onKey = (e) => {
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowRight") show(i + 1);
+      else if (e.key === "ArrowLeft") show(i - 1);
+    };
+    v.querySelector(".viewer__close").addEventListener("click", close);
+    v.querySelector(".viewer__nav--prev").addEventListener("click", () => show(i - 1));
+    v.querySelector(".viewer__nav--next").addEventListener("click", () => show(i + 1));
+    thumbs.forEach((t) => t.addEventListener("click", () => show(+t.dataset.k)));
+    v.addEventListener("click", (e) => { if (e.target === v || e.target === stage) close(); });
+    let x0 = null;
+    stage.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener("touchend", (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+      x0 = null;
+    });
+    document.addEventListener("keydown", onKey);
+    document.documentElement.classList.add("viewer-open");
+    document.body.appendChild(v);
+    show(0);
+    v.querySelector(".viewer__close").focus();
   }
 })();

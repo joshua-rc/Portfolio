@@ -1463,5 +1463,395 @@
    }
   ],
   "gallery_target": 2.4
+ },
+ "dme-2026": {
+  "_note": "Layout from Joshua's Figma frame 57:902; images from photos/dme/portfolio photos, cropped to match the Figma frames.",
+  "hero": "assets/img/projects/dme-2026/hero.jpg",
+  "hero_ar": 1.586,
+  "decisions": {
+   "1": {
+    "layout": "segments",
+    "segments": [
+     {
+      "cols": [
+       800,
+       874
+      ],
+      "align": "start",
+      "left": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/dme-2026/d1_a.jpg",
+          "fit": "cover",
+          "ar": 1.166,
+          "alt": "The redesigned, smaller soccer robot"
+         }
+        ]
+       ]
+      },
+      "right": {
+       "text": [
+        0
+       ],
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/dme-2026/d1_b.jpg",
+          "fit": "cover",
+          "ar": 1.075,
+          "w": 0.41,
+          "alt": "The previous soccer robot design"
+         }
+        ]
+       ],
+       "note": "Previous design for reference"
+      }
+     }
+    ]
+   },
+   "2": {
+    "layout": "segments",
+    "segments": [
+     {
+      "cols": [
+       872,
+       800
+      ],
+      "align": "center",
+      "left": {
+       "text": [
+        0
+       ]
+      },
+      "right": {
+       "rows": [
+        [
+         {
+          "src": "assets/img/projects/dme-2026/d2-instruction-pamphlet.jpg",
+          "fit": "contain",
+          "ar": 1.081,
+          "alt": "The revamped SoccerBot instruction pamphlet"
+         }
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   "3": {
+    "src": "assets/img/projects/dme-2026/d3-pcb-housing.png",
+    "fit": "contain",
+    "ar": 1.205,
+    "alt": "Render of the custom PCB and LiPo housing"
+   }
+  },
+  "gallery": [
+   {
+    "src": "assets/img/projects/dme-2026/g1.jpg",
+    "fit": "cover",
+    "ar": 1.5,
+    "alt": "Robots scuffling on the pitch"
+   },
+   {
+    "src": "assets/img/projects/dme-2026/g2.jpg",
+    "fit": "cover",
+    "ar": 1.333,
+    "alt": "Students watching from the sidelines as robots play"
+   },
+   {
+    "src": "assets/img/projects/dme-2026/g3.jpg",
+    "fit": "cover",
+    "ar": 1.333,
+    "alt": "The DME 2026 cohort with their robots"
+   },
+   {
+    "src": "assets/img/projects/dme-2026/g4.jpg",
+    "fit": "cover",
+    "ar": 1.5,
+    "alt": "A robot driving into the goal box"
+   },
+   {
+    "src": "assets/img/projects/dme-2026/g5.jpg",
+    "fit": "cover",
+    "ar": 1.5,
+    "alt": "Students tuning their robots at the pit stop"
+   },
+   {
+    "src": "assets/img/projects/dme-2026/g6.jpg",
+    "fit": "cover",
+    "ar": 1.5,
+    "alt": "Robots lined up on the pitch"
+   }
+  ]
+ },
+ "more_projects": {
+  "_help": "More Projects viewer: each title (exactly as in the Mini Projects tab) lists its photos/videos in order. The first one is the card's cover. 'fit': 'contain' shows the whole image (cutouts, drawings); 'cutout': true = transparent background.",
+  "4.02A Drawing Machine": [
+   {
+    "src": "assets/img/more/drawing-machine-1.jpg",
+    "ar": 1.333
+   },
+   {
+    "src": "assets/img/more/drawing-machine-v1.mp4",
+    "poster": "assets/img/more/drawing-machine-v1-poster.jpg",
+    "ar": 1.778
+   }
+  ],
+  "Totems": [
+   {
+    "src": "assets/img/more/totems-1.jpg",
+    "ar": 1.5
+   },
+   {
+    "src": "assets/img/more/totems-v1.mp4",
+    "poster": "assets/img/more/totems-v1-poster.jpg",
+    "ar": 0.562
+   }
+  ],
+  "Plates": [
+   {
+    "src": "assets/img/more/plates-1.webp",
+    "ar": 0.866,
+    "fit": "contain",
+    "cutout": true
+   },
+   {
+    "src": "assets/img/more/plates-2.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/more/plates-v1.mp4",
+    "poster": "assets/img/more/plates-v1-poster.jpg",
+    "ar": 0.562
+   },
+   {
+    "src": "assets/img/more/plates-v2.mp4",
+    "poster": "assets/img/more/plates-v2-poster.jpg",
+    "ar": 0.562
+   },
+   {
+    "src": "assets/img/more/plates-v3.mp4",
+    "poster": "assets/img/more/plates-v3-poster.jpg",
+    "ar": 0.562
+   },
+   {
+    "src": "assets/img/more/plates-v4.mp4",
+    "poster": "assets/img/more/plates-v4-poster.jpg",
+    "ar": 0.562
+   },
+   {
+    "src": "assets/img/more/plates-v5.mp4",
+    "poster": "assets/img/more/plates-v5-poster.jpg",
+    "ar": 0.562
+   }
+  ],
+  "MITES Architecture Project": [
+   {
+    "src": "assets/img/more/mites-1.jpg",
+    "ar": 0.772
+   }
+  ],
+  "Clay Hands": [
+   {
+    "src": "assets/img/more/clay-hands-1.webp",
+    "ar": 1.44,
+    "fit": "contain",
+    "cutout": true
+   },
+   {
+    "src": "assets/img/more/hands-v1.mp4",
+    "poster": "assets/img/more/hands-v1-poster.jpg",
+    "ar": 0.562
+   }
+  ],
+  "2.00t Drawing Machine": [
+   {
+    "src": "assets/img/more/polar-drawing-1.jpg",
+    "ar": 1.5
+   }
+  ],
+  "4.02A Laser Cut": [
+   {
+    "src": "assets/img/more/laser-cut-1.jpg",
+    "ar": 1.26
+   },
+   {
+    "src": "assets/img/more/laser-cut-2.jpg",
+    "ar": 1.545,
+    "fit": "contain"
+   }
+  ],
+  "Ribcage Shirt": [
+   {
+    "src": "assets/img/more/ribcage-1.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/more/ribcage-2.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/more/ribcage-3.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/more/ribcage-4.jpg",
+    "ar": 0.75
+   }
+  ],
+  "Speakers": [
+   {
+    "src": "assets/img/more/speakers-1.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/more/speakers-2.jpg",
+    "ar": 1.333
+   },
+   {
+    "src": "assets/img/more/speakers-3.jpg",
+    "ar": 0.75
+   }
+  ],
+  "Glasswork": [
+   {
+    "src": "assets/img/more/glass-1.webp",
+    "ar": 0.909,
+    "fit": "contain",
+    "cutout": true
+   },
+   {
+    "src": "assets/img/more/glass-2.webp",
+    "ar": 0.709,
+    "fit": "contain",
+    "cutout": true
+   },
+   {
+    "src": "assets/img/more/glass-3.jpg",
+    "ar": 0.75
+   }
+  ],
+  "Linoleum Block Printing": [
+   {
+    "src": "assets/img/more/linoleum-1.jpg",
+    "ar": 1.333
+   },
+   {
+    "src": "assets/img/more/linoleum-2.jpg",
+    "ar": 1.546
+   },
+   {
+    "src": "assets/img/more/linoleum-3.jpg",
+    "ar": 1.275
+   },
+   {
+    "src": "assets/img/more/linoleum-4.jpg",
+    "ar": 1.256
+   },
+   {
+    "src": "assets/img/more/linoleum-5.jpg",
+    "ar": 1.256
+   },
+   {
+    "src": "assets/img/more/linoleum-6.jpg",
+    "ar": 1.181
+   },
+   {
+    "src": "assets/img/more/linoleum-7.jpg",
+    "ar": 1.223
+   },
+   {
+    "src": "assets/img/more/linoleum-8.jpg",
+    "ar": 0.868
+   },
+   {
+    "src": "assets/img/more/linoleum-9.jpg",
+    "ar": 0.772
+   },
+   {
+    "src": "assets/img/more/linoleum-10.jpg",
+    "ar": 0.645
+   },
+   {
+    "src": "assets/img/more/linoleum-11.jpg",
+    "ar": 0.982
+   }
+  ],
+  "Hand Push Engraving": [
+   {
+    "src": "assets/img/more/hand-push-1.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/more/hand-push-2.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/more/hand-push-3.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/more/handpush-v1.mp4",
+    "poster": "assets/img/more/handpush-v1-poster.jpg",
+    "ar": 0.562
+   }
+  ],
+  "TwoFold": [
+   {
+    "src": "assets/img/covers/twofold.jpg",
+    "ar": 0.856
+   },
+   {
+    "src": "assets/img/more/twofold-2.jpg",
+    "ar": 1.04,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/img/more/twofold-3.jpg",
+    "ar": 1.04,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/img/more/twofold-4.jpg",
+    "ar": 0.647,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/img/more/twofold-5.jpg",
+    "ar": 0.735,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/img/more/twofold-6.jpg",
+    "ar": 1.259,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/img/more/twofold-7.jpg",
+    "ar": 1.25,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/img/more/twofold-8.jpg",
+    "ar": 1.165,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/img/more/twofold-9.jpg",
+    "ar": 1.206,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/img/more/twofold-10.jpg",
+    "ar": 0.871,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/img/more/twofold-11.jpg",
+    "ar": 0.871,
+    "fit": "contain"
+   }
+  ]
  }
 }
