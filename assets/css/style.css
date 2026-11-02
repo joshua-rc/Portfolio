@@ -501,7 +501,7 @@ details.code pre {
   line-height: 1.5;
   color: var(--ink);
   margin: calc(var(--s) * 8) 0 calc(var(--s) * 14);
-  overflow-x: auto;
+  overflow-wrap: anywhere;   /* long lines wrap instead of showing a scrollbar */
 }
 .eq__math sub, .eq__math sup, .eq__vars sub, .eq__vars sup { font-size: .68em; }
 .eq__vars {
@@ -532,6 +532,15 @@ details.code pre {
 .eq__math { line-height: 1.6; }
 .eq__res { display: inline-block; }
 .eq__step { display: inline-block; }
+.eq__align { display: inline-grid; grid-template-columns: auto auto; column-gap: .35em; row-gap: .25em; align-items: center; }
+.eq__align > .eq__lhs { justify-self: end; }
+/* YubbaYubba: four equations, so smaller text in a two-column grid */
+body[data-slug="yubbayubba"] .eq { padding: calc(var(--s) * 18) calc(var(--s) * 24); }
+body[data-slug="yubbayubba"] .eq__label { font-size: calc(var(--s) * 19); }
+body[data-slug="yubbayubba"] .eq__math { font-size: calc(var(--s) * 27); }
+body[data-slug="yubbayubba"] .eq__vars { font-size: calc(var(--s) * 20); }
+.eq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--s) * 18); margin-top: calc(var(--s) * 30); align-items: stretch; }
+.eq-grid > .eq, .eq-grid > .eq + .eq { margin: 0; }
 
 .eq + .eq { margin-top: calc(var(--s) * 18); }
 
@@ -714,6 +723,7 @@ html.viewer-open { overflow: hidden; }
   .body-text, .project section > p, .summary-text, .body-list, .outcome-list { font-size: 15px; line-height: 24px; }
   .equation { font-size: 13px; line-height: 22px; }
   .eq { padding: 12px 14px; }
+  .eq-grid { grid-template-columns: 1fr; gap: 10px; }
   .eq__label { font-size: 11px; }
   .eq__math { font-size: 16px; }
   .eq__vars { font-size: 12px; column-gap: 10px; }

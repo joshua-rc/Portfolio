@@ -240,8 +240,15 @@ def eq_math_html(expr):
         sym, approx = expr[:cut], expr[cut:]
     sides = [p.strip() for p in _split_top(sym, [" = "]) if p != " = "]
     # each "= …" step stays in one piece, so a long chain wraps only at its equals signs
+    res = f' <span class="eq__res">{math_html(approx)}</span>' if approx else ""
+    if len(sides) > 2:
+        # a chain of steps: one step per line, with the equals signs lined up under each other
+        rows = "".join(f'<span class="eq__lhs">{_expr(sides[0]) if k == 0 else ""}</span>'
+                       f'<span class="eq__step">= {_expr(p)}{res if k == len(sides) - 2 else ""}</span>'
+                       for k, p in enumerate(sides[1:]))
+        return f'<span class="eq__align">{rows}</span>'
     html_ = _expr(sides[0]) + "".join(f' <span class="eq__step">= {_expr(p)}</span>' for p in sides[1:])
-    return html_ + (f' <span class="eq__res">{math_html(approx)}</span>' if approx else "")
+    return html_ + res
 
 
 def split_where(where):
@@ -472,6 +479,10 @@ def media_rows(rows, eq_html=""):
 
 def custom_decision(cfg, title, body, code_html):
     """Per-page decision layouts set in images.json ("layout": "stack" | "tall")."""
+    if cfg.get("eq_grid"):   # equation boxes two per row instead of stacked
+        found = EQ_FIG_RE.findall(body)
+        if found:
+            body = EQ_FIG_RE.sub("", body).rstrip() + '\n          <div class="eq-grid">' + "".join(found) + "</div>"
     eqs = "".join(EQ_FIG_RE.findall(body))
     uses_eq = any(it.get("eq") for row in cfg.get("rows", []) if isinstance(row, list) for it in row)
     if cfg["layout"] == "segments":

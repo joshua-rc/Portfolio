@@ -982,7 +982,8 @@
        "alt": "Interference measurements"
       }
      ]
-    ]
+    ],
+    "eq_grid": true
    },
    "2": {
     "layout": "stack",
@@ -1154,29 +1155,26 @@
    },
    {
     "src": "assets/img/projects/yubbayubba/g3.jpg",
-    "ar": 1.006,
-    "fit": "contain",
-    "alt": "Bubble-gum scented yo-yo string"
+    "ar": 0.75,
+    "fit": "cover",
+    "alt": "Students holding stacks of molded yo-yo parts"
    },
    {
-    "src": "assets/img/projects/yubbayubba/g4.png",
+    "src": "assets/img/projects/yubbayubba/g4.jpg",
     "ar": 0.75,
-    "fit": "contain",
-    "alt": "Bubble gum fragrance oil"
+    "fit": "cover",
+    "alt": "Assembling yo-yos in the shop"
    },
    {
     "src": "assets/img/projects/yubbayubba/g5.jpg",
     "ar": 0.75,
     "fit": "cover",
-    "alt": ""
-   },
-   {
-    "src": "assets/img/projects/yubbayubba/g6.jpg",
-    "ar": 0.75,
-    "fit": "cover",
-    "alt": ""
+    "alt": "Joshua under a pile of finished YubbaYubba yo-yos"
    }
-  ]
+  ],
+  "gallery_target": 2.25,
+  "hero": "assets/img/projects/yubbayubba/hero.jpg",
+  "hero_ar": 1.492
  },
  "pool-boiling": {
   "_note": "Images from the MITEI poster (Summer 2024). Plots redrawn from the MATLAB scripts with the surface-tension fix.",
