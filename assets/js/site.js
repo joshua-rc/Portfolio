@@ -34,7 +34,7 @@
         <div class="return">Return to...
           <div class="return__links">
             <a href="${url("index.html")}">Selected Work</a>
-            <a href="${url("more-projects-by-date.html")}">More Projects</a>
+            <a href="${url("more-projects-by-effort.html")}">More Projects</a>
             <a href="${url("about.html")}">About Me</a>
           </div>
         </div>`;
@@ -81,7 +81,7 @@
         <nav class="nav" aria-label="Main">
           <a href="${url("index.html")}" class="nav__link${page === "home" ? " is-current" : ""}">Selected Work</a>
           <ul class="project-list">${list}</ul>
-          <a href="${url("more-projects-by-date.html")}" class="nav__link${onMore ? " is-current" : ""}">More Projects</a>
+          <a href="${url("more-projects-by-effort.html")}" class="nav__link${onMore ? " is-current" : ""}">More Projects</a>
           <a href="${url("about.html")}" class="nav__link${page === "about" ? " is-current" : ""}">About Me</a>
         </nav>
         ${socials}`;
@@ -177,7 +177,7 @@
   const more = document.getElementById("more-grid");
   if (more) {
     const items = [...(window.MORE_PROJECTS || [])];
-    if (more.dataset.sort === "effort") items.sort((a, b) => (b.effort || 0) - (a.effort || 0));
+    if (more.dataset.sort === "effort") items.sort((a, b) => (a.effort || 999) - (b.effort || 999));   // rank 1 = most effort
     else items.sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
     const fmtDate = (d) => {
@@ -223,6 +223,7 @@
       <button type="button" class="viewer__nav viewer__nav--next" aria-label="Next">&rsaquo;</button>
       <div class="viewer__info">
         <p class="viewer__title">${esc(p.title)}${p.dateLabel ? `<span class="viewer__date">${esc(p.dateLabel)}</span>` : ""}</p>
+        ${p.blurb ? `<p class="viewer__material">${esc(p.blurb)}</p>` : ""}
         ${p.caption ? `<p class="viewer__caption">${esc(p.caption)}</p>` : ""}
         ${media.length > 1 ? `<div class="viewer__thumbs">${media.map((m, k) =>
           `<button type="button" data-k="${k}" aria-label="Show ${k + 1} of ${media.length}"><img src="${esc(url(m.poster || m.src))}" alt="" loading="lazy">${m.poster ? '<span class="viewer__play" aria-hidden="true"></span>' : ""}</button>`).join("")}</div>` : ""}

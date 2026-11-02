@@ -694,9 +694,30 @@ def read_main(ws):
 SEASON_MONTH = {"january": "01", "winter": "01", "spring": "03", "summer": "06", "fall": "09", "autumn": "09"}
 
 
+MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august",
+          "september", "october", "november", "december"]
+
+
+def date_label(raw):
+    """Sheet date -> display label. A date cell becomes "September 2026"; "(2nd)" order notes are dropped."""
+    m = re.match(r"(\d{4})-(\d{2})-\d{2}", raw)
+    if m:
+        return f"{MONTHS[int(m.group(2)) - 1].capitalize()} {m.group(1)}"
+    return re.sub(r"\s*\((\d+)(st|nd|rd|th)\)", "", raw).strip()
+
+
 def date_key(label):
-    m = re.search(r"(january|winter|spring|summer|fall|autumn)\s+(\d{4})", label, re.I)
-    return f"{m.group(2)}-{SEASON_MONTH[m.group(1).lower()]}" if m else ""
+    """Sortable key. "January 2024 (2nd)" sorts after "(1st)" from the same month (newest first on the page)."""
+    m = re.match(r"(\d{4})-(\d{2})-\d{2}", label)
+    if m:
+        return f"{m.group(1)}-{m.group(2)}"
+    order = re.search(r"\((\d+)(?:st|nd|rd|th)\)", label)
+    suffix = f".{order.group(1)}" if order else ""
+    m = re.search(r"(" + "|".join(MONTHS) + r")\s+(\d{4})", label, re.I)
+    if m:
+        return f"{m.group(2)}-{MONTHS.index(m.group(1).lower()) + 1:02d}{suffix}"
+    m = re.search(r"(winter|spring|summer|fall|autumn)\s+(\d{4})", label, re.I)
+    return f"{m.group(2)}-{SEASON_MONTH[m.group(1).lower()]}{suffix}" if m else ""
 
 
 def cover_for(title):
@@ -716,14 +737,16 @@ def read_mini(ws):
         title = cell(ws, rows["title"], c)
         if not title:
             continue
-        label = TODO_RE.sub("", cell(ws, rows["date"], c)).strip()
+        raw = TODO_RE.sub("", cell(ws, rows["date"], c)).strip()
+        rank = cell(ws, rows["effort rank"], c) if "effort rank" in rows else ""
+        material = TODO_RE.sub("", cell(ws, rows["material"], c)).strip() if "material" in rows else ""
         out.append({
             "title": TODO_RE.sub("", title).strip(),
-            "blurb": "",
+            "blurb": material,          # the medium, art-label style; shown on hover and in the viewer
             "caption": TODO_RE.sub("", cell(ws, rows["one-liner"], c)).strip(),
-            "date": date_key(label),
-            "dateLabel": label,
-            "effort": 0,
+            "date": date_key(raw),
+            "dateLabel": date_label(raw),
+            "effort": int(float(rank)) if rank else 0,   # 1 = most effort
             "image": cover_for(title),
             "link": "",
         })
@@ -783,6 +806,7 @@ def main():
     mini = read_mini(wb["Mini Projects"]) if "Mini Projects" in wb.sheetnames else []
     update_projects_js(projects, mini)
     opener = read_opener(wb["Mini Projects"]) if "Mini Projects" in wb.sheetnames else ""
+    opener = opener.rstrip().rstrip(".")   # masthead openers never end with a period
     if opener:
         for f in ("more-projects-by-date.html", "more-projects-by-effort.html"):
             fp = ROOT / f

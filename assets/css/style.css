@@ -287,6 +287,7 @@ img { display: block; max-width: 100%; }
 .more-card .media { aspect-ratio: 1; }
 .more-card .card__title { font-size: calc(var(--s) * 40); }
 .more-card .card__blurb, .more-card .card__meta { font-size: calc(var(--s) * 16); }
+.more-card .card__blurb { font-style: italic; color: var(--accent); }
 .more-card__caption {
   margin-top: calc(var(--s) * 11);
   text-align: center;
@@ -620,6 +621,7 @@ html.viewer-open { overflow: hidden; }
 .viewer__info { grid-column: 1 / -1; grid-row: 2; max-width: 900px; width: 100%; margin: 14px auto 0; text-align: center; }
 .viewer__title { font-size: 20px; margin: 0; }
 .viewer__date { color: #9aa7b4; margin-left: .8em; font-size: 15px; }
+.viewer__material { font-size: 13px; font-style: italic; color: #9aa7b4; margin: 4px 0 0; }
 .viewer__caption { font-size: 14px; line-height: 1.6; color: #c9d0d7; margin: 6px 0 0; }
 .viewer__thumbs { display: flex; gap: 8px; justify-content: center; margin-top: 12px; overflow-x: auto; padding: 2px; scrollbar-width: none; }
 .viewer__thumbs button { all: unset; cursor: pointer; position: relative; flex: 0 0 56px; height: 56px; border-radius: 6px; overflow: hidden; opacity: .45; outline: 2px solid transparent; background: #333; }

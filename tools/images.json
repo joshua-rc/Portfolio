@@ -1587,17 +1587,6 @@
  },
  "more_projects": {
   "_help": "More Projects viewer: each title (exactly as in the Mini Projects tab) lists its photos/videos in order. The first one is the card's cover. 'fit': 'contain' shows the whole image (cutouts, drawings); 'cutout': true = transparent background.",
-  "4.02A Drawing Machine": [
-   {
-    "src": "assets/img/more/drawing-machine-1.jpg",
-    "ar": 1.333
-   },
-   {
-    "src": "assets/img/more/drawing-machine-v1.mp4",
-    "poster": "assets/img/more/drawing-machine-v1-poster.jpg",
-    "ar": 1.778
-   }
-  ],
   "Totems": [
    {
     "src": "assets/img/more/totems-1.jpg",
@@ -1609,77 +1598,10 @@
     "ar": 0.562
    }
   ],
-  "Plates": [
-   {
-    "src": "assets/img/more/plates-1.webp",
-    "ar": 0.866,
-    "fit": "contain",
-    "cutout": true
-   },
-   {
-    "src": "assets/img/more/plates-2.jpg",
-    "ar": 0.75
-   },
-   {
-    "src": "assets/img/more/plates-v1.mp4",
-    "poster": "assets/img/more/plates-v1-poster.jpg",
-    "ar": 0.562
-   },
-   {
-    "src": "assets/img/more/plates-v2.mp4",
-    "poster": "assets/img/more/plates-v2-poster.jpg",
-    "ar": 0.562
-   },
-   {
-    "src": "assets/img/more/plates-v3.mp4",
-    "poster": "assets/img/more/plates-v3-poster.jpg",
-    "ar": 0.562
-   },
-   {
-    "src": "assets/img/more/plates-v4.mp4",
-    "poster": "assets/img/more/plates-v4-poster.jpg",
-    "ar": 0.562
-   },
-   {
-    "src": "assets/img/more/plates-v5.mp4",
-    "poster": "assets/img/more/plates-v5-poster.jpg",
-    "ar": 0.562
-   }
-  ],
   "MITES Architecture Project": [
    {
     "src": "assets/img/more/mites-1.jpg",
     "ar": 0.772
-   }
-  ],
-  "Clay Hands": [
-   {
-    "src": "assets/img/more/clay-hands-1.webp",
-    "ar": 1.44,
-    "fit": "contain",
-    "cutout": true
-   },
-   {
-    "src": "assets/img/more/hands-v1.mp4",
-    "poster": "assets/img/more/hands-v1-poster.jpg",
-    "ar": 0.562
-   }
-  ],
-  "2.00t Drawing Machine": [
-   {
-    "src": "assets/img/more/polar-drawing-1.jpg",
-    "ar": 1.5
-   }
-  ],
-  "4.02A Laser Cut": [
-   {
-    "src": "assets/img/more/laser-cut-1.jpg",
-    "ar": 1.26
-   },
-   {
-    "src": "assets/img/more/laser-cut-2.jpg",
-    "ar": 1.545,
-    "fit": "contain"
    }
   ],
   "Ribcage Shirt": [
@@ -1711,24 +1633,6 @@
    },
    {
     "src": "assets/img/more/speakers-3.jpg",
-    "ar": 0.75
-   }
-  ],
-  "Glasswork": [
-   {
-    "src": "assets/img/more/glass-1.webp",
-    "ar": 0.909,
-    "fit": "contain",
-    "cutout": true
-   },
-   {
-    "src": "assets/img/more/glass-2.webp",
-    "ar": 0.709,
-    "fit": "contain",
-    "cutout": true
-   },
-   {
-    "src": "assets/img/more/glass-3.jpg",
     "ar": 0.75
    }
   ],
@@ -1850,6 +1754,102 @@
    {
     "src": "assets/img/more/twofold-11.jpg",
     "ar": 0.871,
+    "fit": "contain"
+   }
+  ],
+  "Couple Seesaw Drawing Machine": [
+   {
+    "src": "assets/img/more/drawing-machine-1.jpg",
+    "ar": 1.333
+   },
+   {
+    "src": "assets/img/more/drawing-machine-v1.mp4",
+    "poster": "assets/img/more/drawing-machine-v1-poster.jpg",
+    "ar": 1.778
+   }
+  ],
+  "Platillos": [
+   {
+    "src": "assets/img/more/plates-1.webp",
+    "ar": 0.866,
+    "fit": "contain",
+    "cutout": true
+   },
+   {
+    "src": "assets/img/more/plates-2.jpg",
+    "ar": 0.75
+   },
+   {
+    "src": "assets/img/more/plates-v1.mp4",
+    "poster": "assets/img/more/plates-v1-poster.jpg",
+    "ar": 0.562
+   },
+   {
+    "src": "assets/img/more/plates-v2.mp4",
+    "poster": "assets/img/more/plates-v2-poster.jpg",
+    "ar": 0.562
+   },
+   {
+    "src": "assets/img/more/plates-v3.mp4",
+    "poster": "assets/img/more/plates-v3-poster.jpg",
+    "ar": 0.562
+   },
+   {
+    "src": "assets/img/more/plates-v4.mp4",
+    "poster": "assets/img/more/plates-v4-poster.jpg",
+    "ar": 0.562
+   },
+   {
+    "src": "assets/img/more/plates-v5.mp4",
+    "poster": "assets/img/more/plates-v5-poster.jpg",
+    "ar": 0.562
+   }
+  ],
+  "Hands of Midas": [
+   {
+    "src": "assets/img/more/clay-hands-1.webp",
+    "ar": 1.44,
+    "fit": "contain",
+    "cutout": true
+   },
+   {
+    "src": "assets/img/more/hands-v1.mp4",
+    "poster": "assets/img/more/hands-v1-poster.jpg",
+    "ar": 0.562
+   }
+  ],
+  "Polar Coordinate Drawing Machine": [
+   {
+    "src": "assets/img/more/polar-drawing-1.jpg",
+    "ar": 1.5
+   }
+  ],
+  "Stained Glass": [
+   {
+    "src": "assets/img/more/glass-1.webp",
+    "ar": 0.909,
+    "fit": "contain",
+    "cutout": true
+   },
+   {
+    "src": "assets/img/more/glass-2.webp",
+    "ar": 0.709,
+    "fit": "contain",
+    "cutout": true
+   },
+   {
+    "src": "assets/img/more/glass-3.jpg",
+    "ar": 0.75
+   }
+  ],
+  "Sinking": [
+   {
+    "src": "assets/img/more/laser-cut-1.jpg",
+    "ar": 1.26
+   },
+   {
+    "src": "assets/img/more/laser-cut-2.jpg",
+    "ar": 1.545,
     "fit": "contain"
    }
   ]
