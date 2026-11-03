@@ -33,6 +33,7 @@
         <div class="media-rows"><div class="gallery__row gallery__row--flex"><figure class="media gallery__item media--contain" style="flex:1.973 1 0;aspect-ratio:1.973;--ar:1.973"><img src="../assets/img/projects/cantilevered-deltaxy/overview1.jpg" alt="Diagram of the Cantilevered DeltaXY and the toolhead&#x27;s range" loading="lazy"></figure><figure class="media gallery__item media--contain" style="flex:1.367 1 0;aspect-ratio:1.367;--ar:1.367"><img src="../assets/img/projects/cantilevered-deltaxy/overview2.jpg" alt="CAD of the FabUnit printer" loading="lazy"></figure></div></div>
         <p class="media-note">Diagram and CAD by Ilan Moyer.</p>
       </section>
+      <div class="section-split" style="grid-template-columns:445fr 555fr">
       <section id="context" data-nav="Context/ Motivation">
         <h2>Context/Motivation</h2>
           <p class="body-text">Over my sophomore summer, I joined the Ideation Lab in MIT's Department of Mechanical Engineering as an undergraduate researcher. My research centered on the Cantilevered DeltaXY, a movement system Ilan Moyer designed for FabUnit — an ultra-thin 3D printer that sits on a bookshelf like a thick book. The architecture gives FabUnit a lateral space efficiency of 94%: its build area is nearly as wide as the machine itself.</p>
@@ -43,8 +44,9 @@
           <p class="body-text">My work came in two phases. First, FabUnit's prints came out slightly distorted, usually skewed in one direction. The main source of error turned out to be an offset of the toolhead relative to its joint — a slight non-perpendicularity, amplified over the length of the printhead — so the machine's kinematics had to account for it. Second, I shifted to building the architecture into a cheaper form that was easier to prototype, to allow the exploration of new uses for its reach, such as multiple machines working together.</p>
           
       </section>
-      <section id="process" data-nav="Process">
-        <h2>Process</h2>
+      </div>
+      <section id="process" data-nav="Design Process">
+        <h2>Design Process</h2>
 
         <h3>Modeling the toolhead offset</h3>
         <div class="decision-stack">

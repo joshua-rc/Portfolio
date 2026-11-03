@@ -52,6 +52,10 @@
     "ar": 1.0,
     "alt": "Force-displacement curve from a failure trial"
    }
+  ],
+  "split_context": [
+   500,
+   500
   ]
  },
  "pearcat": {
@@ -472,7 +476,8 @@
     "ar": 0.75,
     "alt": ""
    }
-  ]
+  ],
+  "split_context": false
  },
  "synthia": {
   "_note": "Layout from Joshua's Figma frame (node 57:5). Rows are justified: items share a height; 'ar' sets each item's shape.",
@@ -512,8 +517,8 @@
    ]
   ],
   "split_context": [
-   528,
-   1123
+   292,
+   708
   ],
   "decisions": {
    "1": {
@@ -792,6 +797,10 @@
     "fit": "cover",
     "alt": ""
    }
+  ],
+  "split_context": [
+   510,
+   490
   ]
  },
  "en-clair": {
@@ -918,6 +927,10 @@
     "fit": "contain",
     "alt": "Exploded line drawing"
    }
+  ],
+  "split_context": [
+   398,
+   602
   ]
  },
  "yubbayubba": {
@@ -1174,7 +1187,11 @@
   ],
   "gallery_target": 2.25,
   "hero": "assets/img/projects/yubbayubba/hero.jpg",
-  "hero_ar": 1.492
+  "hero_ar": 1.492,
+  "split_context": [
+   418,
+   582
+  ]
  },
  "pool-boiling": {
   "_note": "Images from the MITEI poster (Summer 2024). Plots redrawn from the MATLAB scripts with the surface-tension fix.",
@@ -1230,6 +1247,10 @@
     "ar": 1.486,
     "alt": "CAD of the pool section"
    }
+  ],
+  "split_context": [
+   468,
+   532
   ]
  },
  "cantilevered-deltaxy": {
@@ -1377,6 +1398,10 @@
     "fit": "contain",
     "alt": "Elevation views of multiple machines side by side"
    }
+  ],
+  "split_context": [
+   445,
+   555
   ]
  },
  "unit-cell-tessellation": {
@@ -1460,7 +1485,11 @@
     "alt": "Stress-strain curves for our unit cell and the reference tetrakaidecahedron, with experimental and FEA moduli and the yield point"
    }
   ],
-  "gallery_target": 2.4
+  "gallery_target": 2.4,
+  "split_context": [
+   468,
+   532
+  ]
  },
  "dme-2026": {
   "_note": "Layout from Joshua's Figma frame 57:902; images from photos/dme/portfolio photos, cropped to match the Figma frames.",
@@ -1581,6 +1610,10 @@
     "ar": 1.5,
     "alt": "Robots lined up on the pitch"
    }
+  ],
+  "split_context": [
+   542,
+   458
   ]
  },
  "more_projects": {

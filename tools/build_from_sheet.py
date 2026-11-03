@@ -569,7 +569,9 @@ def page(slug, d):
           {render_body(d[key])}
           {media_rows(extra) if extra else ""}
       </section>''')
-    split = IMAGES.get(slug, {}).get("split_context")   # e.g. [528, 1123]: side by side, column widths from Figma
+    # Context/Motivation and Problem Framing sit side by side (Synthia's Figma widths) unless a page sets
+    # "split_context": false in images.json, or its own [left, right] column widths
+    split = IMAGES.get(slug, {}).get("split_context", [528, 1123])
     if split and len(pair) == 2:
         sections.append(f'      <div class="section-split" style="grid-template-columns:{split[0]}fr {split[1]}fr">\n'
                         + "\n".join(pair) + "\n      </div>")
@@ -602,7 +604,7 @@ def page(slug, d):
           {body}
           </div>
         </div>{chr(10) + "        " + code_html if code_html else ""}''')
-        sections.append('      <section id="process" data-nav="Process">\n        <h2>Process</h2>\n\n'
+        sections.append('      <section id="process" data-nav="Design Process">\n        <h2>Design Process</h2>\n\n'
                         + "\n\n".join(blocks) + "\n      </section>")
 
     if d.get("improve"):
