@@ -145,6 +145,32 @@
     document.body.appendChild(box);
   });
 
+  /* ---------- Sound toggle for videos marked "sound": true ---------- */
+  const soundBtns = [...document.querySelectorAll(".media__sound")];
+  const setSound = (btn, on) => {
+    const v = btn.parentElement.querySelector("video");
+    if (!v) return;
+    v.muted = !on;
+    if (on) { v.play && v.play(); }
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    btn.setAttribute("aria-label", on ? "Turn sound off" : "Turn sound on");
+  };
+  soundBtns.forEach((btn) => btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const on = btn.getAttribute("aria-pressed") !== "true";
+    if (on) soundBtns.forEach((b) => b !== btn && setSound(b, false));   // one video talking at a time
+    setSound(btn, on);
+  }));
+  if (soundBtns.length && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (!en.isIntersecting) {   // scrolled away: go quiet again
+        const btn = en.target.querySelector(".media__sound");
+        if (btn && btn.getAttribute("aria-pressed") === "true") setSound(btn, false);
+      }
+    }), { threshold: 0.2 });
+    soundBtns.forEach((b) => io.observe(b.parentElement));
+  }
+
   /* ---------- Back to top ---------- */
   const btn = document.createElement("button");
   btn.className = "to-top";

@@ -383,6 +383,11 @@ def media_el(item, cls="media", style=""):
     if src.lower().endswith((".mp4", ".webm", ".mov")):
         inner = (f'<video src="{src}" autoplay muted loop playsinline preload="metadata"'
                  + (f' poster="../{item["poster"]}"' if item.get("poster") else "") + "></video>")
+        if item.get("sound"):   # browsers only autoplay muted videos, so these get a sound toggle
+            inner += ('<button type="button" class="media__sound" aria-label="Turn sound on" aria-pressed="false">'
+                      '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9h4l5-4v14l-5-4H4z"/>'
+                      '<path class="on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/>'
+                      '<path class="off" d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg></button>')
     else:
         inner = f'<img src="{src}" alt="{alt}" loading="lazy">'
     return f'<figure class="{cls} media--{fit}"{style}>{inner}</figure>'

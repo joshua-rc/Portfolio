@@ -30,7 +30,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -51,7 +51,7 @@ img { display: block; max-width: 100%; }
 .page {
   display: grid;
   grid-template-columns: 600fr 1760fr 200fr;
-  width: min(100vw, 1920px);
+  width: min(100%, 1920px);   /* 100% (not 100vw) so a Windows scrollbar never adds a horizontal scroll */
   margin: 0 auto;
   min-height: 100vh;
 }
@@ -564,7 +564,7 @@ body[data-slug="yubbayubba"] .eq__vars { font-size: calc(var(--s) * 20); }
    Phone / small tablet: sidebar becomes a top header
    ========================================================= */
 /* ---------- Per-page layouts (set in tools/images.json) ---------- */
-.media-rows { display: grid; gap: calc(var(--s) * 20); margin-top: calc(var(--s) * 30); }
+.media-rows { display: grid; gap: calc(var(--s) * 20); margin-top: calc(var(--s) * 30); grid-template-columns: minmax(0, 1fr); }
 .project__summary + .media-rows { margin-top: calc(var(--s) * 40); }
 .section-split { display: grid; column-gap: calc(var(--s) * 95); align-items: start; }
 .section-split > section { min-width: 0; }
@@ -592,6 +592,19 @@ body[data-slug="yubbayubba"] .eq__vars { font-size: calc(var(--s) * 20); }
 .decision-tall > .media { align-self: start; }
 .decision-tall__side { display: flex; flex-direction: column; justify-content: space-between; gap: calc(var(--s) * 30); min-width: 0; }
 .decision-tall__side > .media-rows { margin-top: 0; }
+
+/* ---------- Sound toggle on videos with "sound": true ---------- */
+.media__sound {
+  all: unset; position: absolute; right: calc(var(--s) * 18); bottom: calc(var(--s) * 18); z-index: 2; cursor: pointer;
+  width: max(34px, calc(var(--s) * 56)); height: max(34px, calc(var(--s) * 56)); border-radius: 50%;
+  background: rgba(20, 22, 25, .55); display: grid; place-items: center; transition: background .2s;
+}
+.media__sound:hover, .media__sound:focus-visible { background: rgba(20, 22, 25, .8); }
+.media__sound svg { width: 58%; height: 58%; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.media__sound .spk { fill: #fff; }
+.media__sound .on { display: none; }
+.media__sound[aria-pressed="true"] .on { display: inline; }
+.media__sound[aria-pressed="true"] .off { display: none; }
 
 /* ---------- More Projects viewer ---------- */
 button.more-card { all: unset; display: flex; flex-direction: column; justify-content: flex-start; cursor: pointer; box-sizing: border-box; }
@@ -654,7 +667,7 @@ html.viewer-open { overflow: hidden; }
   .media-groups { flex-direction: column; gap: 14px; }
   .media-group__label { font-size: 13px; margin-bottom: 6px; }
   .media-rows .gallery__row--flex { flex-wrap: nowrap; gap: 6px; }
-  .media-rows .gallery__row--flex .gallery__item { flex: var(--ar) 1 0 !important; }
+  .media-rows .gallery__row--flex .gallery__item { flex: var(--ar) 1 0 !important; min-width: 0; }
   :root { --s: 0.5px; }
 
   .page, .page--project { display: block; width: 100%; }
@@ -722,6 +735,7 @@ html.viewer-open { overflow: hidden; }
   .eq__label { font-size: 11px; }
   .eq__math { font-size: 16px; }
   .eq__vars { font-size: 12px; column-gap: 10px; }
+  .eq__val { white-space: normal; }
   details.code summary { font-size: 13px; }
   details.code pre { font-size: 11px; }
   .decision, .decision--flip { grid-template-columns: 1fr; gap: 10px; }

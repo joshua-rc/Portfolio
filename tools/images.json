@@ -487,7 +487,8 @@
     {
      "src": "assets/img/projects/synthia/overview1.mp4",
      "poster": "assets/img/projects/synthia/overview1-poster.jpg",
-     "ar": 1.778
+     "ar": 1.778,
+     "sound": true
     },
     {
      "src": "assets/img/projects/synthia/overview2.jpg",
@@ -661,10 +662,12 @@
      "alt": "Playing MochiMash"
     },
     {
-     "src": "assets/img/projects/mochimash/overview2.jpg",
-     "ar": 1.777,
+     "src": "assets/img/projects/mochimash/overview2.mp4",
+     "ar": 1.778,
      "fit": "cover",
-     "alt": "The one-pixel-row game screen"
+     "alt": "MochiMash gameplay with its soundtrack",
+     "poster": "assets/img/projects/mochimash/overview2-poster.jpg",
+     "sound": true
     }
    ],
    [
